@@ -5,12 +5,12 @@ import { Link as ScrollLink } from "react-scroll";
 const Department = () => {
   const [isActive, setIsActive] = useState(0);
   const data = [
-    { id: "Berkuda", title: "Welcome to our Berkuda", subTitle: "Explore the stunning coastline on horseback.", text: "Experience the thrill of riding along the sandy beaches and through the lush landscapes surrounding Pantai Tuban.", image: "/images/berkuda1.jpg" },
-    { id: "Perahu", title: "Welcome to our Perahu", subTitle: "Embark on a scenic boat tour of the coast.", text: "Discover hidden coves, crystal-clear waters, and breathtaking views from the comfort of our traditional perahu boats.", image: "/images/perahu2.jpg" },
-    { id: "ATV Bike", title: "Welcome to our ATV Bike", subTitle: "Get your adrenaline pumping with an ATV adventure.", text: "Ride through challenging terrains, explore off-the-beaten-path trails, and experience the thrill of off-roading near Pantai Tuban.", image: "/images/atv1.jpg" },
-    { id: "Flying Fox", title: "Welcome to our Flying Fox", subTitle: "Soar above the beach on an exhilarating zipline.", text: "Feel the rush of flying through the air as you take in panoramic views of Pantai Tuban and the surrounding area.", image: "/images/flyingfox1.jpg" },
-    { id: "Swimming Pool", title: "Welcome to our Swimming Pool", subTitle: "Relax and unwind in our refreshing pool.", text: "Take a dip in our pool, soak up the sun on the deck, and enjoy a variety of drinks and snacks from our poolside bar.", image: "/images/swimmingpool1.jpg" },
-    { id: "Spot Foto", title: "Welcome to our Spot Foto", subTitle: "Capture your special moments at our photo spots.", text: "Create lasting memories with stunning photos against the backdrop of Pantai Tuban's picturesque scenery.", image: "/images/spotfot1.jpg" }
+    { id: "Berkuda", title: "Welcome to our Berkuda", subTitle: "Explore the stunning coastline on horseback.", text: "Experience the thrill of riding along the sandy beaches and through the lush landscapes surrounding Pantai Tuban.", image: "/images/gallery/berkuda1.jpg" },
+    { id: "Perahu", title: "Welcome to our Perahu", subTitle: "Embark on a scenic boat tour of the coast.", text: "Discover hidden coves, crystal-clear waters, and breathtaking views from the comfort of our traditional perahu boats.", image: "/images/gallery/perahu2.jpg" },
+    { id: "ATV Bike", title: "Welcome to our ATV Bike", subTitle: "Get your adrenaline pumping with an ATV adventure.", text: "Ride through challenging terrains, explore off-the-beaten-path trails, and experience the thrill of off-roading near Pantai Tuban.", image: "/images/gallery/atv1.jpg" },
+    { id: "Flying Fox", title: "Welcome to our Flying Fox", subTitle: "Soar above the beach on an exhilarating zipline.", text: "Feel the rush of flying through the air as you take in panoramic views of Pantai Tuban and the surrounding area.", image: "/images/gallery/flyingfox1.jpg" },
+    { id: "Swimming Pool", title: "Welcome to our Swimming Pool", subTitle: "Relax and unwind in our refreshing pool.", text: "Take a dip in our pool, soak up the sun on the deck, and enjoy a variety of drinks and snacks from our poolside bar.", image: "/images/gallery/swimmingpool1.jpg" },
+    { id: "Spot Foto", title: "Welcome to our Spot Foto", subTitle: "Capture your special moments at our photo spots.", text: "Create lasting memories with stunning photos against the backdrop of Pantai Tuban's picturesque scenery.", image: "/images/gallery/spotfot1.jpg" }
   ];
   return (
     <section id="department">
