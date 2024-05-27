@@ -361,7 +361,7 @@ const priceData = [
     ],
   },
   {
-    image: 'images/template wahana/berkuda.png',
+    image: 'images/template wahana/Berkuda.png',
     price: '$199',
     title: 'Berkuda Plan',
     featureList: [
