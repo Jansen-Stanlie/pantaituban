@@ -76,46 +76,46 @@ const PostDetails = () => {
 
                   <h2 className="section-title">Fakta Menarik Pantai Kelapa Tuban</h2>
 
-                  <div class="facts-list">
-                    <p class="numbered-fact">
-                      <span class="fact-number"></span>
-                      <span class="fact-title">Penamaan Wisata Pantai Kelapa </span>
+                  <div className="facts-list">
+                    <p className="numbered-fact">
+                      <span className="fact-number"></span>
+                      <span className="fact-title">Penamaan Wisata Pantai Kelapa </span>
                       Pantai ini mendapatkan namanya dari banyaknya pohon kelapa yang menghiasi sekitarnya, menjadikannya mudah diingat oleh para wisatawan.
                     </p>
-                    <p class="numbered-fact">
-                      <span class="fact-number"></span>
-                      <span class="fact-title">Lokasi & Rute ke Pantai Kelapa </span>
+                    <p className="numbered-fact">
+                      <span className="fact-number"></span>
+                      <span className="fact-title">Lokasi & Rute ke Pantai Kelapa </span>
                       Terletak di Desa Panyuran, Kecamatan Palang, Kabupaten Tuban, Jawa Timur. Dari pusat kota Tuban, pantai ini berjarak sekitar 5 km. Jika Anda datang dari arah Semarang atau Rembang, ikuti Jalan Pantura hingga mencapai jalur paling utara provinsi Jawa Timur.
                     </p>
-                    <p class="numbered-fact">
-                      <span class="fact-number"></span>
-                      <span class="fact-title">Harga Tiket Masuk Pantai Kelapa Tuban </span>
+                    <p className="numbered-fact">
+                      <span className="fact-number"></span>
+                      <span className="fact-title">Harga Tiket Masuk Pantai Kelapa Tuban </span>
                       Harga tiket masuk sangat terjangkau, hanya Rp 5.000 per orang. Untuk kendaraan, dikenakan biaya tambahan: roda dua Rp 2.000, roda empat Rp 5.000, dan bis Rp 10.000.
                     </p>
-                    <p class="numbered-fact">
-                      <span class="fact-number"></span>
-                      <span class="fact-title">Fasilitas </span>
+                    <p className="numbered-fact">
+                      <span className="fact-number"></span>
+                      <span className="fact-title">Fasilitas </span>
                       Destinasi wisata ini menawarkan juga berbagai fasilitas yang bisa kamu coba nih, seperti flying fox, berkuda, panggung hiburan, tempat bermain anak,dan kolam renang.
 
                       Tak hanya itu, kamu juga bisa mencicipi ragam kuliner yang telah disediakan di Pantai Kelapa ini, mulai dari makanan berat hingga minuman menyegarkan, seperti es degan.
                     </p>
-                    <p class="numbered-fact">
-                      <span class="fact-number"></span>
-                      <span class="fact-title">Pantai yang Memiliki Hutan Bakau dan Pepohonan Cemara </span>
+                    <p className="numbered-fact">
+                      <span className="fact-number"></span>
+                      <span className="fact-title">Pantai yang Memiliki Hutan Bakau dan Pepohonan Cemara </span>
                       Tak hanya wisata pantai nih, banyak orang yang datang untuk berkunjung pula ke area hutan bakau nih. Jika kamu bosan dengan keramaian di sekitaran pantai, kamu bisa singgah ke lingkungan asri hutan bangkau.
 
                       Faktanya, tak hanya hutan bakau saja yang menjadi daya tarik dari Pantai Kelapa ini, di sekitar pantai pun terdapat pepohonan cemara yang rindang. Kamu bisa menikmatinya rindangnya pohon cemara saat siang hari nih. Oleh karena itu, sebagian wisatawan menyebutnya dengan Pantai Cemara Tuban.
                       Tentunya, menyenangkan bisa menikmati pengalaman yang berbeda untuk menikmati keindahan Pantai Kelapa.
                     </p>
-                    <p class="numbered-fact">
-                      <span class="fact-number"></span>
-                      <span class="fact-title">Tempat Berkemah </span>
+                    <p className="numbered-fact">
+                      <span className="fact-number"></span>
+                      <span className="fact-title">Tempat Berkemah </span>
                       Kegiatan berkemah rupanya tidak hanya dilakukan di gunung saja loh. Hal ini dibuktikan objek wisata ini juga dikenal sebagai bumi perkemahan.
                       Faktanya, setiap musim liburan, ada beberapa lembaga pendidikan dari wilayah sekitar Tuban, Lamongan dan Bojonegoro mengadakan kegiatan perkemahan di Pantai Kelapa Panyuran Tuban.
                     </p>
-                    <p class="numbered-fact">
-                      <span class="fact-number"></span>
-                      <span class="fact-title">Ikon Wisata Baru Tuban </span>
+                    <p className="numbered-fact">
+                      <span className="fact-number"></span>
+                      <span className="fact-title">Ikon Wisata Baru Tuban </span>
                       Adanya suntikan dana anggaran pendapatan dan belanja daerah (APBD), kini Pantai Kelapa diubah menjadi destinasi wisata yang wajib kamu kunjungi nih. Dengan dana tersebut telah berhasil mengubah wajah pantai yang dulunya kumuh, kini menjadi tertata rapi, bersih dan layak untuk dikunjungi sebagai tempat wisata.
                     </p>
                   </div>
@@ -303,7 +303,7 @@ const PostDetails = () => {
                   <div className="st-post st-style1">
                     <Link to="" className="st-post-thumb st-zoom">
                       <img
-                        src="/images/rs-post1.jpg"
+                        src="/images/blog1.jpg"
                         alt="post1"
                         className="st-zoom-in"
                       />
@@ -311,10 +311,10 @@ const PostDetails = () => {
                     <div className="st-post-info">
                       <h2 className="st-post-title">
                         <a href="blog-details-right-sidebar.html">
-                          Top Medical Tourism Destination...
+                          Raih Penghargaan Terbaik EJTA 2023
                         </a>
                       </h2>
-                      <div className="st-post-date">Jan 22, 2020</div>
+                      <div className="st-post-date">Oct 31, 2023</div>
                     </div>
                   </div>
                 </li>
@@ -322,7 +322,7 @@ const PostDetails = () => {
                   <div className="st-post st-style1">
                     <Link to="" className="st-post-thumb st-zoom">
                       <img
-                        src="/images/rs-post2.jpg"
+                        src="/images/blog2.jpg"
                         alt="post2"
                         className="st-zoom-in"
                       />
@@ -330,10 +330,10 @@ const PostDetails = () => {
                     <div className="st-post-info">
                       <h2 className="st-post-title">
                         <a href="blog-details-right-sidebar.html">
-                          Overview Malaysia as a medical tourism...
+                          Pantai Kelapa di Detikcom...
                         </a>
                       </h2>
-                      <div className="st-post-date">Jan 15, 2020</div>
+                      <div className="st-post-date">Aug 22, 2020</div>
                     </div>
                   </div>
                 </li>

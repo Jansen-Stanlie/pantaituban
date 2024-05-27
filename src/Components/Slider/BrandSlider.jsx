@@ -30,20 +30,30 @@ const BrandSlider = ({ data }) => {
       {
         breakpoint: 1599,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 4, centerMode: true,
         }
       },
       {
         breakpoint: 1199,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 3, centerMode: true,
         }
       },
+
       {
         breakpoint: 991,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1, centerMode: true,
           dots: true
+        }
+      },
+
+      {
+        breakpoint: 992, // Adjust for desired breakpoint
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+          dots: true,
         }
       },
       {
@@ -52,24 +62,25 @@ const BrandSlider = ({ data }) => {
           slidesToShow: 1,
           dots: true
         }
-      }
+      },
+
     ]
+
   }
+
   return (
-    <div className="st-gray-bg">
+    <div className="st-gray-bg st-brand-slider-container">
       <div className="st-height-b120 st-height-lg-b80" />
       <div className="container">
-        <Slider {...settings} className='st-slider-style2'>
-          {
-            data.map((elements, index) => (
-              <Brand {...elements} key={index} />
-            ))
-          }
+        <Slider {...settings} className="st-slider-style2">
+          {data.map((elements, index) => (
+            <Brand {...elements} key={index} />
+          ))}
         </Slider>
       </div>
       <div className="st-height-b120 st-height-lg-b80" />
     </div>
-  )
+  );
 }
 
 export default BrandSlider;

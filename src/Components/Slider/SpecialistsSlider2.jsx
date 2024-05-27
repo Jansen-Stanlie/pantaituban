@@ -55,7 +55,7 @@ const SpecialistsSlider2 = ({ data, varient }) => {
 
   const sectionHeadingData = {
     "subTitle": `Our Doctors`,
-    "title": `Professional staff at our <br><span class="st-light-blue">dental</span> hospital`
+    "title": `Professional staff at our <br><span className="st-light-blue">dental</span> hospital`
   }
 
   return (

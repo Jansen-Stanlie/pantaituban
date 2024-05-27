@@ -15,7 +15,7 @@ const categoryMenu = [
   },
   {
     title: 'Flying Fox',
-    category: 'flyfox',
+    category: 'flyingfox',
   },
   {
     title: 'Swimming Pool',
@@ -35,95 +35,111 @@ const categoryMenu = [
 const portfolioData = [
   {
     href: '/portfolio/portfolio-details',
-    img: '/images/project1_lg.jpg',
-    category: 'cardiology',
+    img: '/images/gallery/acara1.jpg',
+    category: 'others',
     height: 299,
   },
   {
     href: '/portfolio/portfolio-details',
-    img: '/images/project2_lg.jpg',
-    category: 'cardiology',
+    img: '/images/gallery/acara2.jpg',
+    category: 'others',
     height: 299,
   },
   {
     href: '/portfolio/portfolio-details',
-    img: '/images/project3_lg.jpg',
-    category: 'pulmonary',
+    img: '/images/gallery/acara3.jpg',
+    category: 'others',
     height: 299,
-  },
-  {
-    href: '/portfolio/portfolio-details',
-    img: '/images/project4_lg.jpg',
-    category: 'urology',
-    height: 299,
-  },
-  {
-    href: '/portfolio/portfolio-details',
-    img: '/images/project5_lg.jpg',
-    category: 'urology',
-    height: 299,
-  },
-  {
-    href: '/portfolio/portfolio-details',
-    img: '/images/project6_lg.jpg',
-    category: 'pulmonary',
-    height: 299,
-  },
-  {
-    href: '/portfolio/portfolio-details',
-    img: '/images/project7_lg.jpg',
-    category: 'neurology',
-    height: 299,
-  },
-  {
-    href: '/portfolio/portfolio-details',
-    img: '/images/project1_lg.jpg',
-    category: 'neurology',
-    height: 299,
-  },
-  {
-    href: '/portfolio/portfolio-details',
-    img: '/images/project2_lg.jpg',
-    category: 'neurology',
-    height: 299,
-  },
-  {
-    href: '/portfolio/portfolio-details',
-    img: '/images/project3_lg.jpg',
-    category: 'traumatology',
-    height: 299,
-  },
-  {
-    href: '/portfolio/portfolio-details',
-    img: '/images/project4_lg.jpg',
-    category: 'traumatology',
-    height: 299,
-  },
-  {
-    href: '/portfolio/portfolio-details',
-    img: '/images/project5_lg.jpg',
-    category: 'traumatology',
-    height: 299,
-  },
-  {
-    href: '/portfolio/portfolio-details',
-    img: '/images/project6_lg.jpg',
-    category: 'pulmonary',
-    height: 299,
-  },
-  {
-    href: '/portfolio/portfolio-details',
-    img: '/images/project7_lg.jpg',
-    category: 'pulmonary',
-    height: 299,
-  },
-  {
-    href: '/portfolio/portfolio-details',
-    img: '/images/project1_lg.jpg',
-    category: 'pulmonary',
-    height: 299,
-  },
 
+  },
+  {
+    href: '/portfolio/portfolio-details',
+    img: '/images/gallery/acara4.jpg',
+    category: 'others',
+    height: 299,
+  },
+  {
+    href: '/portfolio/portfolio-details',
+    img: '/images/gallery/acara6.jpg',
+    category: 'others',
+    height: 299,
+  },
+  {
+    href: '/portfolio/portfolio-details',
+    img: '/images/gallery/berkuda1.jpg',
+    category: 'berkuda',
+    height: 299,
+  },
+  {
+    href: '/portfolio/portfolio-details',
+    img: '/images/gallery/berkuda2.jpg',
+    category: 'berkuda',
+    height: 299,
+  },
+  {
+    href: '/portfolio/portfolio-details',
+    img: '/images/gallery/atv1.jpg',
+    category: 'atv',
+    height: 299,
+  },
+  {
+    href: '/portfolio/portfolio-details',
+    img: '/images/gallery/atv2.jpg',
+    category: 'atv',
+    height: 299,
+  }, {
+    href: '/portfolio/portfolio-details',
+    img: '/images/gallery/atv3.jpg',
+    category: 'atv',
+    height: 299,
+  },
+  {
+    href: '/portfolio/portfolio-details',
+    img: '/images/gallery/atv4.jpg',
+    category: 'atv',
+    height: 299,
+  },
+  {
+    href: '/portfolio/portfolio-details',
+    img: '/images/gallery/atv5.jpg',
+    category: 'atv',
+    height: 299,
+  },
+  {
+    href: '/portfolio/portfolio-details',
+    img: '/images/gallery/flyingfox.jpg',
+    category: 'flyingfox',
+    height: 299,
+  }, {
+    href: '/portfolio/portfolio-details',
+    img: '/images/gallery/flyingfox1.jpg',
+    category: 'flyingfox',
+    height: 299,
+  },
+  {
+    href: '/portfolio/portfolio-details',
+    img: '/images/gallery/swimmingpool1.jpg',
+    category: 'swimmingpool',
+    height: 299,
+  },
+  {
+    href: '/portfolio/portfolio-details',
+    img: '/images/gallery/Terapigaram1.jpg',
+    category: 'terapigaram',
+    height: 299,
+  },
+  {
+    href: '/portfolio/portfolio-details',
+    img: '/images/gallery/Terapigaram2.jpg',
+    category: 'terapigaram',
+    height: 299,
+  },
+  {
+    href: '/portfolio/portfolio-details',
+    img: '/images/gallery/Terapigaram3.jpg',
+    category: 'terapigaram',
+    height: 299,
+  }
 ]
 
 const MasonryGallery = () => {

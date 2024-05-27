@@ -79,7 +79,7 @@ const aboutData = {
 
   avater: {
     img: "images/avatar1.png",
-    name: "Dr. John Doe",
+    name: "pokdarwis pantai kelapa",
     designation: "Contact person",
   },
   timeTable: [
@@ -208,7 +208,7 @@ const testimonialData = [
       "banyak kenangan di pantai kelapa.... aku seru camping disana.",
   },
   {
-    img: "images/avatar6.png",
+    img: "images/avatar5.png",
     name: "Nafisa",
     designation: "Family Vacationer",
     subTitle:
@@ -505,26 +505,6 @@ const brandData = [
     bg: "orange",
     img: "images/client1.png",
   },
-  {
-    bg: "blue",
-    img: "images/client2.png",
-  },
-  {
-    bg: "red",
-    img: "images/client3.png",
-  },
-  {
-    bg: "green",
-    img: "images/client4.png",
-  },
-  {
-    bg: "dip-blue",
-    img: "images/client5.png",
-  },
-  {
-    bg: "orange",
-    img: "images/client1.png",
-  }
 ];
 
 const mapLocationURL =
@@ -548,7 +528,7 @@ const Home = () => {
       <Accordion data={faqData} />
       <Newsletter data={newsletterData} />
       <PostWrapper data={postData} />
-      <BrandSlider data={brandData} />
+      {/* <BrandSlider data={brandData} /> */}
       <Contact />
       <LocationInMap data={mapLocationURL} />
     </>

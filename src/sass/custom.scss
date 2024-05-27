@@ -272,6 +272,13 @@ a {
     }
   }
 }
+.st-brand-slider-container {
+  overflow: hidden; /* Prevent duplicated slides from overflowing */
+}
+
+.st-slider-style2 .slick-slide {
+  margin: 0 10px; /* Adjust spacing between slides */
+}
 .st-slider-style3 {
   position: relative;
 
@@ -449,10 +456,7 @@ a {
   h3 {
     font-size: 120px;
     color: $blue;
-    text-shadow:
-      1px 1px 0 $blue,
-      1px -1px 0 $blue,
-      -1px 1px 0 $blue,
+    text-shadow: 1px 1px 0 $blue, 1px -1px 0 $blue, -1px 1px 0 $blue,
       -1px -1px 0 $blue;
   }
 
