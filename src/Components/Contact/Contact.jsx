@@ -75,7 +75,7 @@ const Contact = () => {
               method="post"
               id="contact-form"
             >
-              <input type="hidden" name="from_name" value="Nischinto Medical" />
+              <input type="hidden" name="from_name" value="Pantai Tuban" />
               <input type="hidden" name="replyto" value="custom@gmail.com" />
               <div className="col-lg-6">
                 <div className="st-form-field st-style1">

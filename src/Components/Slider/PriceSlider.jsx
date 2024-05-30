@@ -56,7 +56,7 @@ const PriceSlider = ({ data }) => {
   };
   return (
     <section id="pricing">
-      <div className="st-height-b90 st-height-lg-b50"></div>
+      <div className="st-height-b180 st-height-lg-b50"></div>
       <SectionHeading title="Pantai Tuban Activities Price"
         subTitle="Explore our exciting range of activities and discover the perfect way to enhance your Pantai Tuban experience.<br>Find pricing details and plan your adventure today." />
       <div className="container">

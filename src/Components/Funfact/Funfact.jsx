@@ -238,6 +238,7 @@ const Funfact = () => {
                 <div className="st-height-b30 st-height-lg-b30" />
               </div> */}
               {/* .col */}
+              <div className="st-height-b30 st-height-lg-b30" />
             </div>
           </div>
           <div className="col-xl-6 wow fadeInRight" data-wow-duration="0.8s" data-wow-delay="0.2s" >
@@ -245,6 +246,7 @@ const Funfact = () => {
           </div>
         </div>
       </div>
+      <div className="st-height-b150 st-height-lg-b30" />
     </section>
   )
 }

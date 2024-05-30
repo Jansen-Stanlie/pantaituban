@@ -5,6 +5,7 @@ import Contact from "../Components/Contact/Contact";
 import Department from "../Components/Department/Department";
 import Appointment from "../Components/Appointment/Appointment";
 import About from "../Components/About/About";
+import About4 from "../Components/About/About4";
 import Iconbox from "../Components/Iconbox/Iconbox";
 import PostWrapper from "../Components/Post/PostWrapper";
 import SpecialistsSlider from "../Components/Slider/SpecialistsSlider";
@@ -71,7 +72,19 @@ const iconboxData = [
     title: "Chill Beach Vibes",
   },
 ];
-
+const aboutData2 = {
+  imgSrc: `images/about2.png`,
+  title: `Meet Pantai Tuban Team <span className="st-blue">Pokdarwis</span>`,
+  textLine: [
+    {
+      text: ` Get to know the dedicated professionals who make Pantai Tuban a truly special destination. 
+      Our team is passionate about creating unforgettable experiences for every guest.`,
+    },
+    {
+      text: `We're more than just a team – we're a family`,
+    },
+  ],
+};
 const aboutData = {
   title: "Pantai Tuban: Your Gateway to Tranquil Bali Bliss",
   subTitle:
@@ -436,6 +449,28 @@ const priceData = [
       // 'Drinks included',
       // ... more features
     ],
+  },
+  {
+    image: 'images/template wahana/mobil-listrik.png',
+    price: '$499',
+    title: 'Mobil Listrik Plan',
+    featureList: [
+      // 'All-you-can-eat seafood buffet',
+      // 'Variety of seafood dishes',
+      // 'Drinks included',
+      // ... more features
+    ],
+  },
+  {
+    image: 'images/template wahana/panggung-gembira.png',
+    price: '$499',
+    title: 'Panggung Gembira Plan',
+    featureList: [
+      // 'All-you-can-eat seafood buffet',
+      // 'Variety of seafood dishes',
+      // 'Drinks included',
+      // ... more features
+    ],
   }
 ];
 
@@ -518,7 +553,8 @@ const Home = () => {
       <About data={aboutData} />
       <Department />
       {/* <Appointment /> */}
-      <SpecialistsSlider data={specialistData} />
+      <About4 data={aboutData2} data1={specialistData} />
+      {/* <SpecialistsSlider data={specialistData} /> */}
       <hr />
       <MasonryGallery />
       {/* <BeforeAfter data={beforeAfterData} /> */}

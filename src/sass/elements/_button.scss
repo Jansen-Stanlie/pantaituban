@@ -50,7 +50,7 @@
 }
 
 .st-btn.st-style1.st-color4 {
-  background-color: $pink;
+  background-color: $blue;
   color: #fff;
 }
 
@@ -103,11 +103,11 @@
   }
   &.st-color4 {
     background-color: $white;
-    border-color: $pink;
-    color: $pink;
+    border-color: $light-blue;
+    color: $light-blue;
 
     &:hover {
-      background-color: $pink;
+      background-color: $light-blue;
       color: #fff;
     }
   }
