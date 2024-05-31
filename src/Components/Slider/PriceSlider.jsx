@@ -57,8 +57,8 @@ const PriceSlider = ({ data }) => {
   return (
     <section id="pricing">
       <div className="st-height-b180 st-height-lg-b50"></div>
-      <SectionHeading title="Pantai Tuban Activities Price"
-        subTitle="Explore our exciting range of activities and discover the perfect way to enhance your Pantai Tuban experience.<br>Find pricing details and plan your adventure today." />
+      <SectionHeading title="Petualangan Tak Terbatas, Harga Terjangkau"
+        subTitle="Temukan beragam aktivitas seru yang akan membuat liburan Anda di Pantai Tuban semakin berkesan.<br>Lihat daftar harga dan rencanakan petualangan Anda hari ini!" />
       <div className="container">
         <Slider {...settings} className='st-slider-style2 st-pricing-wrap'>
           {

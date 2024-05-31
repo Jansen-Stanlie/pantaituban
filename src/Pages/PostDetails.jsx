@@ -310,8 +310,8 @@ const PostDetails = () => {
                     </Link>
                     <div className="st-post-info">
                       <h2 className="st-post-title">
-                        <a href="blog-details-right-sidebar.html">
-                          Raih Penghargaan Terbaik EJTA 2023
+                        <a href="/">
+                          Pantai Kelapa Raih Penghargaan Terbaik..
                         </a>
                       </h2>
                       <div className="st-post-date">Oct 31, 2023</div>
@@ -329,8 +329,8 @@ const PostDetails = () => {
                     </Link>
                     <div className="st-post-info">
                       <h2 className="st-post-title">
-                        <a href="blog-details-right-sidebar.html">
-                          Pantai Kelapa di Detikcom...
+                        <a href="/">
+                          Pantai Kelapa di Detikcom. Berita Nasional
                         </a>
                       </h2>
                       <div className="st-post-date">Aug 22, 2020</div>
@@ -348,7 +348,7 @@ const PostDetails = () => {
                     </Link>
                     <div className="st-post-info">
                       <h2 className="st-post-title">
-                        <a href="blog-details-right-sidebar.html">
+                        <a href="/">
                           World Parkinson’s Day 2020 comes...
                         </a>
                       </h2>

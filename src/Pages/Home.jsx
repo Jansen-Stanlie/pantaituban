@@ -42,53 +42,48 @@ const heroData = {
     },
   ],
   title: [
-    "Sun & Sand",
-    "Ocean Waves",
-    "Beach Paradise",
-    "Coastal Adventure",
-    "Seashore Serenity",
+    "Pantai Kelapa Tuban",
+    "Wisata Pantai Tuban",
   ],
 };
 
 const iconboxData = [
   {
-    bg: "blue", // A light blue to evoke the ocean
-    icon: "icons/sun.svg", // Replace with an icon of a sun or palm tree
-    title: "Endless Sunshine",
-    subTitle:
-      "Bask in the warm glow of the tropical sun on our pristine shores.",
+    bg: "blue",
+    icon: "icons/sun.svg",
+    title: "Surga Mentari Menanti",
+    subTitle: "Lepaskan penat, biarkan mentari tropis menyapa kulitmu di pantai pribadi.",
   },
   {
-    bg: "purple", // A vibrant blue-green reminiscent of tropical waters
-    icon: "icons/surfboard.svg", // Replace with an icon of a surfboard or wave
-    title: "Water Adventures",
-    subTitle:
-      "Dive into the crystal-clear waters for swimming, surfing, snorkeling, or kayaking.",
+    bg: "purple",
+    icon: "icons/surfboard.svg",
+    title: "Taklukkan Ombak, Raih Sensasi",
+    subTitle: "Arungi birunya samudra, ciptakan petualangan tak terlupakan.",
   },
   {
-    bg: "red", // A warm yellow to represent the sand
-    icon: "icons/cocktail.svg", // Replace with an icon of a cocktail, beach umbrella, or hammock
-    subTitle: "Find Your Happy Place: It's waiting for you at the beach.",
-    title: "Chill Beach Vibes",
+    bg: "red",
+    icon: "icons/cocktail.svg",
+    title: "Hidupkan Momen Bahagia",
+    subTitle: "Nikmati setiap detik di pantai impian, temukan definisi liburan sesungguhnya.",
   },
 ];
 const aboutData2 = {
   imgSrc: `images/about2.png`,
-  title: `Meet Pantai Tuban Team <span className="st-blue">Pokdarwis</span>`,
+  title: `Temui Tim Pantai <span className="st-blue">Pokdarwis</span> Pantai Tuban: Pahlawan di Balik Pesona`,
   textLine: [
     {
-      text: ` Get to know the dedicated professionals who make Pantai Tuban a truly special destination. 
-      Our team is passionate about creating unforgettable experiences for every guest.`,
+      text: ` Bertemu dengan para profesional berdedikasi yang menjadikan Pantai Kelapa Tuban destinasi tak terlupakan.
+      Tim kami penuh semangat menciptakan pengalaman luar biasa bagi setiap tamu.`,
     },
     {
-      text: `We're more than just a team – we're a family`,
+      text: `Lebih dari Sekadar Tim, Kami adalah Keluarga`,
     },
   ],
 };
 const aboutData = {
-  title: "Pantai Tuban: Your Gateway to Tranquil Bali Bliss",
+  title: "Pantai Tuban: Surga Tersembunyi di Pulau Jawa",
   subTitle:
-    "Relax, unwind, and reconnect with nature on the sun-kissed shores of Pantai Tuban.  Experience mesmerizing sunsets, vibrant beach culture, and a variety of watersports for the adventurer within.  Our beachside cafe and charming shops offer local delicacies and unique treasures to remember your visit.",
+    "Pantai Kelapa Tuban sudah menjadi ikon wisata terbaik di Bumi Wali. Lokasi destinasi wisata yang menyuguhkan pemandangan luar biasa ini cukup mudah ditemukan. Beralamat di Jalan Tuban – Gresik kilometer 1-2, Dusun Kepoh, Kelurahan Panyuran, Kecamatan Palang, Tuban, Jawa Timur.",
 
   avater: {
     img: "images/avatar1.png",
@@ -97,37 +92,37 @@ const aboutData = {
   },
   timeTable: [
     {
-      day: "Monday",
+      day: "Senin",
       startTime: "8:00",
       endTime: "5:00",
     },
     {
-      day: "Tuesday",
+      day: "Selasa",
       startTime: "8:00",
       endTime: "5:00",
     },
     {
-      day: "Wednesday",
+      day: "Rabu",
       startTime: "8:00",
       endTime: "5:00",
     },
     {
-      day: "Thursday",
+      day: "Kamis",
       startTime: "8:00",
       endTime: "5:00",
     },
     {
-      day: "Friday",
+      day: "Jumat",
       startTime: "8:00",
       endTime: "5:00",
     },
     {
-      day: "Saturday",
+      day: "Sabtu",
       startTime: "8:00",
       endTime: "5:00",
     },
     {
-      day: "Sunday",
+      day: "Minggu",
       startTime: "8:00",
       endTime: "5:00",
     },
@@ -475,41 +470,32 @@ const priceData = [
 ];
 
 const faqData = {
-  title: "Your Beach FAQ - We've Got You Covered!",
+  title: "FAQ Pantai Tuban: Jawaban untuk Semua Pertanyaan Anda!",
   img: "images/faq-img.png",
   bgImg: "shape/faq-bg.svg",
   faqItems: [
     {
-      title: "Are there lifeguards on duty at the beach?",
-      content:
-        "Yes, Pantai Tuban is patrolled by certified lifeguards from 9 AM to 5 PM daily. They are trained in first aid and water rescue.",
+      title: "Apakah ada penjaga pantai yang bertugas?",
+      content: "Tentu! Pantai Tuban memiliki penjaga pantai bersertifikat yang siap siaga dari pukul 9 pagi hingga 5 sore setiap hari. Mereka terlatih dalam pertolongan pertama dan penyelamatan air.",
     },
     {
-      title: "What water activities are available?",
-      content:
-        "Pantai Tuban offers a variety of water sports, including surfing, paddleboarding, kayaking, and snorkeling. Rentals are available on the beach.",
+      title: "Aktivitas air apa saja yang tersedia?",
+      content: "Pantai Tuban menawarkan berbagai macam olahraga air seru,Perahu. Anda bisa menyewa peralatan langsung di pantai.",
     },
     {
-      title: "Can I bring my own food and drinks?",
-      content:
-        "Absolutely! You are welcome to bring your own food and drinks to Pantai Tuban. However, we also have a beachside cafe serving local dishes and refreshing beverages.",
+      title: "Bolehkah saya membawa makanan dan minuman sendiri?",
+      content: "Tentu saja! Anda dipersilakan membawa bekal makanan dan minuman sendiri ke Pantai Tuban. Namun, kami juga memiliki kafe tepi pantai yang menyajikan hidangan lokal lezat dan minuman menyegarkan.",
     },
     {
-      title: "Is the beach wheelchair accessible?",
-      content:
-        "Yes, Pantai Tuban is partially wheelchair accessible. There are ramps leading to the beach and designated wheelchair-friendly areas.",
-    },
-    {
-      title: "Are there showers and changing rooms?",
-      content:
-        "Yes, we provide clean and well-maintained showers and changing rooms near the beach for your convenience.",
+      title: "Apakah ada fasilitas kamar mandi dan ruang ganti?",
+      content: "Ya, kami menyediakan kamar mandi dan ruang ganti yang bersih dan terawat di dekat pantai untuk kenyamanan Anda.",
     },
   ],
 };
 
 const newsletterData = {
   bgImg: "images/news-letter-bg.png",
-  contact: "(+62) 813 3027 0359",
+  contact: "(+62) 8574 5410 187",
 };
 
 const postData = [

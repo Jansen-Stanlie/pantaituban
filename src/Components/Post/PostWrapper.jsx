@@ -7,9 +7,9 @@ const PostWrapper = ({ data }) => {
   return (
     <section id="blog">
       <div className="st-height-b120 st-height-lg-b80" />
-      <SectionHeading title="Latest News"
-        subTitle="Stay informed with the latest updates, announcements, and happenings at Pantai Tuban.
-        <br> Your source for all things new and exciting." />
+      <SectionHeading title="Berita Terkini dari Pantai Tuban"
+        subTitle="Jangan sampai ketinggalan informasi terbaru tentang acara spesial, promo menarik, dan berita penting lainnya dari Pantai Tuban. 
+        <br> Semuanya ada di sini! " />
       <div className="container">
         <div className="row">
           {

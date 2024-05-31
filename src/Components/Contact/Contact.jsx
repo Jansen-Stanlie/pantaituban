@@ -63,8 +63,8 @@ const Contact = () => {
         <img src="shape/contact-shape2.svg" alt="shape2" />
       </div>
       <div className="st-height-b120 st-height-lg-b80" />
-      <SectionHeading title="Stay connect with us"
-        subTitle="Your journey with us doesn't end here. <br /> Stay connected with Pantai Tuban and let's continue creating unforgettable memories together." />
+      <SectionHeading title="Tetap Terhubung dengan Pantai Kelapa Tuban"
+        subTitle="Jangan Lewatkan Momen Terbaik!  <br /> Reservasi Liburan Impian Anda di Pantai Tuban Sekarang!." />
       <div className="container">
         <div className="row">
           <div className="col-lg-10 offset-lg-1">
@@ -107,7 +107,7 @@ const Contact = () => {
                 </div>
               </div>
               {/* .col */}
-              <div className="col-lg-6">
+              {/* <div className="col-lg-6">
                 <div className="st-form-field st-style1">
                   <label>Subject</label>
                   <input
@@ -120,7 +120,7 @@ const Contact = () => {
                     value={formData.subject}
                   />
                 </div>
-              </div>
+              </div> */}
               {/* .col */}
               <div className="col-lg-6">
                 <div className="st-form-field st-style1">

@@ -30,8 +30,8 @@ const Hero = ({ data }) => {
           <div className="st-hero-text">
             <div className="st-height-b40 st-height-lg-b40" />
             <h1 className="st-hero-title cd-headline slide">
-              Take best quality time with Family <br />
-              at
+              Ciptakan Momen Tak Terlupakan Bersama Keluarga <br />
+              di
               <span className="cd-words-wrapper">
                 <TextTransition springConfig={presets.wobbly}>
                   <span className="st-transition-title">
@@ -41,9 +41,9 @@ const Hero = ({ data }) => {
               </span>
             </h1>
             <div className="st-hero-subtitle">
-              The joy of a holiday in Pantai Tuban lies in amusing yourself
-              while the sun and sea rejuvenate your soul. <br />
-              Vacationing without planning is simply asking for trouble.
+              Biarkan mentari dan ombak Pantai Tuban menyegarkan jiwa raga,
+              sambil menciptakan kenangan indah bersama orang tersayang. <br />
+              Liburan tanpa rencana? Jangan sampai! Rancang liburan impianmu sekarang.
             </div>
             <div className="st-hero-btn">
               <ScrollLink

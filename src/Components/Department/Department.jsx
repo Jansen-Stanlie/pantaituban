@@ -5,19 +5,19 @@ import { Link as ScrollLink } from "react-scroll";
 const Department = () => {
   const [isActive, setIsActive] = useState(0);
   const data = [
-    { id: "Berkuda", title: "Welcome to our Berkuda", subTitle: "Explore the stunning coastline on horseback.", text: "Experience the thrill of riding along the sandy beaches and through the lush landscapes surrounding Pantai Tuban.", image: "/images/gallery/berkuda1.jpg" },
-    { id: "Perahu", title: "Welcome to our Perahu", subTitle: "Embark on a scenic boat tour of the coast.", text: "Discover hidden coves, crystal-clear waters, and breathtaking views from the comfort of our traditional perahu boats.", image: "/images/gallery/perahu2.jpg" },
-    { id: "ATV Bike", title: "Welcome to our ATV Bike", subTitle: "Get your adrenaline pumping with an ATV adventure.", text: "Ride through challenging terrains, explore off-the-beaten-path trails, and experience the thrill of off-roading near Pantai Tuban.", image: "/images/gallery/atv1.jpg" },
-    { id: "Flying Fox", title: "Welcome to our Flying Fox", subTitle: "Soar above the beach on an exhilarating zipline.", text: "Feel the rush of flying through the air as you take in panoramic views of Pantai Tuban and the surrounding area.", image: "/images/gallery/flyingfox1.jpg" },
-    { id: "Swimming Pool", title: "Welcome to our Swimming Pool", subTitle: "Relax and unwind in our refreshing pool.", text: "Take a dip in our pool, soak up the sun on the deck, and enjoy a variety of drinks and snacks from our poolside bar.", image: "/images/gallery/swimmingpool1.jpg" },
-    { id: "Spot Foto", title: "Welcome to our Spot Foto", subTitle: "Capture your special moments at our photo spots.", text: "Create lasting memories with stunning photos against the backdrop of Pantai Tuban's picturesque scenery.", image: "/images/gallery/spotfot1.jpg" }
+    { id: "Berkuda", title: "Berkuda", subTitle: "", text: "Nikmati sensasi berkuda di Pantai Kelapa Tuban. Bisa foto bersama atau menunggangi kuda keliling pantai dengan didampingi profesional.", image: "/images/gallery/berkuda1.jpg" },
+    { id: "Perahu", title: "Perahu", subTitle: "", text: "Dihiasi dengan belasan perahu yang bersandar di pesisir pantai. Bisa dimanfaatkan untuk spot foto khas pesisir pantai utara.", image: "/images/gallery/perahu2.jpg" },
+    { id: "ATV Bike", title: "ATV Bike", subTitle: "", text: "Menelusuri pantai dengan ATV, kendaraan bertenaga yang bisa menemani pengunjung berkekeliling menikmati keindahan alam.", image: "/images/gallery/atv1.jpg" },
+    { id: "Flying Fox", title: "Flying Fox", subTitle: "", text: "Cocok untuk para pengunjung yang ingin menikmati keindahan pantai dari ketinggian. Sekaligus menantang adrenalin dengan rute flying fox yang panjang.", image: "/images/gallery/flyingfox1.jpg" },
+    { id: "Swimming Pool", title: "Swimming Pool", subTitle: "", text: "Manjakan sang buah hati di kolam renang Pantai Kelapa. Dilengkapi beragam fasilitas dan wahana untuk anak dan ruang tunggu orang tua yang nyaman.", image: "/images/gallery/swimmingpool1.jpg" },
+    { id: "Spot Foto", title: "Spot Foto", subTitle: "", text: "Tersedia banyak spot foto yang menarik. Juga bisa menikmati suguhan es degan langsung dari pohon kelapa.", image: "/images/gallery/spotfot1.jpg" }
   ];
   return (
     <section id="department">
       <div className="st-height-b120 st-height-lg-b80" />
-      <SectionHeading title='Our Activities at Pantai Tuban'
+      <SectionHeading title='Jelajahi Keajaiban Pantai Kelapa Tuban: Darat, Laut, Udara!'
         subTitle=
-        "Enjoy a variety of exciting experiences on land, sea, and air. <br /> From horseback riding to ATV adventures, we have something for everyone." />
+        "Di Pantai Kelapa Tuban, keseruan tidak pernah berhenti. <br /> Mulai dari aktivitas air yang menyegarkan hingga petualangan darat yang menantang, kami punya segalanya untuk membuat liburan Anda tak terlupakan." />
       <div className="container">
         <div className="st-tabs st-fade-tabs st-style1">
           <ul className="st-tab-links st-style1 st-mp0">

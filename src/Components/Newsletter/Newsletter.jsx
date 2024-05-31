@@ -10,8 +10,8 @@ const Newsletter = ({ data }) => {
   const contact = data.contact;
   return (
     <section className="st-news-letter-section st-dynamic-bg st-bg" style={{ backgroundImage: `url(${bgImg})` }}>
-      <SectionHeading title="Subscribe &amp; stay updated"
-        subTitle=" Catch the wave of exclusive beach news! Contact us  and be the first to know about the latest events, <br />  special offers, and sun-sational discounts." />
+      <SectionHeading title="Bergabunglah &amp; dengan Keluarga Pantai Tuban"
+        subTitle=" Dapatkan info terbaru tentang acara seru, penawaran istimewa, dan diskon spesial langsung ke inbox Anda.  <br /> Jadilah yang pertama tahu tentang semua hal menarik di pantai impian Anda!." />
       <div className="container">
         <div className="row">
           <div className="col-lg-12">

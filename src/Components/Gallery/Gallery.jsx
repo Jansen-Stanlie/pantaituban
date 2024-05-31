@@ -192,8 +192,8 @@ const MasonryGallery = () => {
     <section id="gallery">
       <div className="st-height-b120 st-height-lg-b80" />
       <div className="container">
-        <SectionHeading title="View our gallery"
-          subTitle=" Immerse yourself in the beauty of Pantai Tuban through our curated collection of images. <br /> Discover breathtaking landscapes, vibrant moments, and the essence of our tropical paradise." />
+        <SectionHeading title="Abadikan Momen Tak Terlupakan"
+          subTitle="Biarkan diri Anda terpesona oleh keindahan Pantai Tuban melalui galeri foto kami.  <br />  Saksikan panorama yang menakjubkan, momen-momen tak terlupakan, dan warna-warni kehidupan pantai." />
       </div>
       <div className="container">
         <div className="st-portfolio-wrapper">

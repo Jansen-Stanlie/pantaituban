@@ -46,8 +46,8 @@ const TestimonialSlider = ({ data }) => {
   return (
     <section>
       <div className="st-height-b120 st-height-lg-b80" />
-      <SectionHeading title="What people say?"
-        subTitle=" Discover what makes Pantai Tuban so special in the words of our delighted guests.  <br /> Their testimonials are a testament to our commitment to creating exceptional moments.
+      <SectionHeading title="Cerita dari Hati"
+        subTitle=" Temukan mengapa Pantai Tuban begitu istimewa melalui cerita-cerita dari tamu kami yang bahagia.<br /> Testimoni mereka adalah bukti komitmen kami dalam menciptakan momen-momen tak terlupakan.
         " />
       <div className="container">
         <Slider {...settings} className='st-slider-style2'>

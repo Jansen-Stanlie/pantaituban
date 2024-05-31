@@ -8,9 +8,9 @@ const Post = ({ img, title, subTitle, author, date, postLink, authorLink }) => {
       <div className="st-post st-style3">
         <Link to={postLink} className="st-post-thumb st-link-hover-wrap st-zoom" >
           <img className="st-zoom-in" src={img} alt={img} />
-          <span className="st-link-hover">
+          {/* <span className="st-link-hover">
             <i><Icon icon="fa6-solid:link" /></i>
-          </span>
+          </span> */}
         </Link>
         <div className="st-post-info">
           <h2 className="st-post-title">

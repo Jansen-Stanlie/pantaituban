@@ -140,7 +140,7 @@ const Footer = ({ data, varient }) => {
                     </a>
                   </li>
                   <li>
-                    <a href="tel:+62-813-3027-0359" className="text-slate-400">
+                    <a href="tel:+62-857-5410-187" className="text-slate-400">
                       <span className="st-footer-contact-title">Phone:</span> (+62) 813 3027 0359 <br />
                     </a>
                   </li>

@@ -12,8 +12,8 @@ const About = ({ data }) => {
       </div>
       <div className="st-height-b120 st-height-lg-b50" />
       <SectionHeading
-        title="Your Beachside Retreat"
-        subTitle="Unwind, reconnect, and discover the beauty of Pantai Tuban – your haven for sun, sand, and serenity."
+        title="Temukan Ketenangan di Pantai Kelapa Tuban"
+        subTitle="Surga Tersembunyi untuk Liburan Istimewa Anda – Ciptakan Kenangan Tak Terlupakan di Tepi Pantai."
       />
       <div className="container">
         <div className="row">
@@ -51,7 +51,7 @@ const About = ({ data }) => {
           >
             <div className="st-shedule-wrap">
               <div className="st-shedule">
-                <h2 className="st-shedule-title">Weekly Schedule</h2>
+                <h2 className="st-shedule-title">Jadwal Mingguan</h2>
                 <ul className="st-shedule-list">
                   {timeTable.map((element, index) => (
                     <li key={index}>
@@ -68,7 +68,7 @@ const About = ({ data }) => {
                     <img src="/icons/icon4.svg" alt="./icons/icon4.svg" />
                   </div>
                   <div className="st-call-text">
-                    <div className="st-call-title">Call Now</div>
+                    <div className="st-call-title">Telepon Sekarang</div>
                     <div className="st-call-number">{contact}</div>
                   </div>
                 </div>

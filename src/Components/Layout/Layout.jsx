@@ -11,7 +11,7 @@ const headerData = {
 const footerData = {
   "logo": "/images/footer-logo.png",
   "bgImg": "",
-  subTitle: "Create unforgettable family memories on the safe and inviting shores of Pantai Tuban, a paradise for beach play and water adventures."
+  subTitle: "Pantai Kelapa: Tempat Keluarga Berkumpul, Bermain, dan Menciptakan Kenangan Indah."
 }
 const Layout = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -50,7 +50,7 @@ const Layout = () => {
           <Footer data={footerData} />
 
           <a
-            href="https://wa.me/6281330270359"
+            href="https://wa.me/6285745410187"
             target="_blank"
             rel="noopener noreferrer"
             className="whatsapp-float"
