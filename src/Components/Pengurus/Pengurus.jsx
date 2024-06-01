@@ -2,7 +2,7 @@ import { Icon } from '@iconify/react';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Specialists = ({ img, name, designation, authorLink }) => {
+const Pengurus = ({ img, name, designation, authorLink }) => {
   return (
     <>
       <div className="st-member st-style1 st-zoom">
@@ -57,4 +57,4 @@ const Specialists = ({ img, name, designation, authorLink }) => {
   );
 };
 
-export default Specialists;
+export default Pengurus;

@@ -5,7 +5,6 @@ import Layout from "./Components/Layout/Layout";
 import Home from "./Pages/Home";
 import PostDetails from "./Pages/PostDetails";
 import PageNotFound from "./Components/404/PageNotFound";
-import DoctorProfilePage from "./Pages/DoctorProfilePage";
 
 const App = () => {
   const { pathname } = useLocation();

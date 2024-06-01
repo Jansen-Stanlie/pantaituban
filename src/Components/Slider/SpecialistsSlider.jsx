@@ -1,7 +1,7 @@
 import React from 'react';
 import SectionHeading from '../SectionHeading/SectionHeading';
 import Slider from 'react-slick';
-import Specialists from '../Specialists/Specialists';
+import Pengurus from '../Pengurus/Pengurus';
 import { Icon } from '@iconify/react';
 
 const SpecialistsSlider = ({ data }) => {
@@ -61,7 +61,7 @@ const SpecialistsSlider = ({ data }) => {
         <Slider {...settings} className='st-slider-style2'>
           {
             data.map((elements, index) => (
-              <Specialists {...elements} key={index} />
+              <Pengurus {...elements} key={index} />
             ))
           }
         </Slider>

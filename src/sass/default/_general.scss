@@ -128,10 +128,10 @@ hr {
   height: 40px;
   bottom: 100px;
   background-color: rgba(
-    52,
-    152,
-    219,
-    0.7
+    246,
+    171,
+    47,
+    0.6
   ); /* Adjust the last value (0.7) for more/less transparency */
   color: #fff;
   border: none;
@@ -145,12 +145,13 @@ hr {
 
 .scroll-to-top:hover {
   background-color: rgba(
-    52,
-    152,
-    219,
+    246,
+    171,
+    47,
     1
   ); /* Fully opaque on hover (optional) */
 }
+
 .st-gray-bg {
   background-color: $black5;
 }

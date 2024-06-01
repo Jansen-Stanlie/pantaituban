@@ -3,7 +3,7 @@ import { Link as ScrollLink } from 'react-scroll'
 import parser from 'html-react-parser'
 import SectionHeading from '../SectionHeading/SectionHeading';
 import Slider from 'react-slick';
-import Specialists from '../Specialists/Specialists';
+import Pengurus from '../Pengurus/Pengurus';
 import { Icon } from '@iconify/react';
 
 const About4 = ({ data, data1 }) => {
@@ -97,7 +97,7 @@ const About4 = ({ data, data1 }) => {
         <Slider {...settings} className='st-slider-style2'>
           {
             data1.map((elements, index) => (
-              <Specialists {...elements} key={index} />
+              <Pengurus {...elements} key={index} />
             ))
           }
         </Slider>
