@@ -9,8 +9,9 @@ const Department = () => {
     { id: "Perahu", title: "Perahu", subTitle: "", text: "Dihiasi dengan belasan perahu yang bersandar di pesisir pantai. Bisa dimanfaatkan untuk spot foto khas pesisir pantai utara.", image: "/images/gallery/perahu2.jpg" },
     { id: "ATV Bike", title: "ATV Bike", subTitle: "", text: "Menelusuri pantai dengan ATV, kendaraan bertenaga yang bisa menemani pengunjung berkekeliling menikmati keindahan alam.", image: "/images/gallery/atv1.jpg" },
     { id: "Flying Fox", title: "Flying Fox", subTitle: "", text: "Cocok untuk para pengunjung yang ingin menikmati keindahan pantai dari ketinggian. Sekaligus menantang adrenalin dengan rute flying fox yang panjang.", image: "/images/gallery/flyingfox1.jpg" },
-    { id: "Swimming Pool", title: "Swimming Pool", subTitle: "", text: "Manjakan sang buah hati di kolam renang Pantai Kelapa. Dilengkapi beragam fasilitas dan wahana untuk anak dan ruang tunggu orang tua yang nyaman.", image: "/images/gallery/swimmingpool1.jpg" },
-    { id: "Spot Foto", title: "Spot Foto", subTitle: "", text: "Tersedia banyak spot foto yang menarik. Juga bisa menikmati suguhan es degan langsung dari pohon kelapa.", image: "/images/gallery/spotfot1.jpg" }
+    { id: "Kolam Renang", title: "Kolam Renang", subTitle: "", text: "Manjakan sang buah hati di kolam renang Pantai Kelapa. Dilengkapi beragam fasilitas dan wahana untuk anak dan ruang tunggu orang tua yang nyaman.", image: "/images/gallery/swimmingpool1.jpg" },
+    { id: "Spot Foto", title: "Spot Foto", subTitle: "", text: "Tersedia banyak spot foto yang menarik. Juga bisa menikmati suguhan es degan langsung dari pohon kelapa.", image: "/images/gallery/spotfot1.jpg" },
+    { id: 'camping', title: 'Camping', subTitle: '', text: 'Nikmati sensasi berkemah di Pantai Kelapa Tuban. Bisa foto bersama atau menikmati suasana malam hari di sekitar api unggun.', image: '/images/gallery/camping1.jpg' },
   ];
   return (
     <section id="department">
@@ -348,7 +349,23 @@ const Department = () => {
                     <path fill="#FFFFFF" d="M369.778,193.508c-19.011,0-34.478,15.467-34.478,34.478v2.822v16.572h-73.266v-19.394 c0-0.14,0.019-0.272,0.021-0.412c0.222-12.167,10.171-21.999,22.39-21.999c12.357,0,22.411,10.054,22.411,22.411v0.853 c4.091,0.212,8.114,0.45,12.067,0.712v-1.565c0-19.011-15.467-34.478-34.478-34.478c-18.872,0-34.233,15.246-34.457,34.066 c-0.002,0.138-0.021,0.272-0.021,0.412v56.439c2.003,0.012,4.013,0.019,6.034,0.019s4.03-0.009,6.034-0.019v-23.254H335.3v20.02 c4.124-0.362,8.151-0.75,12.067-1.164v-48.056v-3.986c0-12.357,10.054-22.411,22.411-22.411s22.411,10.054,22.411,22.411v10.871 c4.396,0.969,8.432,1.984,12.067,3.044v-13.915C404.256,208.975,388.789,193.508,369.778,193.508z" />
                   </g>
                 </svg>
-                <span>Swimming Pool</span>
+                <span>Kolam Renang</span>
+              </span>
+            </li>
+            <li className={`st-tab-title ${isActive === 6 ? "active" : ""}`} onClick={() => setIsActive(6)}>
+              <span className="st-red-box">
+                <svg width="800px" height="800px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--fxemoji" preserveAspectRatio="xMidYMid meet">
+                  <path fill="#BFBCAF" d="M168.465 391.022h314.59c3.747 0 5.954-4.206 3.825-7.29L329.585 130.298c-1.848-2.676-5.803-2.676-7.651 0L164.639 383.733c-2.128 3.083.079 7.289 3.826 7.289z">
+                  </path>
+                  <path fill="#FF473E" d="M202.068 323.393l4.403.034h243.105l-9.301-14.786h-229.25l-8.957 14.752z"></path>
+                  <path fill="#FF473E" d="M191.954 339.723l-9.177 14.786h285.965l-9.177-14.786z"></path><path fill="#2B3B47" d="M325.76 163.418l-81.528 227.604h81.528z"></path>
+                  <path fill="#8E6049" d="M167.007 390.233a4.633 4.633 0 0 1-3.442-1.525l-18.192-20.084a4.642 4.642 0 0 1 6.881-6.233l18.192 20.084a4.642 4.642 0 0 1-3.439 7.758zm320.948-1.526l18.192-20.084a4.642 4.642 0 0 0-6.881-6.233l-18.192 20.084a4.642 4.642 0 0 0 6.881 6.233zm-71.075 0l18.192-20.084a4.642 4.642 0 0 0-6.881-6.233l-18.192 20.084a4.642 4.642 0 0 0 6.881 6.233z"></path>
+                  <path fill="#BFBCAF" d="M502.091 373.401h-10.192a1.85 1.85 0 0 1 0-3.698h6.601L325.76 127.936L153.02 369.704h7.689a1.848 1.848 0 0 1 0 3.698h-11.282a1.847 1.847 0 0 1-1.504-2.923l176.332-246.795c.693-.971 2.314-.971 3.008 0l176.332 246.795a1.85 1.85 0 0 1 .14 1.92a1.851 1.851 0 0 1-1.644 1.002z"></path><path fill="#E5E4DF" d="M244.232 391.022l67.132-187.414s-55.829 116.389-104.42 152.532c-.001-.001 13.877 34.882 37.288 34.882z"></path>
+                  <path fill="#E5E4DF" d="M431.632 373.401h-13.004a1.85 1.85 0 0 1 0-3.698h10.2L324.061 125.486a1.848 1.848 0 1 1 3.397-1.457l105.873 246.795a1.848 1.848 0 0 1-1.699 2.577z"></path>
+                  <path fill="#8E6049" d="M66.544 385.448v-88.937c0-7.432 6.026-13.465 13.462-13.465s13.462 6.033 13.462 13.465v88.937c0 7.432-26.924 7.432-26.924 0z"></path>
+                  <path fill="#2BA52E" d="M153.405 350.217c.645-.774 1.043-1.521 1.221-2.243c1.22-3.166.919-7.112-1.688-9.973c-12.92-14.182-26.929-35.896-39.542-57.818c7.133 2.404 14.385 3.848 20.978 4.686c5.99.761 9.498-7.81 5.093-12.645c-11.27-12.37-23.536-31.638-34.411-50.762c6.037 2.165 12.235 3.425 17.831 4.137c4.733.602 7.504-6.171 4.024-9.991c-14.949-16.409-32.118-48.173-42.569-68.975c-.419-1.343-1.237-2.356-2.226-2.992l-.045-.028a4.876 4.876 0 0 0-.926-.458a4.238 4.238 0 0 0-1.063-.242a4.257 4.257 0 0 0-.844 0a4.238 4.238 0 0 0-1.063.242a4.648 4.648 0 0 0-.926.458l-.045.028c-.99.636-1.807 1.648-2.226 2.992c-10.452 20.802-27.62 52.566-42.569 68.975c-3.48 3.82-.709 10.592 4.024 9.991c5.597-.711 11.795-1.971 17.831-4.137c-10.875 19.124-23.141 38.392-34.411 50.762c-4.405 4.835-.897 13.407 5.093 12.645c6.593-.838 13.844-2.281 20.978-4.686c-12.613 21.922-26.622 43.636-39.542 57.818c-4.044 4.44-2.544 11.491 1.594 14.182c17.751 18.496 40.411 19.935 72.029 19.935c32.498 0 58.336-5.34 72.388-20.759a8.37 8.37 0 0 0 1.012-1.142z"></path>
+                </svg>
+                <span>Camping</span>
               </span>
             </li>
             <li className={`st-tab-title ${isActive === 5 ? "active" : ""}`} onClick={() => setIsActive(5)}>
@@ -398,6 +415,17 @@ const Department = () => {
                             >
                               See More
                             </ScrollLink>
+
+                            {
+                              item.id === 'camping' && (
+                                <a href="https://wa.me/6285745410187"
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="st-btn st-style1 st-size-medium st-color2">
+                                  Book Now
+                                </a>
+                              )
+                            }
                           </div>
                         </div>
                       </div>

@@ -2,8 +2,9 @@
 6. Button
 ----------------------------------------------------------------*/
 .st-btn.st-style1,
-.st-btn.st-style2 {
+.st-btn.st-style2 > * + * {
   display: inline-flex;
+  margin-left: 10px;
   justify-content: center;
   line-height: 1.6em;
   font-weight: 600;

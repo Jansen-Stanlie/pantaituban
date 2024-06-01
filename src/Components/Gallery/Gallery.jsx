@@ -22,6 +22,10 @@ const categoryMenu = [
     category: 'swimmingpool',
   },
   {
+    title: 'Camping',
+    category: 'camping',
+  },
+  {
     title: 'Terapi Garam',
     category: 'terapigaram',
   }
@@ -54,14 +58,20 @@ const portfolioData = [
   },
   {
     href: '/portfolio/portfolio-details',
-    img: '/images/gallery/acara4.jpg',
-    category: 'others',
+    img: '/images/gallery/camping1.jpg',
+    category: 'camping',
     height: 299,
-  },
-  {
+  }, {
+
     href: '/portfolio/portfolio-details',
-    img: '/images/gallery/acara6.jpg',
-    category: 'others',
+    img: '/images/gallery/camping2.jpg',
+    category: 'camping',
+    height: 299,
+  }, {
+
+    href: '/portfolio/portfolio-details',
+    img: '/images/gallery/camping4.jpg',
+    category: 'camping',
     height: 299,
   },
   {
@@ -139,7 +149,19 @@ const portfolioData = [
     img: '/images/gallery/Terapigaram3.jpg',
     category: 'terapigaram',
     height: 299,
-  }
+  },
+  {
+    href: '/portfolio/portfolio-details',
+    img: '/images/gallery/acara4.jpg',
+    category: 'others',
+    height: 299,
+  },
+  {
+    href: '/portfolio/portfolio-details',
+    img: '/images/gallery/acara6.jpg',
+    category: 'others',
+    height: 299,
+  },
 ]
 
 const MasonryGallery = () => {
