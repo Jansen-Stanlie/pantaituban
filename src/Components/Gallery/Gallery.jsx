@@ -144,7 +144,7 @@ const portfolioData = [
 
 const MasonryGallery = () => {
   const [active, setActive] = useState('all');
-  const [itemShow, setItemShow] = useState(8);
+  const [itemShow, setItemShow] = useState(20);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const modalRef = useRef(null);  // Create a ref for the modal
 

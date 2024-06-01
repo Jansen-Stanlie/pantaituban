@@ -91,25 +91,25 @@ const Footer = ({ data, varient }) => {
                   <li>
                     <Link to="">
                       <Icon icon="fa:angle-right" />
-                      Swimming
+                      Kolam Renang
                     </Link>
                   </li>
                   <li>
                     <Link to="">
                       <Icon icon="fa:angle-right" />
-                      Equestrian sports
+                      Berkuda
                     </Link>
                   </li>
                   <li>
                     <Link to="">
                       <Icon icon="fa:angle-right" />
-                      Outbound Activities
+                      Aktivitas Outbound
                     </Link>
                   </li>
                   <li>
                     <Link to="">
                       <Icon icon="fa:angle-right" />
-                      Panoramic Spot
+                      Dan Lain Lain
                     </Link>
                   </li>
                 </ul>
@@ -141,7 +141,7 @@ const Footer = ({ data, varient }) => {
                   </li>
                   <li>
                     <a href="tel:+62-857-5410-187" className="text-slate-400">
-                      <span className="st-footer-contact-title">Phone:</span> (+62) 813 3027 0359 <br />
+                      <span className="st-footer-contact-title">Phone:</span> (+62) 8574 5410 187 <br />
                     </a>
                   </li>
                 </ul>

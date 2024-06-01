@@ -36,7 +36,7 @@ const Funfact = () => {
                     </svg>
                   </div>
                   <h2 className="st-funfact-number st-counter">4</h2>
-                  <div className="st-funfact-title">Years of experience</div>
+                  <div className="st-funfact-title">Tahun Lebih Pengalaman</div>
                 </div>
                 <div className="st-height-b30 st-height-lg-b30" />
               </div>
@@ -144,7 +144,7 @@ const Funfact = () => {
                     </svg>
                   </div>
                   <h2 className="st-funfact-number st-counter">5+</h2>
-                  <div className="st-funfact-title">Family Activities</div>
+                  <div className="st-funfact-title">Aktivitas Keluarga</div>
                 </div>
                 <div className="st-height-b30 st-height-lg-b30" />
               </div>
@@ -213,7 +213,7 @@ const Funfact = () => {
                     </svg>
                   </div>
                   <h2 className="st-funfact-number st-counter">⬆️10K IDR</h2>
-                  <div className="st-funfact-title">Affordable Price</div>
+                  <div className="st-funfact-title">Harga Terjangkau</div>
                 </div>
                 <div className="st-height-b30 st-height-lg-b30" />
               </div>

@@ -18,7 +18,7 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="/doctor-profile" element={<DoctorProfilePage />} />
+
         <Route path="post/:postId" element={<PostDetails />} />
         <Route path="*" element={<PageNotFound />} />
       </Route>

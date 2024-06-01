@@ -18,35 +18,48 @@ import Funfact from "../Components/Funfact/Funfact";
 import BeforeAfter from "../Components/BeforeAfter/BeforeAfter";
 import MasonryGallery from "../Components/Gallery/Gallery";
 
-const heroData = {
-  bgImg: "images/hero-bg.jpg",
-  bgShape: "shape/hero-shape.png",
-  sliderImages: [
-    {
-      img: "images/hero-img.png",
-    },
-    {
-      img: "images/hero-img1.png",
-    },
-    {
-      img: "images/hero-img2.png",
-    },
-    {
-      img: "images/hero-img.png",
-    },
-    {
-      img: "images/hero-img1.png",
-    },
-    {
-      img: "images/hero-img2.png",
-    },
-  ],
-  title: [
-    "Pantai Kelapa Tuban",
-    "Wisata Pantai Tuban",
-  ],
-};
+// const heroData = {
+//   bgImg: "images/hero-bg.jpg",
+//   bgShape: "shape/hero-shape.png",
+//   sliderImages: [
+//     {
+//       img: "images/hero-img.png",
+//     },
+//     {
+//       img: "images/hero-img1.png",
+//     },
+//     {
+//       img: "images/hero-img2.png",
+//     },
+//     {
+//       img: "images/hero-img.png",
+//     },
+//     {
+//       img: "images/hero-img1.png",
+//     },
+//     {
+//       img: "images/hero-img2.png",
+//     },
+//   ],
+//   title: [
+//     "Pantai Kelapa Tuban",
+//     "Wisata Pantai Tuban",
+//   ],
+// };
+const heroData = [
+  {
+    title: "Ciptakan Momen Tak Terlupakan Bersama Keluarga. <br /> di",
+    subTitle: "Biarkan mentari dan ombak Pantai Tuban menyegarkan jiwa raga,sambil menciptakan kenangan indah bersama orang tersayang.",
+    bgImg: '/images/hero-bg3.jpg',
 
+  },
+  {
+    title: "Ciptakan Momen Tak Terlupakan Bersama Keluarga. <br /> di",
+    subTitle: "Biarkan mentari dan ombak Pantai Tuban menyegarkan jiwa raga,sambil menciptakan kenangan indah bersama orang tersayang.",
+    bgImg: '/images/hero-bg.jpg',
+
+  }
+];
 const iconboxData = [
   {
     bg: "blue",
