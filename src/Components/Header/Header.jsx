@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 
 const Header = ({ data }) => {
   const { logo } = data;
