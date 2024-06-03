@@ -85,7 +85,7 @@ const Header = ({ data }) => {
                 <ul className={`st-nav-list st-onepage-nav ${mobileToggle ? "d-block" : "none"}`}>
                   <li>
                     <ScrollLink
-                      to="/#home"
+                      to="home"
                       activeClass="active" /* Add this for highlighting active link */
                       spy={true}
                       duration={500}
