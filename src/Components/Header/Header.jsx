@@ -83,25 +83,32 @@ const Header = ({ data }) => {
               <div className="st-nav">
                 <ul className={`st-nav-list st-onepage-nav ${mobileToggle ? "d-block" : "none"}`}>
                   <li>
-                    <ScrollLink to="home" spy={true} duration={500} onClick={() => setMobileToggle(false)} >Home</ScrollLink>
+                    <ScrollLink
+                      to="home"
+                      activeClass="active" /* Add this for highlighting active link */
+                      spy={true}
+                      duration={500}
+                      onClick={() => setMobileToggle(false)}
+                      hashSpy={true}
+                    >Home</ScrollLink>
                   </li>
                   <li>
-                    <ScrollLink to="about" spy={true} duration={500} onClick={() => setMobileToggle(false)} >About</ScrollLink>
+                    <ScrollLink to="about" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} hashSpy={true} >About</ScrollLink>
                   </li>
                   <li>
-                    <ScrollLink to="department" spy={true} duration={500} onClick={() => setMobileToggle(false)} >Activities</ScrollLink>
+                    <ScrollLink to="department" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} hashSpy={true}>Activities</ScrollLink>
                   </li>
                   <li>
-                    <ScrollLink to="pengurus" spy={true} duration={500} onClick={() => setMobileToggle(false)} >Pengurus</ScrollLink>
+                    <ScrollLink to="pengurus" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} hashSpy={true}>Pengurus</ScrollLink>
                   </li>
                   <li>
-                    <ScrollLink to="gallery" spy={true} duration={500} onClick={() => setMobileToggle(false)} >Gallery</ScrollLink>
+                    <ScrollLink to="gallery" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} hashSpy={true}>Gallery</ScrollLink>
                   </li>
                   <li>
-                    <ScrollLink to="pricing" spy={true} duration={500} onClick={() => setMobileToggle(false)} >Pricing</ScrollLink>
+                    <ScrollLink to="pricing" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} hashSpy={true} >Pricing</ScrollLink>
                   </li>
                   <li className="menu-item-has-children">
-                    <ScrollLink to="blog" spy={true} duration={500} onClick={() => setMobileToggle(false)} >Blog</ScrollLink>
+                    <ScrollLink to="blog" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} hashSpy={true} >Blog</ScrollLink>
                     <ul>
                       <li>
                         <Link to="/post/post_details">Single Details</Link>
@@ -109,7 +116,7 @@ const Header = ({ data }) => {
                     </ul>
                   </li>
                   <li>
-                    <ScrollLink to="contact" spy={true} duration={500} onClick={() => setMobileToggle(false)} >Contact</ScrollLink>
+                    <ScrollLink to="contact" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} hashSpy={true} >Contact</ScrollLink>
                   </li>
                 </ul>
                 <div className={`st-munu-toggle ${mobileToggle ? "st-toggle-active" : ""} `} onClick={handleMobileToggle}>
