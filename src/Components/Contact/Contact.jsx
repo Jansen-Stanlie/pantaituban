@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import SectionHeading from '../SectionHeading/SectionHeading'
 
 
@@ -26,31 +26,49 @@ const Contact = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
-    const formData = new FormData(event.target);
-    formData.append("access_key", "fcc74231-656a-425b-a54f-aff38354fadb");
 
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
+    const whatsapp_link = `https://wa.me/6285745410187?
+    text=Name: ${formData.name}%0AEmail: ${formData.email}
+    %0APhone: ${formData.phone}%0AMessage: ${formData.msg}`;
 
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      body: json
-    }).then((res) => res.json());
+    //timeouts for the whatsapp link
+    setTimeout(() => {
+      window.open(whatsapp_link, "_blank");
+      setLoading(false);
+    }, 1000);
 
-    if (res.success) {
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        msg: ''
-      });
-      setLoading(false)
-    }
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      subject: '',
+      msg: ''
+    });
+    // const formData = new FormData(event.target);
+    // formData.append("access_key", "fcc74231-656a-425b-a54f-aff38354fadb");
+
+    // const object = Object.fromEntries(formData);
+    // const json = JSON.stringify(object);
+
+    // const res = await fetch("https://wa.me/6285745410187", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     Accept: "application/json"
+    //   },
+    //   body: json
+    // }).then((res) => res.json());
+
+    // if (res.success) {
+    //   setFormData({
+    //     name: '',
+    //     email: '',
+    //     phone: '',
+    //     subject: '',
+    //     msg: ''
+    //   });
+    //   setLoading(false)
+    // }
   };
 
 
@@ -136,6 +154,27 @@ const Contact = () => {
                   />
                 </div>
               </div>
+              {/* .col */}
+              <div className='col-lg-6'>
+                <div className='st-form-field st-style1'>
+                  <label>Paket liburan</label>
+                  <select
+                    id='activity'
+                    name='activity'
+                    required
+                    onChange={handleInputChange}
+                    value={formData.activity}
+                  >
+                    <option value=''>Select Subject</option>
+                    <option value='Reservation'>Reservation</option>
+                    <option value='Feedback'>Feedback</option>
+                    <option value='Complaint'>Complaint</option>
+                    <option value='Others'>Others</option>
+                  </select>
+                </div>
+              </div>
+
+
               {/* .col */}
               <div className="col-lg-12">
                 <div className="st-form-field st-style1">
