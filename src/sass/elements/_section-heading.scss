@@ -15,7 +15,18 @@
     line-height: 1.6em;
   }
 }
+.fallback-link {
+  display: none;
 
+  @media screen and (min-width: 1px) {
+    display: inline-block;
+    position: absolute;
+    left: -9999px;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+}
 .st-section-heading.st-style2 {
   text-align: center;
   overflow: hidden;

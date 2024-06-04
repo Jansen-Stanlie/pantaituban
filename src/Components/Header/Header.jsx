@@ -91,33 +91,33 @@ const Header = ({ data }) => {
                       duration={500}
                       onClick={() => setMobileToggle(false)}
                     >Home</ScrollLink>
-                    <a href="#home" className="d-none">Home</a> {/* Fallback link */}
+                    <a href="#home" className="fallback-link">Home</a> {/* Fallback link */}
                   </li>
                   <li>
                     <ScrollLink to="about" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} >About</ScrollLink>
-                    <a href="#about" className="d-none">About</a> {/* Fallback link */}
+                    <a href="#about" className="fallback-link">About</a> {/* Fallback link */}
                   </li>
                   <li>
                     <ScrollLink to="department" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} >Activities</ScrollLink>
-                    <a href="#department" className="d-none">Activities</a> {/* Fallback link */}
+                    <a href="#department" className="fallback-link">Activities</a> {/* Fallback link */}
                   </li>
                   <li>
                     <ScrollLink to="pengurus" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} >Pengurus</ScrollLink>
-                    <a href="#pengurus" className="d-none">Pengurus</a> {/* Fallback link */}
+                    <a href="#pengurus" className="fallback-link">Pengurus</a> {/* Fallback link */}
                   </li>
                   <li>
                     <ScrollLink to="gallery" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} >Gallery</ScrollLink>
-                    <a href="#gallery" className="d-none">Gallery</a> {/* Fallback link */}
+                    <a href="#gallery" className="fallback-link">Gallery</a> {/* Fallback link */}
                   </li>
                   <li>
                     <ScrollLink to="pricing" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} >Pricing</ScrollLink>
-                    <a href="#pricing" className="d-none">Pricing</a> {/* Fallback link */}
+                    <a href="#pricing" className="fallback-link">Pricing</a> {/* Fallback link */}
                   </li>
                   <li className="menu-item-has-children">
                     <ScrollLink to="blog" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} >Blog</ScrollLink>
-                    <a href="#blog" className="d-none">Blog</a> {/* Fallback link */}
+                    <a href="#blog" className="fallback-link">Blog</a> {/* Fallback link */}
                     <ul>
-                      <li>
+                      <li>fallback-link
                         <Link to="/post/post_details">Single Details</Link>
                       </li>
                     </ul>
@@ -125,7 +125,7 @@ const Header = ({ data }) => {
                   <li>
 
                     <ScrollLink to="contact" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} >Contact</ScrollLink>
-                    <a href="#contact" className="d-none">Contact</a> {/* Fallback link */}
+                    <a href="#contact" className="fallback-link">Contact</a> {/* Fallback link */}
                   </li>
                 </ul>
                 <div className={`st-munu-toggle ${mobileToggle ? "st-toggle-active" : ""} `} onClick={handleMobileToggle}>

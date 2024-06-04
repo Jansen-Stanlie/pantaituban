@@ -1,13 +1,3 @@
 {
-  "rewrites": [
-    { "source": "/home", "destination": "/" },
-    { "source": "/about", "destination": "/" },
-    { "source": "/department", "destination": "/" },
-    { "source": "/pengurus", "destination": "/" },
-    { "source": "/gallery", "destination": "/" },
-    { "source": "/pricing", "destination": "/" },
-    { "source": "/blog", "destination": "/" },
-    { "source": "/contact", "destination": "/" },
-    { "source": "/:path*", "destination": "/" }
-  ]
+  "rewrites": [{ "source": "/home", "destination": "/" }]
 }
