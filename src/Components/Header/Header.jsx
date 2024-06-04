@@ -117,9 +117,11 @@ const Header = ({ data }) => {
                     <ScrollLink to="blog" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} >Blog</ScrollLink>
                     <a href="#blog" className="fallback-link">Blog</a> {/* Fallback link */}
                     <ul>
-                      <li>
-                        <Link to="/post/post_details">Single Details</Link>
-                      </li>
+                      <ul>
+                        <li>
+                          <Link to="/post/post_details">View Full Post Details</Link>
+                        </li>
+                      </ul>
                     </ul>
                   </li>
                   <li>
