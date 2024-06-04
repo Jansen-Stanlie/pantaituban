@@ -16,7 +16,7 @@
   }
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     height: 100%;
     width: 100%;
@@ -51,7 +51,7 @@
     list-style: none;
 
     &:not(:last-child):after {
-      content: '/';
+      content: "/";
       padding-right: 6px;
       margin-left: 6px;
     }
@@ -88,7 +88,7 @@
       padding-right: 15px;
 
       &:before {
-        content: '';
+        content: "";
         background-color: $black4;
         position: absolute;
         left: 100%;
@@ -308,7 +308,7 @@
       margin-right: 15px;
 
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         height: 16px;
         width: 1px;
@@ -334,7 +334,7 @@
     margin-right: 5px;
 
     &:not(:last-child):after {
-      content: ',';
+      content: ",";
     }
 
     a {
@@ -377,6 +377,7 @@
 .st-post-btn-gropu {
   display: flex;
   justify-content: space-between;
+  text-overflow: ellipsis;
 
   .st-btn {
     min-width: 170px;

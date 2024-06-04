@@ -1,6 +1,6 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-allow:/
+allow: *
 
 # Optional: Limit crawl rate if needed
 Crawl-delay: 5

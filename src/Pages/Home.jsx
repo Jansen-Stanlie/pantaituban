@@ -521,6 +521,7 @@ const postData = [
     subTitle:
       "Segala puji syukur kepada Tuhan yang maha Esa, diawali dari niat untuk meningkatkan ekonomi dan manfaat kepada masyarakat sampai dapat membawa nama harum KOTA TUBAN… Pantai Kelapa meraih penghargaan East Java Tourism Award (EJTA) 2023 TERBAIK kategori Wisata Alam Buatan Pengelola Kelompok Masyarakat.",
     postLink: "/post/post_details",
+    truncateText: 'Raih Penghargaan Terbaik...'
   },
   {
     img: "images/blog2.jpg",
@@ -531,6 +532,7 @@ const postData = [
     subTitle:
       "Tuban di Jawa Timur yang dikenal sebagai kota santri banyak memiliki kawasan wisata religi. Namun rupanya tak itu saja. Tuban juga memiliki wisata pantai yang asri dan eksotis, yakni Pantai Kelapa. Destinasi wisata ini telah cukup lama dikenal oleh masyarakat sekitar Tuban.",
     postLink: "/post/post_details",
+    truncateText: 'Pantai Kelapa di Detikcom...'
   }
 ];
 
