@@ -479,6 +479,17 @@ const priceData = [
       // 'Drinks included',
       // ... more features
     ],
+  },
+  {
+    image: 'images/template wahana/Cafe.png',
+    price: '$499',
+    title: 'Cafe Plan',
+    featureList: [
+      // 'All-you-can-eat seafood buffet',
+      // 'Variety of seafood dishes',
+      // 'Drinks included',
+      // ... more features
+    ],
   }
 ];
 
