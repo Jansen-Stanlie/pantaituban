@@ -50,13 +50,13 @@ const heroData = [
   {
     title: "Ciptakan Momen Tak Terlupakan Bersama Keluarga. <br /> di",
     subTitle: "Biarkan mentari dan ombak Pantai Tuban menyegarkan jiwa raga,sambil menciptakan kenangan indah bersama orang tersayang.",
-    bgImg: '/images/hero-bg3.jpg',
-
+    bgImg: '/images/hero-bg.jpg',
   },
   {
     title: "Ciptakan Momen Tak Terlupakan Bersama Keluarga. <br /> di",
     subTitle: "Biarkan mentari dan ombak Pantai Tuban menyegarkan jiwa raga,sambil menciptakan kenangan indah bersama orang tersayang.",
-    bgImg: '/images/hero-bg.jpg',
+    bgImg: '/images/hero-bg3.jpg',
+
 
   }
 ];
