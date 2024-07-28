@@ -4,3 +4,4 @@ allow: *
 
 # Optional: Limit crawl rate if needed
 Crawl-delay: 5
+Sitemap: https://www.pantaikelapa.com/sitemap.xml
