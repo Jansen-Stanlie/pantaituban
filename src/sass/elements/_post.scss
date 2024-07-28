@@ -1,6 +1,10 @@
 /*--------------------------------------------------------------
 22. Post
 ----------------------------------------------------------------*/
+.st-load-more {
+  display: flex;
+  justify-content: flex-end;
+}
 .st-post.st-style3 {
   a:hover {
     color: $blue;
@@ -215,6 +219,43 @@
   .st-post-date {
     border-top: 1px solid $black4;
     padding: 12px 20px;
+  }
+  /* Default styles for the button */
+  .st-post-footer .responsive-btn {
+    display: block; /* Make button block-level to take full width */
+    padding: 10px 20px;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Styles for larger screens */
+  @media (min-width: 768px) {
+    .st-post-footer .responsive-btn {
+      font-size: 18px;
+      padding: 12px 24px;
+    }
+  }
+
+  /* Styles for smaller screens */
+  @media (max-width: 767px) {
+    .st-post-footer .responsive-btn {
+      font-size: 14px;
+      padding: 8px 16px;
+      max-width: 100%;
+    }
+  }
+
+  /* Styles for extra small screens */
+  @media (max-width: 480px) {
+    .st-post-footer .responsive-btn {
+      font-size: 12px;
+      padding: 6px 12px;
+      max-width: 100%;
+    }
   }
 
   .st-post-footer {

@@ -71,7 +71,7 @@ const PostWrapper4 = ({ data }) => {
             </div>
             <div className="st-height-b30 st-height-lg-b30" />
             <div className="st-widget st-sidebar-widget">
-              <h3 className="st-widget-title">Arachives</h3>
+              <h3 className="st-widget-title">Archives</h3>
               <ul className="st-widget-list">
                 <li>
                   <Link>March 2020</Link>
@@ -98,7 +98,7 @@ const PostWrapper4 = ({ data }) => {
               <h3 className="st-widget-title">Recent Post</h3>
               <ul className="st-post-widget-list st-mp0">
                 {
-                  post.slice(0,3).map((elements, index) => (
+                  post.slice(0, 3).map((elements, index) => (
                     <li key={index}>
                       <div className="st-post st-style1">
                         <Link to={elements.postLink} className="st-post-thumb st-zoom">
@@ -111,7 +111,7 @@ const PostWrapper4 = ({ data }) => {
                         <div className="st-post-info">
                           <h2 className="st-post-title">
                             <Link to={elements.postLink}>
-                              Top Medical Tourism Destination...
+                              Top Beach Tourism Destination...
                             </Link>
                           </h2>
                           <div className="st-post-date">{elements.date}</div>
@@ -134,15 +134,6 @@ const PostWrapper4 = ({ data }) => {
                 </Link>
                 <Link to="" className="st-tag">
                   Video
-                </Link>
-                <Link to="" className="st-tag">
-                  Quote
-                </Link>
-                <Link to="" className="st-tag">
-                  Audio
-                </Link>
-                <Link to="" className="st-tag">
-                  Doctor
                 </Link>
                 <Link to="" className="st-tag">
                   Link

@@ -522,7 +522,18 @@ const newsletterData = {
   contact: "(+62) 8574 5410 187",
 };
 
-const postData = [
+const postData =
+  [{
+    img: "images/blog3.jpg",
+    title: "TDA Jatim 1 Gelar Family Fun Camp",
+    date: "Jul 21, 2024",
+    author: "nur syaifudin",
+    authorLink: "",
+    subTitle:
+      "Komunitas Pengusaha Tangan Di Atas (TDA) Jatim 1 menggelar family fun camp di lokasi Wisata Pantai Kelapa Tuban selama dua hari berturut-turut mulai Sabtu-Minggu (20-21/7/2024). Dalam kesempatan itu para pebisnis TDA juga mengajak keluarga mereka masing-masing agar acara semakin meriah.",
+    postLink: "https://harianbangsa.net/tda-jatim-1-gelar-family-fun-camp-bersama-keluarga-begini-tujuannya",
+    truncateText: 'Child’s first hospital visit...'
+  },
   {
     img: "images/blog1.jpg",
     title: "Raih Penghargaan Terbaik EJTA 2023",
@@ -544,8 +555,8 @@ const postData = [
       "Tuban di Jawa Timur yang dikenal sebagai kota santri banyak memiliki kawasan wisata religi. Namun rupanya tak itu saja. Tuban juga memiliki wisata pantai yang asri dan eksotis, yakni Pantai Kelapa. Destinasi wisata ini telah cukup lama dikenal oleh masyarakat sekitar Tuban.",
     postLink: "/post/post_details",
     truncateText: 'Pantai Kelapa di Detikcom...'
-  }
-];
+  },
+  ];
 
 const brandData = [
   {

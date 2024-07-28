@@ -354,7 +354,7 @@ const Department = () => {
             </li>
             <li className={`st-tab-title ${isActive === 6 ? "active" : ""}`} onClick={() => setIsActive(6)}>
               <span className="st-red-box">
-                <svg width="800px" height="800px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--fxemoji" preserveAspectRatio="xMidYMid meet">
+                <svg width="800px" height="800px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" className="iconify iconify--fxemoji" preserveAspectRatio="xMidYMid meet">
                   <path fill="#BFBCAF" d="M168.465 391.022h314.59c3.747 0 5.954-4.206 3.825-7.29L329.585 130.298c-1.848-2.676-5.803-2.676-7.651 0L164.639 383.733c-2.128 3.083.079 7.289 3.826 7.289z">
                   </path>
                   <path fill="#FF473E" d="M202.068 323.393l4.403.034h243.105l-9.301-14.786h-229.25l-8.957 14.752z"></path>

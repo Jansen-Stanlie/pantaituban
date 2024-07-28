@@ -5,14 +5,15 @@ import SectionHeading from '../SectionHeading/SectionHeading';
 import Slider from 'react-slick';
 import Pengurus from '../Pengurus/Pengurus';
 import { Icon } from '@iconify/react';
-
+import { Link } from 'react-router-dom';
+import { tr } from 'date-fns/locale';
 const About4 = ({ data, data1 }) => {
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
     <div {...props} className={'slick-arrow-left slick-arrow' + (currentSlide === 0 ? ' slick-disabled' : '')} aria-hidden="true" aria-disabled={currentSlide === 0 ? true : false} >
       <Icon icon="fa-solid:angle-left" />
     </div>
   );
-
+  const isDisabled = true;
   const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
     <div {...props} className={'slick-arrow-right slick-arrow' + (currentSlide === slideCount - 1 ? ' slick-disabled' : '')} aria-hidden="true" aria-disabled={currentSlide === slideCount - 1 ? true : false} >
       <Icon icon="fa-solid:angle-right" />
@@ -76,13 +77,24 @@ const About4 = ({ data, data1 }) => {
                         <p key={index}>{elements.text}</p>
                       ))
                     }
-                    <div className="st-height-b15 st-height-lg-b15" />
-                    <ScrollLink
-                      to="gallery"
-                      className="st-btn st-style1 st-color4  st-size-medium st-smooth-move"
-                    >
-                      Lihat Galeri Gambar
-                    </ScrollLink>
+                    <div className="responsive-section" style={{ marginLeft: 0 }}>
+                      <div className="st-height-b10 st-height-lg-b10" style={{ marginLeft: 0 }} />
+                      <ScrollLink
+                        to="gallery"
+                        className="st-btn st-style1 st-color4 st-size-medium st-smooth-move responsive-btn"
+                      >
+                        Lihat Galeri Gambar
+                      </ScrollLink>
+
+                      <Link
+                        to={isDisabled ? '#' : 'post/postrecap'}
+                        className={`st-btn st-style1 ${isDisabled ? 'st-color2' : 'st-color2'} st-size-medium st-smooth-move responsive-btn ${isDisabled ? 'disabled-link' : ''}`}
+                        aria-disabled={isDisabled}
+                        onClick={e => isDisabled && e.preventDefault()}
+                      >
+                        Penghargaan dan Prestasi
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -103,7 +115,7 @@ const About4 = ({ data, data1 }) => {
         </Slider>
       </div>
       <div className="st-height-b120 st-height-lg-b80" />
-    </section>
+    </section >
 
   )
 }

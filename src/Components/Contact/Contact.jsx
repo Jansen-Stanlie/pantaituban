@@ -1,25 +1,39 @@
-import React, { useEffect, useState } from 'react'
-import SectionHeading from '../SectionHeading/SectionHeading'
-
-
+import React, { useState } from 'react';
+import SectionHeading from '../SectionHeading/SectionHeading';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const Contact = () => {
-
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
+    alamat: '',
     phone: '',
-    subject: '',
-    msg: ''
+    activity: '',
+    msg: '',
+    campingDate: null
   });
+  const [showDatePicker, setShowDatePicker] = useState(false);
 
-  // Handler for input field changes
   const handleInputChange = event => {
     const { name, value } = event.target;
     setFormData(prevFormData => ({
       ...prevFormData,
       [name]: value,
+    }));
+
+    // Show or hide date picker based on activity selection
+    if (name === 'activity' && value === 'Camping') {
+      setShowDatePicker(true);
+    } else if (name === 'activity') {
+      setShowDatePicker(false);
+    }
+  };
+
+  const handleDateChange = date => {
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      campingDate: date,
     }));
   };
 
@@ -27,11 +41,10 @@ const Contact = () => {
     event.preventDefault();
     setLoading(true);
 
-    const whatsapp_link = `https://wa.me/6285745410187?
-    text=Name: ${formData.name}%0AEmail: ${formData.email}
-    %0APhone: ${formData.phone}%0AMessage: ${formData.msg}`;
+    const message = `Name: ${formData.name}\nAlamat: ${formData.alamat}\nPhone: ${formData.phone}\nActivity: ${formData.activity}\nMessage: ${formData.msg}${formData.campingDate ? `\nCamping Date: ${formData.campingDate.toLocaleDateString()}` : ''}`;
 
-    //timeouts for the whatsapp link
+    const whatsapp_link = `https://wa.me/6285745410187?text=${encodeURIComponent(message)}`;
+
     setTimeout(() => {
       window.open(whatsapp_link, "_blank");
       setLoading(false);
@@ -41,36 +54,11 @@ const Contact = () => {
       name: '',
       email: '',
       phone: '',
-      subject: '',
-      msg: ''
+      activity: '',
+      msg: '',
+      campingDate: null
     });
-    // const formData = new FormData(event.target);
-    // formData.append("access_key", "fcc74231-656a-425b-a54f-aff38354fadb");
-
-    // const object = Object.fromEntries(formData);
-    // const json = JSON.stringify(object);
-
-    // const res = await fetch("https://wa.me/6285745410187", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Accept: "application/json"
-    //   },
-    //   body: json
-    // }).then((res) => res.json());
-
-    // if (res.success) {
-    //   setFormData({
-    //     name: '',
-    //     email: '',
-    //     phone: '',
-    //     subject: '',
-    //     msg: ''
-    //   });
-    //   setLoading(false)
-    // }
   };
-
 
   return (
     <section className="st-shape-wrap" id="contact">
@@ -81,8 +69,10 @@ const Contact = () => {
         <img src="shape/contact-shape2.svg" alt="shape2" />
       </div>
       <div className="st-height-b120 st-height-lg-b80" />
-      <SectionHeading title="Tetap Terhubung dengan Pantai Kelapa Tuban"
-        subTitle="Jangan Lewatkan Momen Terbaik!  <br /> Reservasi Liburan Impian Anda di Pantai Tuban Sekarang!." />
+      <SectionHeading
+        title="Tetap Terhubung dengan Pantai Kelapa Tuban"
+        subTitle="Jangan Lewatkan Momen Terbaik!  <br /> Reservasi Liburan Impian Anda di Pantai Tuban Sekarang!."
+      />
       <div className="container">
         <div className="row">
           <div className="col-lg-10 offset-lg-1">
@@ -109,37 +99,19 @@ const Contact = () => {
                   />
                 </div>
               </div>
-              {/* .col */}
               <div className="col-lg-6">
                 <div className="st-form-field st-style1">
-                  <label>Email Address</label>
+                  <label>Alamat</label>
                   <input
                     type="text"
-                    id="email"
-                    name="email"
+                    id="alamat"
+                    name="alamat"
                     placeholder="example@gmail.com"
-                    required
                     onChange={handleInputChange}
-                    value={formData.email}
+                    value={formData.alamat}
                   />
                 </div>
               </div>
-              {/* .col */}
-              {/* <div className="col-lg-6">
-                <div className="st-form-field st-style1">
-                  <label>Subject</label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    placeholder="Write subject"
-                    required
-                    onChange={handleInputChange}
-                    value={formData.subject}
-                  />
-                </div>
-              </div> */}
-              {/* .col */}
               <div className="col-lg-6">
                 <div className="st-form-field st-style1">
                   <label>Phone</label>
@@ -154,7 +126,6 @@ const Contact = () => {
                   />
                 </div>
               </div>
-              {/* .col */}
               <div className='col-lg-6'>
                 <div className='st-form-field st-style1'>
                   <label>Paket liburan</label>
@@ -165,17 +136,31 @@ const Contact = () => {
                     onChange={handleInputChange}
                     value={formData.activity}
                   >
-                    <option value=''>Select Subject</option>
-                    <option value='Reservation'>Reservation</option>
-                    <option value='Feedback'>Feedback</option>
-                    <option value='Complaint'>Complaint</option>
-                    <option value='Others'>Others</option>
+                    <option value=''>Pilih Aktivitas</option>
+                    <option value='Berkuda'>Berkuda</option>
+                    <option value='Perahu'>Perahu</option>
+                    <option value='ATV'>Atv Bike</option>
+                    <option value='FlyingFox'>Flying Fox</option>
+                    <option value="KolamRenang">Kolam Renang</option>
+                    <option value="Camping">Camping</option>
+                    <option value="SpotFoto">Spot Foto</option>
                   </select>
                 </div>
               </div>
 
+              <div className="col-lg-12">
+                <div className="st-form-field st-style1">
+                  <label>Select Camping Date</label>
+                  <DatePicker
+                    selected={formData.campingDate}
+                    onChange={handleDateChange}
+                    dateFormat="yyyy/MM/dd"
+                    className="form-control"
+                    placeholderText="Select a date"
+                  />
+                </div>
+              </div>
 
-              {/* .col */}
               <div className="col-lg-12">
                 <div className="st-form-field st-style1">
                   <label>Your Message</label>
@@ -191,7 +176,6 @@ const Contact = () => {
                   />
                 </div>
               </div>
-              {/* .col */}
               <div className="col-lg-12">
                 <div className="text-center">
                   <div className="st-height-b10 st-height-lg-b10" />
@@ -205,15 +189,13 @@ const Contact = () => {
                   </button>
                 </div>
               </div>
-              {/* .col */}
             </form>
           </div>
-          {/* .col */}
         </div>
       </div>
       <div className="st-height-b120 st-height-lg-b80" />
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

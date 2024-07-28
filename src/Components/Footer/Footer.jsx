@@ -156,7 +156,7 @@ const Footer = ({ data, varient }) => {
           <div className="st-copyright-in">
             <div className="st-left-copyright">
               <div className="st-copyright-text">
-                Copyright {currentYear}. Design by ByU Digital
+                Copyright {currentYear}. Design by BYU Digital
               </div>
             </div>
             <div className="st-right-copyright">

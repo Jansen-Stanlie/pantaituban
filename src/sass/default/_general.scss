@@ -13,6 +13,38 @@
 //     max-width: 1140px;
 //   }
 // }
+/* Base styles for the buttons */
+.responsive-btn {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  margin-left: 0 !important;
+  text-align: left; /* Align text to the left */
+  margin-left: 0; /* Ensure margin-left is 0 */
+}
+
+/* Container styling */
+.responsive-section {
+  display: flex;
+  margin-left: 0;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
+}
+
+/* Styles for larger screens */
+@media (min-width: 768px) {
+  .responsive-section {
+    flex-direction: row;
+    justify-content: flex-start; /* Align items to the left */
+  }
+
+  .responsive-btn {
+    display: inline-block;
+    width: auto;
+    margin: 0 10px; /* Horizontal spacing between buttons */
+    margin-left: 0; /* Ensure margin-left is 0 */
+  }
+}
 
 .st-shape-wrap > .container {
   position: relative;
@@ -599,6 +631,12 @@ hr {
   &.st-color2 {
     b {
       color: $black1;
+    }
+  }
+
+  &.st-color3 {
+    b {
+      color: $gray;
     }
   }
 }
