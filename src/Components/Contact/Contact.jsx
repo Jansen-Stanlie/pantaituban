@@ -11,7 +11,8 @@ const Contact = () => {
     phone: '',
     activity: '',
     msg: '',
-    campingDate: null
+    tanggal: null,
+    jumlah: ''
   });
   const [showDatePicker, setShowDatePicker] = useState(false);
 
@@ -33,7 +34,7 @@ const Contact = () => {
   const handleDateChange = date => {
     setFormData(prevFormData => ({
       ...prevFormData,
-      campingDate: date,
+      tanggal: date,
     }));
   };
 
@@ -41,7 +42,7 @@ const Contact = () => {
     event.preventDefault();
     setLoading(true);
 
-    const message = `Name: ${formData.name}\nAlamat: ${formData.alamat}\nPhone: ${formData.phone}\nActivity: ${formData.activity}\nMessage: ${formData.msg}${formData.campingDate ? `\nCamping Date: ${formData.campingDate.toLocaleDateString()}` : ''}`;
+    const message = `Name: ${formData.name}\nAlamat: ${formData.alamat}\nJumlah Peserta: ${formData.jumlah} \nPhone: ${formData.phone}\nActivity: ${formData.activity}\nMessage: ${formData.msg}${formData.tanggal ? `\nTanggal Booking: ${formData.tanggal.toLocaleDateString()}` : ''}`;
 
     const whatsapp_link = `https://wa.me/6285745410187?text=${encodeURIComponent(message)}`;
 
@@ -56,7 +57,7 @@ const Contact = () => {
       phone: '',
       activity: '',
       msg: '',
-      campingDate: null
+      tanggal: null
     });
   };
 
@@ -148,11 +149,11 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="col-lg-12">
+              <div className="col-lg-6">
                 <div className="st-form-field st-style1">
-                  <label>Select Camping Date</label>
+                  <label>Pilih Tanggal</label>
                   <DatePicker
-                    selected={formData.campingDate}
+                    selected={formData.tanggal}
                     onChange={handleDateChange}
                     dateFormat="yyyy/MM/dd"
                     className="form-control"
@@ -160,7 +161,19 @@ const Contact = () => {
                   />
                 </div>
               </div>
-
+              <div className='col-lg-6'>
+                <div className="st-form-field st-style1">
+                  <label>Jumlah Peserta</label>
+                  <input
+                    type="text"
+                    id="jumlah"
+                    name="jumlah"
+                    placeholder="Jumlah Peserta"
+                    onChange={handleInputChange}
+                    value={formData.jumlah}
+                  />
+                </div>
+              </div>
               <div className="col-lg-12">
                 <div className="st-form-field st-style1">
                   <label>Your Message</label>

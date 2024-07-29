@@ -19,8 +19,8 @@ const Post4 = ({ img, title, subTitle, author, date, postLink, authorLink }) => 
           <div className="st-post-meta">
             <span className="st-post-date">{date}</span>
             <span>
-              Posted by:
-              <Link to={authorLink} className="st-post-avatar">
+              Posted by: {" "}
+              <Link to={authorLink} className="st-post-avatar" target='_blank'>
                 <span className="st-post-avatar-text">{author}</span>
               </Link>
             </span>
