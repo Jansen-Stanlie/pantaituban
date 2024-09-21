@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom'
 import Header from '../Header/Header'
 import Preloader from '../Preloader/Preloader'
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { Analytics } from '@vercel/analytics/react'
 const headerData = {
   "logo": "/images/logo.png"
 }
@@ -46,7 +47,9 @@ const Layout = () => {
       ) : (
         <>
           <Header data={headerData} />
-          <Outlet />
+          <Outlet>
+            <Analytics id="X2Z6L3E4" />
+          </Outlet>
           <Footer data={footerData} />
 
           <a
