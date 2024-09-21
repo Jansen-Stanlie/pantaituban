@@ -17,7 +17,7 @@ import PriceSlider from "../Components/Slider/PriceSlider";
 import Funfact from "../Components/Funfact/Funfact";
 import BeforeAfter from "../Components/BeforeAfter/BeforeAfter";
 import MasonryGallery from "../Components/Gallery/Gallery";
-
+import { Analytics } from '@vercel/analytics/react'
 // const heroData = {
 //   bgImg: "images/hero-bg.jpg",
 //   bgShape: "shape/hero-shape.png",
@@ -583,6 +583,7 @@ const Home = () => {
       {/* <BeforeAfter data={beforeAfterData} /> */}
       <TestimonialSlider data={testimonialData} />
       <Funfact />
+      <Analytics mode={'production'} />;
       <PriceSlider data={priceData} />
       <Accordion data={faqData} />
       <Newsletter data={newsletterData} />

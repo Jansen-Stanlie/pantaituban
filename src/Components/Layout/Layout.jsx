@@ -48,7 +48,7 @@ const Layout = () => {
         <>
           <Header data={headerData} />
           <Outlet>
-            <Analytics id="X2Z6L3E4" />
+            <Analytics />
           </Outlet>
           <Footer data={footerData} />
 
