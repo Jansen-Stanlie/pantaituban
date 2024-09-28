@@ -61,13 +61,8 @@ const portfolioData = [
     img: '/images/gallery/camping1.jpg',
     category: 'camping',
     height: 299,
-  }, {
-
-    href: '/portfolio/portfolio-details',
-    img: '/images/gallery/camping2.jpg',
-    category: 'camping',
-    height: 299,
-  }, {
+  },
+  {
 
     href: '/portfolio/portfolio-details',
     img: '/images/gallery/camping4.jpg',
@@ -82,36 +77,13 @@ const portfolioData = [
   },
   {
     href: '/portfolio/portfolio-details',
-    img: '/images/gallery/berkuda2.jpg',
-    category: 'berkuda',
-    height: 299,
-  },
-  {
-    href: '/portfolio/portfolio-details',
     img: '/images/gallery/atv1.jpg',
     category: 'atv',
     height: 299,
   },
   {
     href: '/portfolio/portfolio-details',
-    img: '/images/gallery/atv2.jpg',
-    category: 'atv',
-    height: 299,
-  }, {
-    href: '/portfolio/portfolio-details',
-    img: '/images/gallery/atv3.jpg',
-    category: 'atv',
-    height: 299,
-  },
-  {
-    href: '/portfolio/portfolio-details',
     img: '/images/gallery/atv4.jpg',
-    category: 'atv',
-    height: 299,
-  },
-  {
-    href: '/portfolio/portfolio-details',
-    img: '/images/gallery/atv5.jpg',
     category: 'atv',
     height: 299,
   },
@@ -135,18 +107,6 @@ const portfolioData = [
   {
     href: '/portfolio/portfolio-details',
     img: '/images/gallery/Terapigaram1.jpg',
-    category: 'terapigaram',
-    height: 299,
-  },
-  {
-    href: '/portfolio/portfolio-details',
-    img: '/images/gallery/Terapigaram2.jpg',
-    category: 'terapigaram',
-    height: 299,
-  },
-  {
-    href: '/portfolio/portfolio-details',
-    img: '/images/gallery/Terapigaram3.jpg',
     category: 'terapigaram',
     height: 299,
   },
