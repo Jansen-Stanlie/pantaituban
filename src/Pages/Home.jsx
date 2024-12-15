@@ -96,7 +96,7 @@ const aboutData2 = {
 const aboutData = {
   title: "Pantai Tuban: Surga Tersembunyi di Pulau Jawa",
   subTitle:
-    "Pantai Kelapa Tuban sudah menjadi ikon wisata terbaik di Bumi Wali. Lokasi destinasi wisata yang menyuguhkan pemandangan luar biasa ini cukup mudah ditemukan. Beralamat di Jalan Tuban – Gresik kilometer 1-2, Dusun Kepoh, Kelurahan Panyuran, Kecamatan Palang, Tuban, Jawa Timur.",
+    "Pantai Kelapa Tuban jawa timur sudah menjadi ikon wisata terbaik di jawa timur. Lokasi destinasi wisata yang menyuguhkan pemandangan luar biasa ini cukup mudah ditemukan. Beralamat di Jalan Tuban – Gresik kilometer 1-2, Dusun Kepoh, Kelurahan Panyuran, Kecamatan Palang, Tuban, Jawa Timur.",
 
   avater: {
     img: "images/avatar1.png",
