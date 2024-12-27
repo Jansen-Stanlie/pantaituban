@@ -153,7 +153,7 @@ const Header = ({ data }) => {
                       className="language-select"
                     > <option disabled={currentLanguage === "id"} value="id">Bahasa Indonesia</option>
                       <option disabled={currentLanguage === "en"} value="en">English</option>
-                      <option disabled={currentLanguage === "zh"} value="zh">中文 (Chinese)</option>
+                      {/* <option disabled={currentLanguage === "zh"} value="zh">中文 (Chinese)</option> */}
                       {/* Add more language options as needed */}
                     </select>
                   </li>
