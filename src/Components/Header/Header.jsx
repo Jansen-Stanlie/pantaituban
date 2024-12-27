@@ -22,7 +22,8 @@ const Header = ({ data }) => {
   const handleChangeLanguage = (codeLanguage) => {
     setCurrentLanguage(codeLanguage);
     i18n.changeLanguage(codeLanguage);
-    localStorage.setItem("i18nextLng", codeLanguage);
+    console.log(i18n.language)
+    // localStorage.setItem("i18nextLng", codeLanguage);
   };
 
   useEffect(() => {
@@ -146,13 +147,13 @@ const Header = ({ data }) => {
                       //   console.log("Selected Language:", selectedLanguage);
                       //   // Example: i18n.changeLanguage(selectedLanguage);
                       // }}
-                      value={currentLanguage}
+                      value={i18n.language}
                       onChange={({ target }) => handleChangeLanguage(target.value)}
 
                       name="Languages"
                       className="language-select"
-                    > <option disabled={currentLanguage === "id"} value="id">Bahasa Indonesia</option>
-                      <option disabled={currentLanguage === "en"} value="en">English</option>
+                    > <option disabled={i18n.language === "id"} value="id">Bahasa Indonesia</option>
+                      <option disabled={i18n.language === "en"} value="en">English</option>
                       {/* <option disabled={currentLanguage === "zh"} value="zh">中文 (Chinese)</option> */}
                       {/* Add more language options as needed */}
                     </select>

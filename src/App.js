@@ -15,14 +15,16 @@ const App = () => {
 
   return (
     <Routes>
+      {/* Layout will wrap the home, post details, and post recap routes */}
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-
         <Route path="post/:postId" element={<PostDetails />} />
-        <Route path="404" element={<PageNotFound />} />
         <Route path="post/postrecap" element={<PostPage />} />
-        <Route path="*" element={<PageNotFound />} />
       </Route>
+
+      {/* 404 route should be outside Layout */}
+      <Route path="404" element={<PageNotFound />} />
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
 };
