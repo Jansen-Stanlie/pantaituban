@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
+import { useTranslation } from "react-i18next";
 
 const Header = ({ data }) => {
   const { logo } = data;
@@ -12,6 +13,16 @@ const Header = ({ data }) => {
 
   const handleMobileToggle = () => {
     setMobileToggle(!mobileToggle);
+  };
+  const { t, i18n } = useTranslation();
+
+  const [currentLanguage, setCurrentLanguage] = useState(
+    localStorage.getItem("i18nextLng") || "id"
+  );
+  const handleChangeLanguage = (codeLanguage) => {
+    setCurrentLanguage(codeLanguage);
+    i18n.changeLanguage(codeLanguage);
+    localStorage.setItem("i18nextLng", codeLanguage);
   };
 
   useEffect(() => {
@@ -90,28 +101,28 @@ const Header = ({ data }) => {
                       spy={true}
                       duration={500}
                       onClick={() => setMobileToggle(false)}
-                    >Home</ScrollLink>
-                    <a href="#home" className="fallback-link">Home</a> {/* Fallback link */}
+                    >{t("menu.home")}</ScrollLink>
+                    <a href="#home" className="fallback-link">{t("menu.home")}</a> {/* Fallback link */}
                   </li>
                   <li>
-                    <ScrollLink to="about" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} >About</ScrollLink>
-                    <a href="#about" className="fallback-link">About</a> {/* Fallback link */}
+                    <ScrollLink to="about" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} >{t("menu.about")}</ScrollLink>
+                    <a href="#about" className="fallback-link">{t("menu.about")}</a> {/* Fallback link */}
                   </li>
                   <li>
-                    <ScrollLink to="department" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} >Activities</ScrollLink>
-                    <a href="#department" className="fallback-link">Activities</a> {/* Fallback link */}
+                    <ScrollLink to="department" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} >{t("menu.Activities")}</ScrollLink>
+                    <a href="#department" className="fallback-link">{t("menu.Activities")}</a> {/* Fallback link */}
                   </li>
                   <li>
-                    <ScrollLink to="pengurus" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} >Pengurus</ScrollLink>
-                    <a href="#pengurus" className="fallback-link">Pengurus</a> {/* Fallback link */}
+                    <ScrollLink to="pengurus" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} >{t("menu.Committee")}</ScrollLink>
+                    <a href="#pengurus" className="fallback-link">{t("menu.Committee")}</a> {/* Fallback link */}
                   </li>
                   <li>
-                    <ScrollLink to="gallery" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} >Gallery</ScrollLink>
-                    <a href="#gallery" className="fallback-link">Gallery</a> {/* Fallback link */}
+                    <ScrollLink to="gallery" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} >{t("menu.gallery")}</ScrollLink>
+                    <a href="#gallery" className="fallback-link">{t("menu.gallery")}</a> {/* Fallback link */}
                   </li>
                   <li>
-                    <ScrollLink to="pricing" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} >Pricing</ScrollLink>
-                    <a href="#pricing" className="fallback-link">Pricing</a> {/* Fallback link */}
+                    <ScrollLink to="pricing" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} >{t("menu.pricing")}</ScrollLink>
+                    <a href="#pricing" className="fallback-link">{t("menu.pricing")}</a> {/* Fallback link */}
                   </li>
                   <li className="menu-item-has-children">
                     <ScrollLink to="blog" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} >Blog</ScrollLink>
@@ -124,8 +135,27 @@ const Header = ({ data }) => {
                   </li>
                   <li>
 
-                    <ScrollLink to="contact" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} >Contact</ScrollLink>
-                    <a href="#contact" className="fallback-link">Contact</a> {/* Fallback link */}
+                    <ScrollLink to="contact" activeClass="active" /* Add this for highlighting active link */ spy={true} duration={500} onClick={() => setMobileToggle(false)} >{t("menu.contact")}</ScrollLink>
+                    <a href="#contact" className="fallback-link">{t("menu.contact")}</a> {/* Fallback link */}
+                  </li>
+                  <li className="language-dropdown">
+                    <select
+                      // onChange={(e) => {
+                      //   const selectedLanguage = e.target.value;
+                      //   // Call function to change language here
+                      //   console.log("Selected Language:", selectedLanguage);
+                      //   // Example: i18n.changeLanguage(selectedLanguage);
+                      // }}
+                      value={currentLanguage}
+                      onChange={({ target }) => handleChangeLanguage(target.value)}
+
+                      name="Languages"
+                      className="language-select"
+                    > <option disabled={currentLanguage === "id"} value="id">Bahasa Indonesia</option>
+                      <option disabled={currentLanguage === "en"} value="en">English</option>
+                      <option disabled={currentLanguage === "zh"} value="zh">中文 (Chinese)</option>
+                      {/* Add more language options as needed */}
+                    </select>
                   </li>
                 </ul>
                 <div className={`st-munu-toggle ${mobileToggle ? "st-toggle-active" : ""} `} onClick={handleMobileToggle}>

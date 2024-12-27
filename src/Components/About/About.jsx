@@ -1,10 +1,12 @@
 import React from "react";
 import parse from "html-react-parser";
 import SectionHeading from "../SectionHeading/SectionHeading";
-
+import { Trans, useTranslation } from "react-i18next";
+import LanguageSelector from "../LanguageSelector/language-selector"
 const About = ({ data }) => {
   const { title, subTitle, avater, timeTable, contact } = data;
-
+  const { t } = useTranslation();
+  const { line1, line2 } = t("description", { channel: "RoadsideCoder" });
   return (
     <section className="st-about-wrap" id="about">
       <div className="st-shape-bg">
@@ -15,6 +17,19 @@ const About = ({ data }) => {
         title="Temukan Ketenangan di Pantai Kelapa Tuban"
         subTitle="Surga Tersembunyi untuk Liburan Istimewa Anda – Ciptakan Kenangan Tak Terlupakan di Tepi Pantai."
       />
+
+      <h1>{t("greeting")}</h1>
+      <span>
+        <Trans
+          // i18nKey={"description.line1"}
+          i18nKey={line1}
+          values={{
+            channel: "RoadsideCoder",
+          }}
+          components={{ 1: <b /> }}
+        ></Trans>
+      </span>
+      <span>{line2}</span>
       <div className="container">
         <div className="row">
           <div className="col-lg-7">

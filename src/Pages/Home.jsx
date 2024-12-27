@@ -583,7 +583,7 @@ const Home = () => {
       {/* <BeforeAfter data={beforeAfterData} /> */}
       <TestimonialSlider data={testimonialData} />
       <Funfact />
-      <Analytics mode={'production'} />;
+      {/* <Analytics mode={'production'} />; */}
       <PriceSlider data={priceData} />
       <Accordion data={faqData} />
       <Newsletter data={newsletterData} />

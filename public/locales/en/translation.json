@@ -1,0 +1,11 @@
+{
+  "menu": {
+    "home": "Home",
+    "Activities": "Activities",
+    "about": "About",
+    "Committee": "Committee",
+    "gallery": "Gallery",
+    "pricing": "Pricing",
+    "contact": "Contact"
+  }
+}

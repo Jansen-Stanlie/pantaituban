@@ -1,0 +1,12 @@
+{
+  "menu": {
+    "home": "Utama",
+    "Activities": "Aktivitas",
+    "about": "Tentang",
+    "Committee": "Pengurus",
+    "gallery": "Galeri",
+    "pricing": "Harga",
+    "contact": "Kontak"
+  },
+  "content": "React adalah pustaka javascript untuk membuat tampilan antarmuka pengguna, Belajar semua hal tentang react pada halaman utama kami atau di tutorial."
+}
