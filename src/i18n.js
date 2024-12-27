@@ -7,7 +7,10 @@ import BackEnd from "i18next-http-backend";
 // untuk deteksi bahasa yang digunakan pada browser berdasarkan local storage dll.
 import LanguageDetector from "i18next-browser-languagedetector";
 
-const currentHost = window.location.origin;
+const currentHost =
+  import.meta.env === "development"
+    ? window.location.origin
+    : "https://www.pantaikelapa.com/";
 console.log(currentHost);
 
 const getCurrentHost = currentHost;
