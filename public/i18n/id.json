@@ -8,5 +8,83 @@
     "pricing": "Harga",
     "contact": "Kontak"
   },
-  "content": "React adalah pustaka javascript untuk membuat tampilan antarmuka pengguna, Belajar semua hal tentang react pada halaman utama kami atau di tutorial."
+  "Hero": {
+    "hTitle": "Hubungi Kami",
+    "hSubTitle": "Tentang Kami",
+    "title11": "Ciptakan Momen Tak Terlupakan Bersama Keluarga. <br /> di",
+    "subTitle1": "Biarkan mentari dan ombak Pantai Tuban menyegarkan jiwa raga,sambil menciptakan kenangan indah bersama orang tersayang.",
+    "title2": "Ciptakan Momen Tak Terlupakan Bersama Keluarga. <br /> di",
+    "subTitle2": "Biarkan mentari dan ombak Pantai Tuban menyegarkan jiwa raga,sambil menciptakan kenangan indah bersama orang tersayang."
+  },
+  "iconData": {
+    "title1": "Surga Mentari Menanti",
+    "subTitle1": "Lepaskan penat, biarkan mentari tropis menyapa kulitmu di pantai pribadi.",
+    "title2": "Taklukkan Ombak, Raih Sensasi",
+    "subTitle2": "Arungi birunya samudra, ciptakan petualangan tak terlupakan.",
+    "title3": "Hidupkan Momen Bahagia",
+    "subTitle3": "Nikmati setiap detik di pantai impian, temukan definisi liburan sesungguhnya."
+  },
+  "aboutData2": {
+    "title1": "Temui Tim Pantai <span className='st-blue'>Pokdarwis</span> Pantai Tuban: Pahlawan di Balik Pesona",
+    "textline": {
+      "text1": "Bertemu dengan para profesional berdedikasi yang menjadikan Pantai Kelapa Tuban destinasi tak terlupakan. Tim kami penuh semangat menciptakan pengalaman luar biasa bagi setiap tamu.",
+      "text2": "Lebih dari Sekadar Tim, Kami adalah Keluarga"
+    }
+  },
+  "aboutData": {
+    "sectionTitle": "Temukan Ketenangan di Pantai Kelapa Tuban",
+    "sectionSubTitle": "Surga Tersembunyi untuk Liburan Istimewa Anda – Ciptakan Kenangan Tak Terlupakan di Tepi Pantai.",
+    "title": "Pantai Tuban: Surga Tersembunyi di Pulau Jawa",
+    "subTitle": "Pantai Kelapa Tuban jawa timur sudah menjadi ikon wisata terbaik di jawa timur. Lokasi destinasi wisata yang menyuguhkan pemandangan luar biasa ini cukup mudah ditemukan. Beralamat di Jalan Tuban – Gresik kilometer 1-2, Dusun Kepoh, Kelurahan Panyuran, Kecamatan Palang, Tuban, Jawa Timur.",
+    "timeTable": {
+      "title": "Jadwal Mingguan",
+      "day1": "Senin",
+      "day2": "Selasa",
+      "day3": "Rabu",
+      "day4": "Kamis",
+      "day5": "Jumat",
+      "day6": "Sabtu",
+      "day7": "Minggu"
+    },
+    "call": {
+      "title": "Telepon Sekarang",
+      "subTitle": "Jika Anda memiliki pertanyaan, jangan ragu untuk menghubungi kami.",
+      "phone": "Telepon",
+      "email": "Email",
+      "address": "Alamat"
+    }
+  },
+  "specialist": {
+    "title1": "Ketua Pokdarwis",
+    "title2": "Wakil Ketua Pokdarwis",
+    "title3": "Sekretaris I Pokdarwis",
+    "title4": "Sekretaris II Pokdarwis",
+    "title5": "Bendahara I Pokdarwis",
+    "title6": "Bendahara II Pokdarwis",
+    "title7": "Divisi Hiburan",
+    "title8": "Divisi Wahana",
+    "title9": "Divisi Hiburan"
+  },
+  "department": {
+    "sectionTitle": "Jelajahi Keajaiban Pantai Kelapa Tuban: Darat, Laut, Udara!",
+    "sectionSubTitle": "Di Pantai Kelapa Tuban, keseruan tidak pernah berhenti. <br /> Mulai dari aktivitas air yang menyegarkan hingga petualangan darat yang menantang, kami punya segalanya untuk membuat liburan Anda tak terlupakan.",
+    "name": {
+      "depart1": "Berkuda",
+      "depart2": "Perahu",
+      "depart3": "ATV Bike",
+      "depart4": "Flying Fox",
+      "depart5": "Kolam Renang",
+      "depart6": "Spot Foto",
+      "depart7": "Camping"
+    },
+    "desc": {
+      "depart1": "Nikmati sensasi berkuda di sepanjang pantai Tuban.",
+      "depart2": "Jelajahi keindahan laut Tuban dengan perahu tradisional.",
+      "depart3": "Rasakan sensasi petualangan dengan ATV Bike di sepanjang pantai.",
+      "depart4": "Rasakan sensasi terbang dengan Flying Fox di atas pantai Tuban.",
+      "depart5": "Nikmati kesegaran di kolam renang Pantai Tuban.",
+      "depart6": "Spot foto terbaik untuk mengabadikan momen indah di Pantai Tuban.",
+      "depart7": "Nikmati malam yang indah dengan berkemah di Pantai Tuban."
+    }
+  }
 }

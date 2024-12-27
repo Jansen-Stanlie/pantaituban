@@ -8,7 +8,7 @@ import BackEnd from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 
 const currentHost =
-  import.meta.env === "development"
+  process.env.REACT_APP_ENV === "development"
     ? window.location.origin
     : "https://www.pantaikelapa.com/";
 console.log(currentHost);

@@ -7,5 +7,84 @@
     "gallery": "Gallery",
     "pricing": "Pricing",
     "contact": "Contact"
+  },
+  "Hero": {
+    "hTitle": "Contact Us",
+    "hSubTitle": "About Us",
+    "title11": "Create Unforgettable Moments with Your Family. <br /> at",
+    "subTitle1": "Let the sun and waves of Tuban Beach refresh your soul while creating beautiful memories with your loved ones.",
+    "title2": "Create Unforgettable Moments with Your Family. <br /> at",
+    "subTitle2": "Let the sun and waves of Tuban Beach refresh your soul while creating beautiful memories with your loved ones."
+  },
+  "iconData": {
+    "title1": "Sun Paradise Awaits",
+    "subTitle1": "Relax, let the tropical sun greet your skin on a private beach.",
+    "title2": "Conquer the Waves, Achieve Sensation",
+    "subTitle2": "Sail the blue ocean, create unforgettable adventures.",
+    "title3": "Live Happy Moments",
+    "subTitle3": "Enjoy every second on the dream beach, find the true definition of a vacation."
+  },
+  "aboutData2": {
+    "title1": "Meet the Beach Team <span className='st-blue'>Pokdarwis</span> Tuban Beach: Heroes Behind the Charm",
+    "textline": {
+      "text1": "Meet dedicated professionals who make Pantai Kelapa Tuban an unforgettable destination. Our team is passionate about creating extraordinary experiences for every guest.",
+      "text2": "More Than Just a Team, We are Family"
+    }
+  },
+  "aboutData": {
+    "sectionTitle": "Find Peace at Pantai Kelapa Tuban",
+    "sectionSubTitle": "Hidden Paradise for Your Special Vacation – Create Unforgettable Memories on the Beach.",
+    "title": "Tuban Beach: Hidden Paradise in Java Island",
+    "subTitle": "Pantai Kelapa Tuban  East Java has become the best tourist icon in East Java. The location of this extraordinary tourist destination is quite easy to find. Located at Jalan Tuban - Gresik kilometer 1-2, Dusun Kepoh, Kelurahan Panyuran, Kecamatan Palang, Tuban, East Java.",
+    "timeTable": {
+      "title": "Weekly Schedule",
+      "day1": "Monday",
+      "day2": "Tuesday",
+      "day3": "Wednesday",
+      "day4": "Thursday",
+      "day5": "Friday",
+      "day6": "Saturday",
+      "day7": "Sunday"
+    },
+    "call": {
+      "title": "Call Now",
+      "subTitle": "If you have any questions, feel free to contact us.",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address"
+    }
+  },
+  "specialist": {
+    "title1": "Chairman Pokdarwis",
+    "title2": "Vice Chairman Pokdarwis",
+    "title3": "Secretary I Pokdarwis",
+    "title4": "Secretary II Pokdarwis",
+    "title5": "Treasurer I Pokdarwis",
+    "title6": "Treasurer II Pokdarwis",
+    "title7": "Entertainment Division",
+    "title8": "Playground Division",
+    "title9": "Entertainment Division"
+  },
+  "department": {
+    "sectionTitle": "Explore the Wonders of Pantai Kelapa Tuban: Land, Sea, Air!",
+    "sectionSubTitle": "At Pantai Kelapa Tuban, the excitement never stops. <br /> From refreshing water activities to thrilling land adventures, we have everything to make your vacation unforgettable.",
+    "name": {
+      "depart1": "Horse Riding",
+      "depart2": "Boat Riding",
+      "depart3": "ATV Bike",
+      "depart4": "Flying Fox",
+      "depart5": "Swimming Pool",
+      "depart6": "Photo Spot",
+      "depart7": "Camping"
+    },
+    "desc": {
+      "depart1": "Enjoy the sensation of riding a horse on the beach.",
+      "depart2": "Explore the beauty of the Tuban sea with a traditional boat.",
+      "depart3": "Feel the sensation of adventure with ATV Bike along the beach.",
+      "depart4": "Feel the sensation of flying with Flying Fox above Tuban beach.",
+      "depart5": "Enjoy the freshness of the Tuban Beach swimming pool.",
+      "depart6": "The best photo spot to capture beautiful moments at Tuban Beach.",
+      "depart7": "Enjoy a beautiful night by camping at Tuban Beach."
+    }
   }
 }

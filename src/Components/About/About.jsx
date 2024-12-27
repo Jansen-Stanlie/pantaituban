@@ -1,8 +1,9 @@
 import React from "react";
 import parse from "html-react-parser";
 import SectionHeading from "../SectionHeading/SectionHeading";
-import { Trans, useTranslation } from "react-i18next";
-import LanguageSelector from "../LanguageSelector/language-selector"
+
+import LanguageSelector from "../LanguageSelector/language-selector";
+import { useTranslation } from 'react-i18next';
 const About = ({ data }) => {
   const { title, subTitle, avater, timeTable, contact } = data;
   const { t } = useTranslation();
@@ -14,8 +15,8 @@ const About = ({ data }) => {
       </div>
       <div className="st-height-b120 st-height-lg-b50" />
       <SectionHeading
-        title="Temukan Ketenangan di Pantai Kelapa Tuban"
-        subTitle="Surga Tersembunyi untuk Liburan Istimewa Anda – Ciptakan Kenangan Tak Terlupakan di Tepi Pantai."
+        title={t("aboutData.sectionTitle")}
+        subTitle={t("aboutData.sectionSubTitle")}
       />
 
       <div className="container">
@@ -54,7 +55,7 @@ const About = ({ data }) => {
           >
             <div className="st-shedule-wrap">
               <div className="st-shedule">
-                <h2 className="st-shedule-title">Jadwal Mingguan</h2>
+                <h2 className="st-shedule-title">{t("aboutData.timeTable.title")}</h2>
                 <ul className="st-shedule-list">
                   {timeTable.map((element, index) => (
                     <li key={index}>
@@ -71,7 +72,7 @@ const About = ({ data }) => {
                     <img src="/icons/icon4.svg" alt="./icons/icon4.svg" />
                   </div>
                   <div className="st-call-text">
-                    <div className="st-call-title">Telepon Sekarang</div>
+                    <div className="st-call-title">{t("aboutData.call.title")}</div>
                     <div className="st-call-number">{contact}</div>
                   </div>
                 </div>

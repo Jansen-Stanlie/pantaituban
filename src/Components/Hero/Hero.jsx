@@ -5,7 +5,9 @@ import TextTransition, { presets } from 'react-text-transition';
 import parser from 'html-react-parser';
 import { Link as ScrollLink } from 'react-scroll';
 import { TypeAnimation } from 'react-type-animation';
+import { useTranslation } from 'react-i18next';
 const Hero3 = ({ data }) => {
+  const { t } = useTranslation();
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
     <div {...props} className={'slick-arrow-left slick-arrow' + (currentSlide === 0 ? ' slick-disabled' : '')} aria-hidden="true" aria-disabled={currentSlide === 0 ? true : false} >
       <Icon icon="fa-solid:angle-left" />
@@ -67,13 +69,13 @@ const Hero3 = ({ data }) => {
                         to="contact"
                         className="st-btn st-style1 st-size-medium st-color1 st-smooth-move"
                       >
-                        Hubungi Kami
+                        {t("Hero.hTitle")}
                       </ScrollLink>
                       <ScrollLink
                         to="about"
                         className="st-btn st-style1 st-size-medium st-color3 st-smooth-move"
                       >
-                        Tentang Kami
+                        {t("Hero.hSubTitle")}
                       </ScrollLink>
                     </div>
                     <div className="st-height-b15 st-height-lg-b15" />
