@@ -3,9 +3,10 @@ import SectionHeading from '../SectionHeading/SectionHeading';
 import Slider from 'react-slick';
 import { Icon } from '@iconify/react';
 import Price from '../Price/Price';
-
+import { useTranslation } from 'react-i18next';
 
 const PriceSlider = ({ data }) => {
+  const { t } = useTranslation();
   const [activeSlide, setActiveSlide] = useState(0); // Track active slide
 
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
@@ -57,8 +58,8 @@ const PriceSlider = ({ data }) => {
   return (
     <section id="pricing">
       <div className="st-height-b180 st-height-lg-b50"></div>
-      <SectionHeading title="Petualangan Tak Terbatas, Harga Terjangkau"
-        subTitle="Temukan beragam aktivitas seru yang akan membuat liburan Anda di Pantai Tuban semakin berkesan.<br>Lihat daftar harga dan rencanakan petualangan Anda hari ini!" />
+      <SectionHeading title={t("Pricing.sectionTitle")} subTitle={t("Pricing.sectionSubTitle")} />
+
       <div className="container">
         <Slider {...settings} className='st-slider-style2 st-pricing-wrap'>
           {

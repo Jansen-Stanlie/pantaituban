@@ -5,18 +5,20 @@ import Header from '../Header/Header'
 import Preloader from '../Preloader/Preloader'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Analytics } from '@vercel/analytics/react'
+import { useTranslation } from 'react-i18next'
 const headerData = {
   "logo": "/images/logo.png"
 }
 
-const footerData = {
-  "logo": "/images/footer-logo.png",
-  "bgImg": "",
-  subTitle: "Pantai Kelapa: Tempat Keluarga Berkumpul, Bermain, dan Menciptakan Kenangan Indah."
-}
 const Layout = () => {
+  const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(true);
 
+  const footerData = {
+    "logo": "/images/footer-logo.png",
+    "bgImg": "",
+    subTitle: t("footer.title"),
+  }
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);

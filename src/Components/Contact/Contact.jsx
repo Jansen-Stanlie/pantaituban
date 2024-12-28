@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import SectionHeading from '../SectionHeading/SectionHeading';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-
+import { useTranslation } from 'react-i18next';
 const Contact = () => {
+  const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -71,8 +72,8 @@ const Contact = () => {
       </div>
       <div className="st-height-b120 st-height-lg-b80" />
       <SectionHeading
-        title="Tetap Terhubung dengan Pantai Kelapa Tuban"
-        subTitle="Jangan Lewatkan Momen Terbaik!  <br /> Reservasi Liburan Impian Anda di Pantai Tuban Sekarang!."
+        title={t("contact.sectionTitle")}
+        subTitle={t("contact.sectionSubTitle")}
       />
       <div className="container">
         <div className="row">
@@ -129,7 +130,7 @@ const Contact = () => {
               </div>
               <div className='col-lg-6'>
                 <div className='st-form-field st-style1'>
-                  <label>Paket liburan</label>
+                  <label>{t("contact.form.paket_liburan.title")}</label>
                   <select
                     id='activity'
                     name='activity'
@@ -137,14 +138,14 @@ const Contact = () => {
                     onChange={handleInputChange}
                     value={formData.activity}
                   >
-                    <option value=''>Pilih Aktivitas</option>
-                    <option value='Berkuda'>Berkuda</option>
-                    <option value='Perahu'>Perahu</option>
-                    <option value='ATV'>Atv Bike</option>
-                    <option value='FlyingFox'>Flying Fox</option>
-                    <option value="KolamRenang">Kolam Renang</option>
-                    <option value="Camping">Camping</option>
-                    <option value="SpotFoto">Spot Foto</option>
+                    <option value=''>{t("contact.form.paket_liburan.subTitle")}</option>
+                    <option value='Berkuda'>{t("contact.form.paket_liburan.paket1")}</option>
+                    <option value='Perahu'>{t("contact.form.paket_liburan.paket2")}</option>
+                    <option value='ATV'>{t("contact.form.paket_liburan.paket3")}</option>
+                    <option value='FlyingFox'>{t("contact.form.paket_liburan.paket4")}</option>
+                    <option value="KolamRenang">{t("contact.form.paket_liburan.paket5")}</option>
+                    <option value="Camping">{t("contact.form.paket_liburan.paket6")}</option>
+                    <option value="SpotFoto">{t("contact.form.paket_liburan.paket7")}</option>
                   </select>
                 </div>
               </div>
@@ -163,7 +164,7 @@ const Contact = () => {
               </div>
               <div className='col-lg-6'>
                 <div className="st-form-field st-style1">
-                  <label>Jumlah Peserta</label>
+                  <label>{t("contact.form.jumlah_pengunjung")}</label>
                   <input
                     type="text"
                     id="jumlah"

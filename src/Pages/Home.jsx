@@ -210,29 +210,28 @@ const Home = () => {
       img: "images/avatar2.png",
       name: "David Bayu Nur Fauzi",
       designation: "Content Creator",
-      subTitle:
-        "saya habis dari sana tempatnya bersih, nyaman ada campingnya juga.",
+      subTitle: t("Testimonial.user.user1Comment"),
     },
     {
       img: "images/avatar3.png",
       name: "D. Ayu Puspita .A",
       designation: "Travel Blogger",
       subTitle:
-        "Pantainya adem, bisa di buat piknik bareng keluarga, wahananya lengkap dan seru, tiker masuknyapun murah juga",
+        t("Testimonial.user.user2Comment"),
     },
     {
       img: "images/avatar4.png",
       name: "Yan Ardi Abdul Hakim",
       designation: "Travel Blogger",
       subTitle:
-        "banyak kenangan di pantai kelapa.... aku seru camping disana.",
+        t("Testimonial.user.user3Comment"),
     },
     {
       img: "images/avatar5.png",
       name: "Nafisa",
       designation: "Family Vacationer",
       subTitle:
-        "tempatnya aestetik, cocok di buat nongkrong bareng besti.. campingnya juga seru bisa sambil menikmati senjanya.",
+        t("Testimonial.user.user4Comment"),
     },
   ];
 
@@ -493,25 +492,25 @@ const Home = () => {
   ];
 
   const faqData = {
-    title: "FAQ Pantai Tuban: Jawaban untuk Semua Pertanyaan Anda!",
+    title: t("faq.sectionTitle"),
     img: "images/faq-img.png",
     bgImg: "shape/faq-bg.svg",
     faqItems: [
       {
-        title: "Apakah ada penjaga pantai yang bertugas?",
-        content: "Tentu! Pantai Tuban memiliki penjaga pantai bersertifikat yang siap siaga dari pukul 9 pagi hingga 5 sore setiap hari. Mereka terlatih dalam pertolongan pertama dan penyelamatan air.",
+        title: t("faq.items.item1.title"),
+        content: t("faq.items.item1.desc"),
       },
       {
-        title: "Aktivitas air apa saja yang tersedia?",
-        content: "Pantai Tuban menawarkan berbagai macam olahraga air seru,Perahu. Anda bisa menyewa peralatan langsung di pantai.",
+        title: t("faq.items.item2.title"),
+        content: t("faq.items.item2.desc"),
       },
       {
-        title: "Bolehkah saya membawa makanan dan minuman sendiri?",
-        content: "Tentu saja! Anda dipersilakan membawa bekal makanan dan minuman sendiri ke Pantai Tuban. Namun, kami juga memiliki kafe tepi pantai yang menyajikan hidangan lokal lezat dan minuman menyegarkan.",
+        title: t("faq.items.item3.title"),
+        content: t("faq.items.item3.desc"),
       },
       {
-        title: "Apakah ada fasilitas kamar mandi dan ruang ganti?",
-        content: "Ya, kami menyediakan kamar mandi dan ruang ganti yang bersih dan terawat di dekat pantai untuk kenyamanan Anda.",
+        title: t("faq.items.item4.title"),
+        content: t("faq.items.item4.desc"),
       },
     ],
   };

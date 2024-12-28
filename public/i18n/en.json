@@ -55,6 +55,8 @@
     }
   },
   "specialist": {
+    "sectionButton1": "View Image Gallery",
+    "sectionButton2": "Awards and Achievements",
     "title1": "Chairman Pokdarwis",
     "title2": "Vice Chairman Pokdarwis",
     "title3": "Secretary I Pokdarwis",
@@ -85,6 +87,97 @@
       "depart5": "Enjoy the freshness of the Tuban Beach swimming pool.",
       "depart6": "The best photo spot to capture beautiful moments at Tuban Beach.",
       "depart7": "Enjoy a beautiful night by camping at Tuban Beach."
+    }
+  },
+  "Gallery": {
+    "sectionTitle": "Capture Unforgettable Moments",
+    "sectionSubTitle": "Let yourself be mesmerized by the beauty of Pantai Tuban through our photo gallery. <br /> Witness breathtaking panoramas, unforgettable moments, and the vibrant colors of beach life."
+  },
+  "Testimonial": {
+    "sectionTitle": "Stories from the Heart",
+    "sectionSubTitle": "Discover why Pantai Tuban is so special through stories from our happy guests. <br /> Their testimonials are a testament to our commitment to creating unforgettable moments.",
+    "user": {
+      "user1Comment": "I just visited the place, it's clean, comfortable, and has camping too.",
+      "user2Comment": "The beach is cool, perfect for family picnics, the attractions are complete and fun, and the entrance fee is affordable too.",
+      "user3Comment": "So many memories at Pantai Kelapa... I had a great time camping there.",
+      "user4Comment": "The place is aesthetic, perfect for hanging out with friends... camping is fun too while enjoying the sunset."
+    }
+  },
+  "FunFact": {
+    "fact1": "Years of Experience",
+    "fact2": "Family Activities",
+    "fact3": "Affordable Prices"
+  },
+  "Pricing": {
+    "sectionTitle": "Unlimited Adventures, Affordable Prices",
+    "sectionSubTitle": "Discover a variety of exciting activities that will make your holiday at Tuban Beach even more memorable.<br>Check out the price list and plan your adventure today!"
+  },
+  "faq": {
+    "sectionTitle": "Tuban Beach FAQ: Answers to All Your Questions!",
+    "items": {
+      "item1": {
+        "title": "Is Tuban Beach Open Every Day?",
+        "desc": "Yes, Tuban Beach is open daily from 8:00 AM to 5:00 PM WIB."
+      },
+      "item2": {
+        "title": "Does Tuban Beach Provide Parking Facilities?",
+        "desc": "Yes, Tuban Beach offers a spacious and secure parking area for private vehicles."
+      },
+      "item3": {
+        "title": "Does Tuban Beach Have Restroom Facilities?",
+        "desc": "Yes, Tuban Beach provides clean and comfortable restroom facilities for visitors."
+      },
+      "item4": {
+        "title": "Does Tuban Beach Offer Food and Beverage Services?",
+        "desc": "Yes, Tuban Beach has a variety of delicious and fresh food and drink options available."
+      },
+      "item5": {
+        "title": "Does Tuban Beach Offer Snorkeling Equipment Rentals?",
+        "desc": "Yes, Tuban Beach provides snorkeling equipment rentals to explore the underwater beauty."
+      }
+    }
+  },
+  "newsletter": {
+    "sectionTitle": "Join the Tuban Beach Family",
+    "sectionSubTitle": "Get the latest updates on exciting events, exclusive deals, and special discounts delivered straight to your inbox. <br /> Be the first to know about everything exciting at your dream beach!"
+  },
+  "postwrapper": {
+    "sectionTitle": "Latest News from Tuban Beach",
+    "sectionSubTitle": "Stay updated with the latest information about special events, exciting promotions, and other important news from Tuban Beach. <br> It's all here!",
+    "button1": "View More"
+  },
+  "contact": {
+    "sectionTitle": "Stay Connected with Tuban Beach",
+    "sectionSubTitle": "Don't Miss Out on the Best Moments! <br /> Book Your Dream Vacation at Tuban Beach Now!",
+    "form": {
+      "name": "name",
+      "email": "email",
+      "phone": "phone",
+      "activity": "activity",
+      "msg": "message",
+      "tanggal": "date",
+      "jumlah_pengunjung": "total visitor",
+      "paket_liburan": {
+        "title": "Holiday Packages",
+        "subTitle": "Choose Your Holiday Package",
+        "paket1": "Horseback Riding",
+        "paket2": "Boat Ride",
+        "paket3": "ATV Bike",
+        "paket4": "Flying Fox",
+        "paket5": "Swimming Pool",
+        "paket6": "Camping",
+        "paket7": "Photo Spot"
+      }
+    }
+  },
+  "footer": {
+    "title": "Tuban Beach: A Place for Families to Gather, Play, and Create Beautiful Memories.",
+    "aktivitas": {
+      "title": "Activities",
+      "item1": "Horseback Riding",
+      "item2": "Swimming Pool",
+      "item3": "Photo Spot",
+      "item4": "Camping"
     }
   }
 }

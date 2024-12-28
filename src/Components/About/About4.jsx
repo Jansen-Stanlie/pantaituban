@@ -96,7 +96,7 @@ const About4 = ({ data, data1 }) => {
                         to="gallery"
                         className="st-btn st-style1 st-color4 st-size-medium st-smooth-move responsive-btn"
                       >
-                        {t('Lihat Galeri Gambar')}
+                        {t('specialist.sectionButton1')}
                       </ScrollLink>
 
                       <Link
@@ -105,7 +105,7 @@ const About4 = ({ data, data1 }) => {
                         aria-disabled={true}
                         onClick={(e) => e.preventDefault()}
                       >
-                        {t('Penghargaan dan Prestasi')}
+                        {t('specialist.sectionButton2')}
                       </Link>
                     </div>
                   </div>

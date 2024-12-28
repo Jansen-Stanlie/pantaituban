@@ -3,6 +3,7 @@ import SectionHeading from '../SectionHeading/SectionHeading';
 import { Icon } from '@iconify/react';
 import ModalImage from 'react-modal-image';
 import Masonry from 'react-masonry-css';
+import { useTranslation } from 'react-i18next';
 
 const categoryMenu = [
   {
@@ -125,6 +126,7 @@ const portfolioData = [
 ]
 
 const MasonryGallery = () => {
+  const { t } = useTranslation();
   const [active, setActive] = useState('all');
   const [itemShow, setItemShow] = useState(20);
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -174,8 +176,8 @@ const MasonryGallery = () => {
     <section id="gallery">
       <div className="st-height-b120 st-height-lg-b80" />
       <div className="container">
-        <SectionHeading title="Abadikan Momen Tak Terlupakan"
-          subTitle="Biarkan diri Anda terpesona oleh keindahan Pantai Tuban melalui galeri foto kami.  <br />  Saksikan panorama yang menakjubkan, momen-momen tak terlupakan, dan warna-warni kehidupan pantai." />
+        <SectionHeading title={(t("Gallery.sectionTitle"))}
+          subTitle={t("Gallery.sectionSubTitle")} />
       </div>
       <div className="container">
         <div className="st-portfolio-wrapper">

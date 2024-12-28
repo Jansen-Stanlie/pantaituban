@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import Social from '../Social/Social';
 import { Icon } from '@iconify/react';
 import { Link } from 'react-router-dom';
-
+import { useTranslation } from 'react-i18next';
 
 
 
 const Footer = ({ data, varient }) => {
+  const { t } = useTranslation();
   const { logo, subTitle, bgImg, links } = data;
   const currentYear = new Date().getFullYear();
 
@@ -86,30 +87,30 @@ const Footer = ({ data, varient }) => {
             {/* .col */}
             <div className="col-lg-3">
               <div className="st-footer-widget">
-                <h2 className="st-footer-widget-title">Activities</h2>
+                <h2 className="st-footer-widget-title">{t("footer.aktivitas.title")}</h2>
                 <ul className="st-footer-widget-nav st-mp0">
                   <li>
                     <Link to="">
                       <Icon icon="fa:angle-right" />
-                      Kolam Renang
+                      {t("footer.aktivitas.item1")}
                     </Link>
                   </li>
                   <li>
                     <Link to="">
                       <Icon icon="fa:angle-right" />
-                      Berkuda
+                      {t("footer.aktivitas.item2")}
                     </Link>
                   </li>
                   <li>
                     <Link to="">
                       <Icon icon="fa:angle-right" />
-                      Aktivitas Outbound
+                      {t("footer.aktivitas.item3")}
                     </Link>
                   </li>
                   <li>
                     <Link to="">
                       <Icon icon="fa:angle-right" />
-                      Dan Lain Lain
+                      {t("footer.aktivitas.item4")}
                     </Link>
                   </li>
                 </ul>

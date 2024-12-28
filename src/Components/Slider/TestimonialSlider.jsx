@@ -3,8 +3,10 @@ import SectionHeading from '../SectionHeading/SectionHeading';
 import Slider from 'react-slick';
 import { Icon } from '@iconify/react';
 import Testimonial from '../Testimonial/Testimonial';
+import { useTranslation } from 'react-i18next';
 
 const TestimonialSlider = ({ data }) => {
+  const { t } = useTranslation();
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
     <div {...props} className={'slick-arrow-left slick-arrow' + (currentSlide === 0 ? ' slick-disabled' : '')} aria-hidden="true" aria-disabled={currentSlide === 0 ? true : false} >
       <Icon icon="fa-solid:angle-left" />
@@ -46,9 +48,8 @@ const TestimonialSlider = ({ data }) => {
   return (
     <section>
       <div className="st-height-b120 st-height-lg-b80" />
-      <SectionHeading title="Cerita dari Hati"
-        subTitle=" Temukan mengapa Pantai Tuban begitu istimewa melalui cerita-cerita dari tamu kami yang bahagia.<br /> Testimoni mereka adalah bukti komitmen kami dalam menciptakan momen-momen tak terlupakan.
-        " />
+      <SectionHeading title={t("Testimonial.sectionTitle")}
+        subTitle={t("Testimonial.sectionSubTitle")} />
       <div className="container">
         <Slider {...settings} className='st-slider-style2'>
           {

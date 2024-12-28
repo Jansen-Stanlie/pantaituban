@@ -1,6 +1,6 @@
 import React from 'react';
 import VideoBlock from '../VideoBlock/VideoBlock';
-
+import { useTranslation } from 'react-i18next';
 const videoBlockData = {
   "videoThumb": '/images/video-block-img.jpg',
   "videoSrc": 'https://www.youtube.com/embed/pyuEFIEnMGc?si=zlBNA1ZZGo6yMr4N',
@@ -8,6 +8,7 @@ const videoBlockData = {
 }
 
 const Funfact = () => {
+  const { t } = useTranslation();
   return (
     <section className="st-gray-bg st-shape-wrap">
       <div className="st-shape4">
@@ -36,7 +37,7 @@ const Funfact = () => {
                     </svg>
                   </div>
                   <h2 className="st-funfact-number st-counter">4</h2>
-                  <div className="st-funfact-title">Tahun Lebih Pengalaman</div>
+                  <div className="st-funfact-title">{t('FunFact.fact1')}</div>
                 </div>
                 <div className="st-height-b30 st-height-lg-b30" />
               </div>
@@ -144,7 +145,7 @@ const Funfact = () => {
                     </svg>
                   </div>
                   <h2 className="st-funfact-number st-counter">5+</h2>
-                  <div className="st-funfact-title">Aktivitas Keluarga</div>
+                  <div className="st-funfact-title">{t('FunFact.fact2')}</div>
                 </div>
                 <div className="st-height-b30 st-height-lg-b30" />
               </div>
@@ -213,7 +214,7 @@ const Funfact = () => {
                     </svg>
                   </div>
                   <h2 className="st-funfact-number st-counter">⬆️10K IDR</h2>
-                  <div className="st-funfact-title">Harga Terjangkau</div>
+                  <div className="st-funfact-title">{t('FunFact.fact3')}</div>
                 </div>
                 <div className="st-height-b30 st-height-lg-b30" />
               </div>

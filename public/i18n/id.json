@@ -55,6 +55,8 @@
     }
   },
   "specialist": {
+    "sectionButton1": "Lihat Galeri Gambar",
+    "sectionButton2": "Penghargaan dan prestasi",
     "title1": "Ketua Pokdarwis",
     "title2": "Wakil Ketua Pokdarwis",
     "title3": "Sekretaris I Pokdarwis",
@@ -85,6 +87,97 @@
       "depart5": "Nikmati kesegaran di kolam renang Pantai Tuban.",
       "depart6": "Spot foto terbaik untuk mengabadikan momen indah di Pantai Tuban.",
       "depart7": "Nikmati malam yang indah dengan berkemah di Pantai Tuban."
+    }
+  },
+  "Gallery": {
+    "sectionTitle": "Abadikan Momen Tak Terlupakan",
+    "sectionSubTitle": "Biarkan diri Anda terpesona oleh keindahan Pantai Tuban melalui galeri foto kami.  <br />  Saksikan panorama yang menakjubkan, momen-momen tak terlupakan, dan warna-warni kehidupan pantai."
+  },
+  "Testimonial": {
+    "sectionTitle": "Cerita dari Hati",
+    "sectionSubTitle": "Temukan mengapa Pantai Tuban begitu istimewa melalui cerita-cerita dari tamu kami yang bahagia.<br /> Testimoni mereka adalah bukti komitmen kami dalam menciptakan momen-momen tak terlupakan.",
+    "user": {
+      "user1Comment": "saya habis dari sana tempatnya bersih, nyaman ada campingnya juga.",
+      "user2Comment": "Pantainya adem, bisa di buat piknik bareng keluarga, wahananya lengkap dan seru, tiker masuknyapun murah juga.",
+      "user3Comment": "banyak kenangan di pantai kelapa.... aku seru camping disana.",
+      "user4Comment": "tempatnya aestetik, cocok di buat nongkrong bareng besti.. campingnya juga seru bisa sambil menikmati senjanya."
+    }
+  },
+  "FunFact": {
+    "fact1": "Tahun Lebih Pengalaman",
+    "fact2": "Activitas Keluarga",
+    "fact3": "Harga Terjangkau"
+  },
+  "Pricing": {
+    "sectionTitle": "Petualangan Tak Terbatas, Harga Terjangkau",
+    "sectionSubTitle": "Temukan beragam aktivitas seru yang akan membuat liburan Anda di Pantai Tuban semakin berkesan.<br>Lihat daftar harga dan rencanakan petualangan Anda hari ini!"
+  },
+  "faq": {
+    "sectionTitle": "FAQ Pantai Tuban: Jawaban untuk Semua Pertanyaan Anda!",
+    "items": {
+      "item1": {
+        "title": "Apakah Pantai Tuban Buka Setiap Hari?",
+        "desc": "Ya, Pantai Tuban buka setiap hari mulai pukul 08.00 hingga 17.00 WIB."
+      },
+      "item2": {
+        "title": "Apakah Pantai Tuban Menyediakan Tempat Parkir?",
+        "desc": "Ya, Pantai Tuban menyediakan area parkir yang luas dan aman untuk kendaraan pribadi."
+      },
+      "item3": {
+        "title": "Apakah Pantai Tuban Menyediakan Fasilitas Kamar Mandi?",
+        "desc": "Ya, Pantai Tuban menyediakan fasilitas kamar mandi yang bersih dan nyaman untuk pengunjung."
+      },
+      "item4": {
+        "title": "Apakah Pantai Tuban Menyediakan Fasilitas Makanan dan Minuman?",
+        "desc": "Ya, Pantai Tuban menyediakan beragam pilihan makanan dan minuman yang lezat dan segar."
+      },
+      "item5": {
+        "title": "Apakah Pantai Tuban Menyediakan Fasilitas Penyewaan Alat Snorkeling?",
+        "desc": "Ya, Pantai Tuban menyediakan fasilitas penyewaan alat snorkeling untuk menikmati keindahan bawah laut."
+      }
+    }
+  },
+  "newsletter": {
+    "sectionTitle": "Bergabunglah &amp; dengan Keluarga Pantai Tuban",
+    "sectionSubTitle": " Dapatkan info terbaru tentang acara seru, penawaran istimewa, dan diskon spesial langsung ke inbox Anda.  <br /> Jadilah yang pertama tahu tentang semua hal menarik di pantai impian Anda!."
+  },
+  "postwrapper": {
+    "sectionTitle": "Berita Terkini dari Pantai Tuban",
+    "sectionSubTitle": "Jangan sampai ketinggalan informasi terbaru tentang acara spesial, promo menarik, dan berita penting lainnya dari Pantai Tuban. <br> Semuanya ada di sini!",
+    "button1": "Lihat Lebih Banyak"
+  },
+  "contact": {
+    "sectionTitle": "Tetap Terhubung dengan Pantai Kelapa Tuban",
+    "sectionSubTitle": "Jangan Lewatkan Momen Terbaik!  <br /> Reservasi Liburan Impian Anda di Pantai Tuban Sekarang!.",
+    "form": {
+      "name": "nama",
+      "email": "email",
+      "phone": "phone",
+      "activity": "activity",
+      "msg": "pesan",
+      "tanggal": "tanggal",
+      "jumlah_pengunjung": "jumlah pengunjung",
+      "paket_liburan": {
+        "title": "Paket Liburan",
+        "subTitle": "Pilih Paket Liburan Anda",
+        "paket1": "Berkuda",
+        "paket2": "Perahu",
+        "paket3": "ATV Bike",
+        "paket4": "Flying Fox",
+        "paket5": "Kolam Renang",
+        "paket6": "Camping",
+        "paket7": "Spot Foto"
+      }
+    }
+  },
+  "footer": {
+    "title": "Pantai Kelapa: Tempat Keluarga Berkumpul, Bermain, dan Menciptakan Kenangan Indah.",
+    "aktivitas": {
+      "title": "Aktivitas",
+      "item1": "Berkuda",
+      "item2": "Kolam Renang",
+      "item3": "Spot Foto",
+      "item4": "Camping"
     }
   }
 }
