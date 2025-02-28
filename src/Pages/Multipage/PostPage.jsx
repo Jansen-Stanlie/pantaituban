@@ -10,6 +10,39 @@ const heroData = {
 
 const postData = [
   {
+    img: "https://www.ototrend.com/images/2025/02/24/IMG_20250224_221110.jpg",
+    title: "Pantai Kelapa Otocontest #1 – Tuban: Perdana, Otomotif dan Pariwisata Bersinergi, Dibanjiri Ratusan Peserta dan Banjir Doorprize.",
+    date: "Feb 24, 2025",
+    author: " Pantai Kelapa",
+    authorLink: "",
+    subTitle:
+      "Managemen Pantai Kelapa Tuban bareng Honda Squad Tuban sukses pertama kali menggelar event kontes modifikasi motor. Bertajuk “Pantai Kelapa Otocontest #1” yang rapi terkemas di Pantai Kelapa Minggu 23 Februari silam.",
+    postLink: "https://www.ototrend.com/oto-info/132-oto-mania/29228-pantai-kelapa-otocontest-1-tuban-perdana-otomotif-dan-pariwisata-bersinergi-dibanjiri-ratusan-peserta-dan-banjir-doorprize",
+
+  },
+  {
+    img: "https://www.bloktuban.com/image/posts/2025/02/w5c8rbbS4eRb1fIrhy6zVaKgLucMBbocBZIICSFu.jpg",
+    title: "Kisah Haru Penerima Bantuan Pokdarwis Pantai Kelapa Tuban: “Alhamdulillah, Sangat Membantu”",
+    date: "Feb 15, 2025",
+    author: " Ali Imron",
+    authorLink: "",
+    subTitle:
+      "blokTuban.com - Kelompok Sadar Wisata (Pokdarwis) Pantai Kelapa kembali menunjukkan kepeduliannya terhadap masyarakat sekitar dengan menyalurkan bantuan sosial kepada anak yatim dan warga kurang mampu di sekitar kawasan Pantai Kelapa. Kegiatan ini berlangsung pagi ini dan merupakan bagian dari program Corporate Social Responsibility (CSR) Pantai Kelapa.",
+    postLink: "https://www.bloktuban.com/2025/02/15/kisah-haru-penerima-bantuan-pokdarwis-pantai-kelapa-tuban-alhamdulillah-sangat-membantu",
+
+  },
+  {
+    img: "	https://liputansatu.id/wp-content/uploads/2025/02/IMG_20250215_121419_copy_1200x675-800x450.jpg",
+    title: "Jelang Ramadhan, Pantai Kelapa Tuban Salurkan 300 Paket Bantuan untuk Warga Kurang Mampu",
+    date: "Feb 15, 2025",
+    author: " Assayid Annazili",
+    authorLink: "",
+    subTitle:
+      "Menjelang bulan suci Ramadhan, Kelompok Sadar Wisata (Pokdarwis) Pantai Kelapa, yang berlokasi di Kelurahan Panyuran, Kecamatan Palang, kembali menggelar kegiatan sosial dengan menyalurkan bantuan kepada masyarakat yang membutuhkan. Sebanyak 300 paket bantuan sosial (bansos) dibagikan kepada anak yatim dan warga kurang mampu di sekitar kawasan Pantai Kelapa, Sabtu (15/02/25).",
+    postLink: "https://liputansatu.id/jelang-ramadhan-pantai-kelapa-tuban-salurkan-300-paket-bantuan-untuk-warga-kurang-mampu/",
+
+  },
+  {
     img: "/images/blog3.jpg",
     title: "TDA Jatim 1 Gelar Family Fun Camp",
     date: "Jul 21, 2024",

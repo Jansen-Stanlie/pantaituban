@@ -521,39 +521,63 @@ const Home = () => {
   };
 
   const postData =
-    [{
-      img: "images/blog3.jpg",
-      title: "TDA Jatim 1 Gelar Family Fun Camp",
-      date: "Jul 21, 2024",
-      author: "nur syaifudin",
-      authorLink: "",
-      subTitle:
-        "Komunitas Pengusaha Tangan Di Atas (TDA) Jatim 1 menggelar family fun camp di lokasi Wisata Pantai Kelapa Tuban selama dua hari berturut-turut mulai Sabtu-Minggu (20-21/7/2024). Dalam kesempatan itu para pebisnis TDA juga mengajak keluarga mereka masing-masing agar acara semakin meriah.",
-      postLink: "https://harianbangsa.net/tda-jatim-1-gelar-family-fun-camp-bersama-keluarga-begini-tujuannya",
-      truncateText: 'Child’s first hospital visit...'
-    },
-    {
-      img: "images/blog1.jpg",
-      title: "Raih Penghargaan Terbaik EJTA 2023",
-      date: "Oct 31, 2023",
-      author: "Pokdawis Pantai Kelapa",
-      authorLink: "",
-      subTitle:
-        "Segala puji syukur kepada Tuhan yang maha Esa, diawali dari niat untuk meningkatkan ekonomi dan manfaat kepada masyarakat sampai dapat membawa nama harum KOTA TUBAN… Pantai Kelapa meraih penghargaan East Java Tourism Award (EJTA) 2023 TERBAIK kategori Wisata Alam Buatan Pengelola Kelompok Masyarakat.",
-      postLink: "/post/post_details",
-      truncateText: 'Raih Penghargaan Terbaik...'
-    },
-    {
-      img: "images/blog2.jpg",
-      title: "Pantai Kelapa di Detikcom",
-      date: "Aug 22, 2020",
-      author: "Detik.com",
-      authorLink: "",
-      subTitle:
-        "Tuban di Jawa Timur yang dikenal sebagai kota santri banyak memiliki kawasan wisata religi. Namun rupanya tak itu saja. Tuban juga memiliki wisata pantai yang asri dan eksotis, yakni Pantai Kelapa. Destinasi wisata ini telah cukup lama dikenal oleh masyarakat sekitar Tuban.",
-      postLink: "/post/post_details",
-      truncateText: 'Pantai Kelapa di Detikcom...'
-    },
+    [
+      //   {
+      //   img: "images/blog3.jpg",
+      //   title: "TDA Jatim 1 Gelar Family Fun Camp",
+      //   date: "Jul 21, 2024",
+      //   author: "nur syaifudin",
+      //   authorLink: "",
+      //   subTitle:
+      //     "Komunitas Pengusaha Tangan Di Atas (TDA) Jatim 1 menggelar family fun camp di lokasi Wisata Pantai Kelapa Tuban selama dua hari berturut-turut mulai Sabtu-Minggu (20-21/7/2024). Dalam kesempatan itu para pebisnis TDA juga mengajak keluarga mereka masing-masing agar acara semakin meriah.",
+      //   postLink: "https://harianbangsa.net/tda-jatim-1-gelar-family-fun-camp-bersama-keluarga-begini-tujuannya",
+      // 
+      // },
+      {
+        img: "https://www.ototrend.com/images/2025/02/24/IMG_20250224_221110.jpg",
+        title: "Pantai Kelapa Otocontest #1 – Tuban: Perdana, Otomotif dan Pariwisata Bersinergi, Dibanjiri Ratusan Peserta dan Banjir Doorprize.",
+        date: "Feb 24, 2025",
+        author: " Pantai Kelapa",
+        authorLink: "",
+        subTitle:
+          "Managemen Pantai Kelapa Tuban bareng Honda Squad Tuban sukses pertama kali menggelar event kontes modifikasi motor. Bertajuk “Pantai Kelapa Otocontest #1” yang rapi terkemas di Pantai Kelapa Minggu 23 Februari silam.",
+        postLink: "https://www.ototrend.com/oto-info/132-oto-mania/29228-pantai-kelapa-otocontest-1-tuban-perdana-otomotif-dan-pariwisata-bersinergi-dibanjiri-ratusan-peserta-dan-banjir-doorprize",
+
+      },
+      {
+        img: "	https://liputansatu.id/wp-content/uploads/2025/02/IMG_20250215_121419_copy_1200x675-800x450.jpg",
+        title: "Jelang Ramadhan, Pantai Kelapa Tuban Salurkan 300 Paket Bantuan untuk Warga Kurang Mampu",
+        date: "Feb 15, 2025",
+        author: " Assayid Annazili",
+        authorLink: "",
+        subTitle:
+          "Menjelang bulan suci Ramadhan, Kelompok Sadar Wisata (Pokdarwis) Pantai Kelapa, yang berlokasi di Kelurahan Panyuran, Kecamatan Palang, kembali menggelar kegiatan sosial dengan menyalurkan bantuan kepada masyarakat yang membutuhkan. Sebanyak 300 paket bantuan sosial (bansos) dibagikan kepada anak yatim dan warga kurang mampu di sekitar kawasan Pantai Kelapa, Sabtu (15/02/25).",
+        postLink: "https://liputansatu.id/jelang-ramadhan-pantai-kelapa-tuban-salurkan-300-paket-bantuan-untuk-warga-kurang-mampu/",
+
+      },
+
+      {
+        img: "images/blog1.jpg",
+        title: "Raih Penghargaan Terbaik EJTA 2023",
+        date: "Oct 31, 2023",
+        author: "Pokdawis Pantai Kelapa",
+        authorLink: "",
+        subTitle:
+          "Segala puji syukur kepada Tuhan yang maha Esa, diawali dari niat untuk meningkatkan ekonomi dan manfaat kepada masyarakat sampai dapat membawa nama harum KOTA TUBAN… Pantai Kelapa meraih penghargaan East Java Tourism Award (EJTA) 2023 TERBAIK kategori Wisata Alam Buatan Pengelola Kelompok Masyarakat.",
+        postLink: "/post/post_details",
+        truncateText: 'Raih Penghargaan Terbaik...'
+      },
+      // {
+      //   img: "images/blog2.jpg",
+      //   title: "Pantai Kelapa di Detikcom",
+      //   date: "Aug 22, 2020",
+      //   author: "Detik.com",
+      //   authorLink: "",
+      //   subTitle:
+      //     "Tuban di Jawa Timur yang dikenal sebagai kota santri banyak memiliki kawasan wisata religi. Namun rupanya tak itu saja. Tuban juga memiliki wisata pantai yang asri dan eksotis, yakni Pantai Kelapa. Destinasi wisata ini telah cukup lama dikenal oleh masyarakat sekitar Tuban.",
+      //   postLink: "/post/post_details",
+      //   truncateText: 'Pantai Kelapa di Detikcom...'
+      // },
     ];
 
   const brandData = [
