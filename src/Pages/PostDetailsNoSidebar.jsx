@@ -50,6 +50,7 @@ const PostDetailsNoSidebar = () => {
                                 By <Link>Pokdarwis</Link>
                             </span>
                             <span>Apr 21, 2025</span>
+
                         </div>
                         <div className="st-height-b20 st-height-lg-b20" />
                         <div className="st-hero-btn-group">
@@ -65,7 +66,7 @@ const PostDetailsNoSidebar = () => {
                     </div>
                 </div>
             </div>
-            {/* .st-page-heading */}
+            {/* .st-page-heading oke */}
             <div className="st-height-b20 st-height-lg-b80" />
             <div className="container">
                 <div className="row">
