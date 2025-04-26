@@ -55,6 +55,11 @@ const Home = () => {
     {
       title: t("Hero.title11"),
       subTitle: t("Hero.subTitle1"),
+      bgImg: '/images/garam/bg-garam3.jpg',
+    },
+    {
+      title: t("Hero.title11"),
+      subTitle: t("Hero.subTitle1"),
       bgImg: '/images/hero-bg.jpg',
     },
     {
@@ -533,6 +538,17 @@ const Home = () => {
       //   postLink: "https://harianbangsa.net/tda-jatim-1-gelar-family-fun-camp-bersama-keluarga-begini-tujuannya",
       // 
       // },
+      {
+        img: "/images/garam/garam-ed3.jpg",
+        title: "Proses Edukasi Pembuatan Garam: Dari Air Laut Menjadi Kristal Garam Berkualitas",
+        date: "Apr 21, 2025",
+        author: " Pantai Kelapa",
+        authorLink: "",
+        subTitle:
+          "Pengelola Wisata Pantai Kelapa terus berkomitmen untuk memberikan pelayanan yang terbaik untuk pengunjung, dengan memberikan fasilitas-fasilitas yang dapat menunjang kenyamanan ataupun keamanan bagi para wisatawan. Salah satunya, dengan menghadirkan Green House Salt Tunnel di wisata tersebut.",
+        postLink: "/post/gst",
+
+      },
       {
         img: "https://www.ototrend.com/images/2025/02/24/IMG_20250224_221110.jpg",
         title: "Pantai Kelapa Otocontest #1 – Tuban: Perdana, Otomotif dan Pariwisata Bersinergi, Dibanjiri Ratusan Peserta dan Banjir Doorprize.",

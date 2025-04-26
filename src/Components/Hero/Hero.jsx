@@ -6,6 +6,7 @@ import parser from 'html-react-parser';
 import { Link as ScrollLink } from 'react-scroll';
 import { TypeAnimation } from 'react-type-animation';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 const Hero3 = ({ data }) => {
   const { t } = useTranslation();
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
@@ -71,12 +72,15 @@ const Hero3 = ({ data }) => {
                       >
                         {t("Hero.hTitle")}
                       </ScrollLink>
-                      <ScrollLink
+                      {/* <ScrollLink
                         to="about"
                         className="st-btn st-style1 st-size-medium st-color3 st-smooth-move"
                       >
                         {t("Hero.hSubTitle")}
-                      </ScrollLink>
+                      </ScrollLink> */}
+                      <Link to="/post/GST" className="st-btn st-style1 st-size-medium st-color3 st-smooth-move">
+                        GST Pantai Kelapa
+                      </Link>
                     </div>
                     <div className="st-height-b15 st-height-lg-b15" />
                   </div>

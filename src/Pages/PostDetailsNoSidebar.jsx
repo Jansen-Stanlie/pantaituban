@@ -8,7 +8,7 @@ const PostDetailsNoSidebar = () => {
     const postImages = [
         { img: '/images/garam/garam1.png' },
         { img: '/images/garam/garam2.png' },
-        { img: '/images/garam/bg-garam4.jpg' },
+        { img: '/images/garam/garam3.png' },
     ];
     const postImages2 = [
         { img: '/images/garam/garam-ed1.jpg' },
@@ -16,6 +16,7 @@ const PostDetailsNoSidebar = () => {
         { img: '/images/garam/garam-ed3.jpg' },
         { img: '/images/garam/garam-ed4.jpg' },
         { img: '/images/garam/garam-ed5.jpg' },
+        { img: '/images/garam/bg-garam4.jpg' },
     ];
     const settings = {
         dots: true,
