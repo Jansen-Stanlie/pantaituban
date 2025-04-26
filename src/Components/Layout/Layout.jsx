@@ -60,8 +60,17 @@ const Layout = () => {
             rel="noopener noreferrer"
             className="whatsapp-float"
           >
-            <i className="fab fa-whatsapp my-float"></i> {/* Font Awesome icon */}
+            <i className="fab fa-whatsapp my-float"></i>
           </a>
+          {/* <a
+            href="/files/sample.pdf"
+            download
+            className="download-float"
+            title="Download PDF"
+          >
+            <i className="fas fa-file-pdf my-float"></i>
+
+          </a> */}
         </>
       )} {showScrollToTop && (
         <button onClick={(e) => {

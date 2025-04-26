@@ -4,6 +4,7 @@ import PostPage from "./Pages/Multipage/PostPage";
 import Layout from "./Components/Layout/Layout";
 import Home from "./Pages/Home";
 import PostDetails from "./Pages/PostDetails";
+import PostDetailsNoSidebar from "./Pages/PostDetailsNoSidebar";
 import PageNotFound from "./Components/404/PageNotFound";
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="post/:postId" element={<PostDetails />} />
         <Route path="post/postrecap" element={<PostPage />} />
+        <Route path="post/postgaram" element={<PostDetailsNoSidebar />} />
       </Route>
 
       {/* 404 route should be outside Layout */}

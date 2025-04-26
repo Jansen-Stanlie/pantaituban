@@ -114,6 +114,50 @@ hr {
   left: 0;
   overflow: hidden;
 }
+.download-float {
+  position: fixed;
+  width: 65px; /* Slightly larger */
+  height: 65px;
+  bottom: 30px;
+  right: 30px;
+  background-color: #f44336;
+  color: white;
+  border-radius: 50%;
+  font-size: 24px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  animation: pulse 1.5s infinite; /* Add a pulse animation */
+  text-align: center;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.download-float:hover {
+  background-color: #d32f2f;
+}
+.download-float-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #febd19;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  z-index: 9999;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  animation: pulse 1.5s infinite;
+}
+
+.download-float-button:hover {
+  background-color: #febd19;
+}
+
 .whatsapp-float {
   position: fixed;
   width: 65px; /* Slightly larger */

@@ -131,6 +131,7 @@ const Header = ({ data }) => {
                     <ul>
                       <li>
                         <Link to="/post/post_details">View Full Post Details</Link>
+                        <Link to="/post/postgaram">Blog Garam</Link>
                       </li>
                     </ul>
                   </li>
