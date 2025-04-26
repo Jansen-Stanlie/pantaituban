@@ -21,7 +21,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="post/:postId" element={<PostDetails />} />
         <Route path="post/postrecap" element={<PostPage />} />
-        <Route path="post/postgaram" element={<PostDetailsNoSidebar />} />
+        <Route path="post/gst" element={<PostDetailsNoSidebar />} />
       </Route>
 
       {/* 404 route should be outside Layout */}
