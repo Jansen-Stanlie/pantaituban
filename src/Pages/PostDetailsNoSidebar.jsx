@@ -55,7 +55,7 @@ const PostDetailsNoSidebar = () => {
                         <div className="st-height-b20 st-height-lg-b20" />
                         <div className="st-hero-btn-group">
                             <a
-                                href="/files/sample.pdf"
+                                href="/files/Panduan Eduwisata GST Pantai Kelapa.pdf"
                                 download
                                 className="st-btn st-style1 st-size-medium st-color1"
                             >
@@ -234,7 +234,7 @@ const PostDetailsNoSidebar = () => {
                 </div>
             </div >
             <a
-                href="/files/sample.pdf"
+                href="/files/Panduan Eduwisata GST Pantai Kelapa.pdf"
                 download
                 className="download-float-button"
             >
