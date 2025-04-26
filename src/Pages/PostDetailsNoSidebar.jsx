@@ -241,7 +241,7 @@ const PostDetailsNoSidebar = () => {
                 <Icon icon="mdi:download" style={{ marginRight: "8px" }} />
                 Download Panduan
             </a>
-            {/* <div className="st-height-b100 st-height-lg-b80" /> */}
+            {/* <div className="st-height-b100 st-height-lg-b80"  />  yo*/}
         </div >
     );
 };
