@@ -11,7 +11,7 @@
     background-position: center;
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       top: 0;
@@ -124,7 +124,7 @@
 }
 .embed-responsive::before {
   display: block;
-  content: '';
+  content: "";
 }
 .embed-responsive .embed-responsive-item,
 .embed-responsive embed,
@@ -227,7 +227,7 @@
 }
 
 .st-video-popup-content:after {
-  content: '';
+  content: "";
   display: inline-block;
   height: 100%;
   vertical-align: middle;
@@ -276,7 +276,7 @@
 }
 
 .st-video-popup-close:before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 50%;
@@ -294,7 +294,7 @@
 }
 
 .st-video-popup-close:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 50%;

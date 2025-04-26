@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Hero from "../Components/Hero/Hero";
 import LocationInMap from "../Components/Map/LocationInMap";
 import Contact from "../Components/Contact/Contact";
@@ -19,6 +19,7 @@ import BeforeAfter from "../Components/BeforeAfter/BeforeAfter";
 import MasonryGallery from "../Components/Gallery/Gallery";
 import { Analytics } from '@vercel/analytics/react'
 import { useTranslation } from 'react-i18next';
+import VideoModal from '../Components/VideoModal/VideoModal';
 
 const Home = () => {
   // const heroData = {
@@ -602,10 +603,28 @@ const Home = () => {
       img: "images/client1.png",
     },
   ];
+  const videoBlockData = {
+    "videoSrc": 'https://www.youtube.com/embed/6rsq1jodaMU?si=hvQ2lSabop7PFfzW',
+  }
 
   const mapLocationURL =
     "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d63375.21794269388!2d112.089161!3d-6.89645!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e77bdc4b920f3cd%3A0x97bbfe219b26599!2sPantai%20Kelapa%20Tuban!5e0!3m2!1sid!2sid!4v1710796156138!5m2!1sid!2sid";
 
+  const [iframeSrc, setIframeSrc] = useState('about:blank');
+  const [toggle, setToggle] = useState(false);
+
+  const handelClick = () => {
+    setIframeSrc(`${videoBlockData.videoSrc}`);
+    setToggle(!toggle);
+  };
+  useEffect(() => {
+    // Auto buka modal setelah page load
+    setToggle(true);
+  }, []);
+  const handelClose = () => {
+    setIframeSrc('about:blank');
+    setToggle(!toggle);
+  };
   return (
     <>
       <Hero data={heroData} />
@@ -628,6 +647,7 @@ const Home = () => {
       {/* <BrandSlider data={brandData} /> */}
       <Contact />
       <LocationInMap data={mapLocationURL} />
+      <VideoModal isTrue={toggle} iframeSrc={videoBlockData.videoSrc} handelClose={handelClose} />
     </>
   );
 };
