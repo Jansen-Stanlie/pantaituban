@@ -1,14 +1,45 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Post4 from "./Post4";
 
-const PostWrapper4 = ({ data }) => {
-  const postsPerPage = 6;
+const PostWrapper4 = () => {
+  const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 6;
 
-  const totalPages = Math.ceil(data.length / postsPerPage);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(
+          "http://localhost:3000/api/pages/post/public?page=1&limit=100&sortBy=publishedAt&order=desc&isPublished=true&isDeleted=false"
+        );
+        const json = await res.json();
+        const formatted = (json?.data?.posts || []).map((post) => ({
+          img: post.img,
+          title: post.title,
+          date: new Date(post.publishedAt).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          }),
+          author: post.author?.name || "Unknown",
+          authorLink: "",
+          subTitle: post.subTitle,
+          postLink: post.postLink,
+          truncateText: post.truncateText || post.subTitle?.slice(0, 100) + "...",
+        }));
+        setPosts(formatted);
+      } catch (error) {
+        console.error("Error fetching posts:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const totalPages = Math.ceil(posts.length / postsPerPage);
   const startIndex = (currentPage - 1) * postsPerPage;
-  const currentPosts = data.slice(startIndex, startIndex + postsPerPage);
+  const currentPosts = posts.slice(startIndex, startIndex + postsPerPage);
 
   const handleNext = () => {
     if (currentPage < totalPages) {
@@ -82,7 +113,7 @@ const PostWrapper4 = ({ data }) => {
             <div className="st-widget st-sidebar-widget">
               <h3 className="st-widget-title">Recent Posts</h3>
               <ul className="st-post-widget-list st-mp0">
-                {data.slice(0, 3).map((elements, index) => (
+                {posts.slice(0, 3).map((elements, index) => (
                   <li key={index}>
                     <div className="st-post st-style1">
                       <Link to={elements.postLink} className="st-post-thumb st-zoom">

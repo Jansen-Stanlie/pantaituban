@@ -5,6 +5,7 @@ import { Icon } from '@iconify/react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 const PostWrapper = ({ data }) => {
+  console.log("data", data);
   const { t } = useTranslation();
   const post = data.slice(0, 3);
   return (
@@ -33,7 +34,7 @@ const PostWrapper = ({ data }) => {
 
         )}
       </div>
-      <div className="st-height-b120 st-height-lg-b80" />
+      {/* <div className="st-height-b120 st-height-lg-b80" /> */}
     </section>
   )
 }
