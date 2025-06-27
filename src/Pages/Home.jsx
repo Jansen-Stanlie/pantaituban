@@ -22,6 +22,38 @@ import { useTranslation } from 'react-i18next';
 import VideoModal from '../Components/VideoModal/VideoModal';
 
 const Home = () => {
+  const [latestPosts, setLatestPosts] = useState([])
+  useEffect(() => {
+    const fetchLatestPosts = async () => {
+      try {
+        const res = await fetch('https://pantaikelapa-panel.my.id/api/pages/post/public?page=1&limit=3&sortBy=publishedAt&order=desc&isPublished=true&isDeleted=false')
+        const json = await res.json()
+
+        // 👉 Restructure sesuai kebutuhan frontend
+        const formattedPosts = (json?.data?.posts || []).map(post => ({
+          img: post.img,
+          title: post.title,
+          date: new Date(post.publishedAt).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          }),
+          author: post.author?.name || 'Unknown',
+          authorLink: '', // kosong karena data tidak ada
+          subTitle: post.subTitle,
+          postLink: post.postLink,
+          truncateText: post.truncateText || post.subTitle?.slice(0, 80) + '...'
+        }))
+
+        setLatestPosts(formattedPosts)
+      } catch (error) {
+        console.error('❌ Error fetching posts:', error)
+      }
+    }
+
+    fetchLatestPosts()
+  }, [])
+
   // const heroData = {
   //   bgImg: "images/hero-bg.jpg",
   //   bgShape: "shape/hero-shape.png",
@@ -630,10 +662,11 @@ const Home = () => {
       <Hero data={heroData} />
       <Iconbox data={iconboxData} />
       <About data={aboutData} />
+      <PostWrapper data={latestPosts} />
       <Department />
       {/* <Appointment /> */}
       <About4 data={aboutData2} data1={specialistData} />
-      {/* <SpecialistsSlider data={specialistDatas} /> */}
+      {/* <SpecialistsSlider data={specialistData} /> */}
       <hr />
       <MasonryGallery />
       {/* <BeforeAfter data={beforeAfterData} /> */}
@@ -643,7 +676,8 @@ const Home = () => {
       <PriceSlider data={priceData} />
       <Accordion data={faqData} />
       <Newsletter data={newsletterData} />
-      <PostWrapper data={postData} />
+
+
       {/* <BrandSlider data={brandData} /> */}
       <Contact />
       <LocationInMap data={mapLocationURL} />
