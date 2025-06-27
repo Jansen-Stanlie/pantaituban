@@ -26,7 +26,7 @@ const Home = () => {
   useEffect(() => {
     const fetchLatestPosts = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/pages/post/public?page=1&limit=3&sortBy=publishedAt&order=desc&isPublished=true&isDeleted=false')
+        const res = await fetch('https://pantaikelapa-panel.my.id/api/pages/post/public?page=1&limit=3&sortBy=publishedAt&order=desc&isPublished=true&isDeleted=false')
         const json = await res.json()
 
         // 👉 Restructure sesuai kebutuhan frontend

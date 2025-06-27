@@ -11,7 +11,7 @@ const PostWrapper4 = () => {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          "http://localhost:3000/api/pages/post/public?page=1&limit=100&sortBy=publishedAt&order=desc&isPublished=true&isDeleted=false"
+          "https://pantaikelapa-panel.my.id/api/pages/post/public?page=1&limit=100&sortBy=publishedAt&order=desc&isPublished=true&isDeleted=false"
         );
         const json = await res.json();
         const formatted = (json?.data?.posts || []).map((post) => ({
