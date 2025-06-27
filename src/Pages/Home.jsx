@@ -633,7 +633,7 @@ const Home = () => {
       <Department />
       {/* <Appointment /> */}
       <About4 data={aboutData2} data1={specialistData} />
-      {/* <SpecialistsSlider data={specialistData} /> */}
+      {/* <SpecialistsSlider data={specialistDatas} /> */}
       <hr />
       <MasonryGallery />
       {/* <BeforeAfter data={beforeAfterData} /> */}
