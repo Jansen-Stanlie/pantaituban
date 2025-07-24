@@ -23,6 +23,9 @@ import VideoModal from '../Components/VideoModal/VideoModal';
 
 const Home = () => {
   const [latestPosts, setLatestPosts] = useState([])
+  const [latestVideo, setLatestVideo] = useState(null)
+  const [toggle, setToggle] = useState(false)
+  const [iframeSrc, setIframeSrc] = useState('about:blank')
   useEffect(() => {
     const fetchLatestPosts = async () => {
       try {
@@ -53,6 +56,34 @@ const Home = () => {
 
     fetchLatestPosts()
   }, [])
+
+  // Fetch video terbaru
+  useEffect(() => {
+    const fetchLatestVideo = async () => {
+      try {
+        const res = await fetch('http://localhost:3000/api/pages/playback/public');
+        const json = await res.json();
+        if (json?.data?.videoUrl) {
+          const url = new URL(json.data.videoUrl);
+          const v = new URLSearchParams(url.search).get('v');
+          if (v) {
+            setLatestVideo(`https://www.youtube.com/embed/${v}?autoplay=1`);
+          }
+        }
+      } catch (err) {
+        console.error('❌ Error fetching latest video:', err);
+      }
+    };
+    fetchLatestVideo();
+  }, []);
+
+  // Tampilkan modal jika video ready
+  useEffect(() => {
+    if (latestVideo) {
+      setIframeSrc(latestVideo);
+      setToggle(true);
+    }
+  }, [latestVideo]);
 
   // const heroData = {
   //   bgImg: "images/hero-bg.jpg",
@@ -642,8 +673,7 @@ const Home = () => {
   const mapLocationURL =
     "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d63375.21794269388!2d112.089161!3d-6.89645!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e77bdc4b920f3cd%3A0x97bbfe219b26599!2sPantai%20Kelapa%20Tuban!5e0!3m2!1sid!2sid!4v1710796156138!5m2!1sid!2sid";
 
-  const [iframeSrc, setIframeSrc] = useState('about:blank');
-  const [toggle, setToggle] = useState(false);
+
 
   const handelClick = () => {
     setIframeSrc(`${videoBlockData.videoSrc}`);
@@ -681,7 +711,11 @@ const Home = () => {
       {/* <BrandSlider data={brandData} /> */}
       <Contact />
       <LocationInMap data={mapLocationURL} />
-      <VideoModal isTrue={toggle} iframeSrc={videoBlockData.videoSrc} handelClose={handelClose} />
+      <VideoModal
+        isTrue={toggle}
+        iframeSrc={iframeSrc}
+        handelClose={handelClose}
+      />
     </>
   );
 };
