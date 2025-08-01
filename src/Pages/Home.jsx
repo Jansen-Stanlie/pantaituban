@@ -61,7 +61,7 @@ const Home = () => {
   useEffect(() => {
     const fetchLatestVideo = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/pages/playback/public');
+        const res = await fetch('https://pantaikelapa-panel.my.id/api/pages/playback/public');
         const json = await res.json();
         if (json?.data?.videoUrl) {
           const url = new URL(json.data.videoUrl);
