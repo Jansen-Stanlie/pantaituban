@@ -133,11 +133,11 @@ const Footer = ({ data, varient }) => {
                   </li>
                   <li>
                     <a
-                      href="mailto:pokdarwis@pantaikelapa.com"
+                      href="mailto:pantaikelapatuban@gmail.com"
                       className="text-slate-400"
                     >
                       <span className="st-footer-contact-title">Email:</span>{" "}
-                      pokdarwis@pantaikelapa.com
+                      pantaikelapatuban@gmail.com
                     </a>
                   </li>
                   <li>
