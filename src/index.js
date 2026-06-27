@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-import { HashRouter } from "react-router-dom";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./sass/style.scss";
 import "./sass/custom.scss";
@@ -15,5 +15,5 @@ root.render(
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
