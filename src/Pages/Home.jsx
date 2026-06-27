@@ -18,10 +18,10 @@ import Funfact from "../Components/Funfact/Funfact";
 // import BeforeAfter from "../Components/BeforeAfter/BeforeAfter";
 import MasonryGallery from "../Components/Gallery/Gallery";
 import { useTranslation } from "react-i18next";
-
+import UpcomingEvents from "../Components/UpcomingEvents/UpcomingEvents";
 // ✅ pakai modal carousel yang support VIDEO + IMAGE
 import MediaCarouselModal from "../Components/VideoModal/MediaCarouselModal";
-
+import EventCalendar from "../Components/EventCalendar/EventCalendar";
 // --- helpers ---
 const safeJson = async (res) => {
   try {
@@ -33,7 +33,7 @@ const safeJson = async (res) => {
 
 const Home = () => {
   const { t } = useTranslation();
-
+  const [upcomingEvents, setUpcomingEvents] = useState([]);
   // posts
   const [latestPosts, setLatestPosts] = useState([]);
 
@@ -74,7 +74,39 @@ const Home = () => {
         console.error("❌ Error fetching posts:", error);
       }
     };
+    const fetchEvents = async () => {
+      try {
+        const res = await fetch(
 
+          "https://pantaikelapa-panel.my.id/api/apps/calendar/public/events?upcoming=true&limit=3"
+        );
+
+        if (!res.ok) {
+
+          throw new Error(
+            "Cannot fetch event"
+          );
+        }
+
+        const json = await safeJson(res);
+
+        console.log(
+          "EVENTS",
+          json
+        );
+
+        setUpcomingEvents(
+          json?.data || []
+        );
+      }
+      catch (err) {
+        console.error(
+          err
+        );
+      }
+
+    }
+    fetchEvents();
     fetchLatestPosts();
   }, []);
 
@@ -83,8 +115,8 @@ const Home = () => {
     const fetchFeaturedMedia = async () => {
       try {
         // ✅ production endpoint
-        const res = await fetch("https://pantaikelapa-panel.my.id/api/pages/playback/public");
-        // const res = await fetch("http://localhost:3000/api/pages/playback/public");
+        // const res = await fetch("https://pantaikelapa-panel.my.id/api/pages/playback/public");
+        const res = await fetch("http://localhost:3000/api/pages/playback/public");
 
         const json = await safeJson(res);
 
@@ -248,6 +280,10 @@ const Home = () => {
   return (
     <>
       <Hero data={heroData} />
+      <UpcomingEvents
+        data={upcomingEvents}
+      />
+      <EventCalendar data={upcomingEvents} />
       <Iconbox data={iconboxData} />
       <About data={aboutData} />
       <PostWrapper data={latestPosts} />
