@@ -2,12 +2,12 @@ import React from "react";
 import parse from "html-react-parser";
 import SectionHeading from "../SectionHeading/SectionHeading";
 
-import LanguageSelector from "../LanguageSelector/language-selector";
+// import LanguageSelector from "../LanguageSelector/language-selector";
 import { useTranslation } from 'react-i18next';
 const About = ({ data }) => {
   const { title, subTitle, avater, timeTable, contact } = data;
   const { t } = useTranslation();
-  const { line1, line2 } = t("description", { channel: "RoadsideCoder" });
+  // const { line1, line2 } = t("description", { channel: "RoadsideCoder" });
   return (
     <section className="st-about-wrap" id="about">
       <div className="st-shape-bg">
