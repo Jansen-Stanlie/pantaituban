@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useRef } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 // --- helpers youtube -> embed ---
 const getYoutubeId = (input) => {
@@ -19,7 +19,6 @@ const toEmbedUrl = (youtubeUrl, autoplay = true) => {
     if (!id) return null;
 
     const base = `https://www.youtube.com/embed/${id}`;
-    // autoplay sering butuh mute
     if (!autoplay) return base;
     return `${base}?autoplay=1&mute=1&playsinline=1`;
 };
@@ -41,6 +40,13 @@ export default function MediaCarouselModal({
     const len = list.length;
     const idx = clampIndex(activeIndex, len);
     const active = len ? list[idx] : null;
+
+    const [imgError, setImgError] = useState(false);
+
+    // reset error state tiap kali pindah item
+    useEffect(() => {
+        setImgError(false);
+    }, [idx]);
 
     // ---------- keyboard ----------
     useEffect(() => {
@@ -90,7 +96,6 @@ export default function MediaCarouselModal({
 
         startRef.current.active = false;
 
-        // swipe horizontal: dx besar, dy kecil
         const absX = Math.abs(dx);
         const absY = Math.abs(dy);
 
@@ -115,10 +120,20 @@ export default function MediaCarouselModal({
         if (!active) return null;
 
         if (active.type === "VIDEO") {
-            const embed = toEmbedUrl(active.url, true) || "about:blank";
+            const embed = toEmbedUrl(active.url, true);
+
+            if (!embed) {
+                return (
+                    <div className="mcm-media error">
+                        <p>Video tidak valid.</p>
+                    </div>
+                );
+            }
+
             return (
                 <div className="mcm-media video">
                     <iframe
+                        key={active.url} // ✅ force reload iframe tiap ganti video
                         className="mcm-iframe"
                         title={active.title || "Video"}
                         src={embed}
@@ -130,31 +145,61 @@ export default function MediaCarouselModal({
         }
 
         // IMAGE
+        if (imgError) {
+            return (
+                <div className="mcm-media error">
+                    <p>Gambar gagal dimuat.</p>
+                </div>
+            );
+        }
+
         return (
             <div className="mcm-media image">
-                <img className="mcm-img" src={active.url} alt={active.title || "Image"} />
+                <img
+                    className="mcm-img"
+                    src={active.url}
+                    alt={active.title || "Image"}
+                    onError={() => setImgError(true)}
+                />
             </div>
         );
-    }, [active]);
+    }, [active, imgError]);
 
     if (!isTrue) return null;
+    if (!len) return null; // ✅ jangan render modal kosong sama sekali
 
     return (
         <div
             className="mcm-modal"
             aria-modal="true"
             role="dialog"
-            onClick={handelClose}   // ✅ klik di luar = close
+            onClick={handelClose}
         >
             <div className="mcm-overlay" />
 
             <div className="mcm-center">
                 <div
                     className="mcm-stage"
-                    onClick={(e) => e.stopPropagation()} // ✅ klik di dalam frame = tidak close
+                    onClick={(e) => e.stopPropagation()}
                     onTouchStart={onTouchStart}
                     onTouchEnd={onTouchEnd}
                 >
+                    {/* ✅ tombol close */}
+                    <button
+                        className="mcm-close"
+                        onClick={handelClose}
+                        aria-label="Close"
+                    >
+                        ✕
+                    </button>
+
+                    {/* ✅ index counter */}
+                    {len > 1 && (
+                        <div className="mcm-counter">
+                            {idx + 1} / {len}
+                        </div>
+                    )}
+
                     {len > 1 && (
                         <>
                             <button className="mcm-arrow left" onClick={prev} aria-label="Previous">‹</button>
@@ -166,7 +211,6 @@ export default function MediaCarouselModal({
                 </div>
             </div>
 
-            {/* ✅ CSS in same file */}
             <style>{`
         .mcm-modal{
           position: fixed;
@@ -188,7 +232,6 @@ export default function MediaCarouselModal({
           padding: 16px;
         }
 
-        /* stage dibuat "shrink to content" biar ga ada hitam samping */
         .mcm-stage{
           position: relative;
           display: inline-block;
@@ -196,14 +239,13 @@ export default function MediaCarouselModal({
           max-height: 78vh;
           border-radius: 14px;
           overflow: hidden;
-          background: transparent; /* ✅ hilangin hitam */
+          background: transparent;
         }
 
-        /* VIDEO fixed ratio */
         .mcm-media.video{
           width: min(92vw, 980px);
           aspect-ratio: 16/9;
-          background: #000; /* video ok hitam tipis */
+          background: #000;
         }
         .mcm-iframe{
           width: 100%;
@@ -212,12 +254,11 @@ export default function MediaCarouselModal({
           display: block;
         }
 
-        /* IMAGE mengikuti dimensi asli tapi dibatasi viewport */
         .mcm-media.image{
           display: flex;
           align-items: center;
           justify-content: center;
-          background: transparent; /* ✅ hilangin hitam */
+          background: transparent;
         }
         .mcm-img{
           display: block;
@@ -229,7 +270,53 @@ export default function MediaCarouselModal({
           border-radius: 14px;
         }
 
-        /* arrows */
+        .mcm-media.error{
+          width: min(92vw, 600px);
+          height: 200px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #1a1a1a;
+          color: #fff;
+          border-radius: 14px;
+          text-align: center;
+          padding: 16px;
+        }
+
+        .mcm-close{
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          width: 38px;
+          height: 38px;
+          border-radius: 999px;
+          border: none;
+          background: rgba(0,0,0,0.55);
+          color: #fff;
+          font-size: 18px;
+          line-height: 1;
+          display: grid;
+          place-items: center;
+          z-index: 25;
+          cursor: pointer;
+        }
+        .mcm-close:active{
+          transform: scale(0.95);
+        }
+
+        .mcm-counter{
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          padding: 6px 12px;
+          border-radius: 999px;
+          background: rgba(0,0,0,0.55);
+          color: #fff;
+          font-size: 13px;
+          z-index: 25;
+          user-select: none;
+        }
+
         .mcm-arrow{
           position: absolute;
           top: 50%;

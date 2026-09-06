@@ -111,21 +111,28 @@ const Home = () => {
   }, []);
 
   // -------- fetch featured media (VIDEO + IMAGE) --------
+  // -------- fetch featured media (VIDEO + IMAGE) --------
   useEffect(() => {
     const fetchFeaturedMedia = async () => {
       try {
-        // ✅ production endpoint
-        // const res = await fetch("https://pantaikelapa-panel.my.id/api/pages/playback/public");
-        const res = await fetch("https://pantaikelapa-panel.my.id/api/apps/media/public?page=1&limit=3&sortBy=publishedAt&order=desc&isPublished=true");
+        const res = await fetch(
+          "https://pantaikelapa-panel.my.id/api/apps/media/public?page=1&limit=10&sortBy=publishedAt&order=desc&isPublished=true&isFeatured=true"
+        );
+
+        if (!res.ok) {
+          throw new Error(`Failed to fetch media: ${res.status}`);
+        }
 
         const json = await safeJson(res);
-
         console.log("✅ featured media:", json);
 
-        const topVideo = json?.data?.top?.VIDEO || [];
-        const topImage = json?.data?.top?.IMAGE || [];
+        // ✅ API sekarang balikin array flat di `data`, bukan { top: { VIDEO, IMAGE } }
+        const items = Array.isArray(json?.data) ? json.data : [];
 
-        // merge + stable sort
+        const topVideo = items.filter((x) => x?.type === "VIDEO");
+        const topImage = items.filter((x) => x?.type === "IMAGE");
+
+        // merge + stable sort (sortOrder asc, lalu createdAt desc)
         const merged = [...topVideo, ...topImage].sort((a, b) => {
           const so = (a?.sortOrder ?? 0) - (b?.sortOrder ?? 0);
           if (so !== 0) return so;
