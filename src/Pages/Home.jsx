@@ -47,7 +47,7 @@ const Home = () => {
     const fetchLatestPosts = async () => {
       try {
         const res = await fetch(
-          "https://pantaikelapa-panel.my.id/api/pages/post/public?page=1&limit=3&sortBy=publishedAt&order=desc&isPublished=true&isDeleted=false"
+          "https://pantaikelapa-panel.my.id/api/apps/media/public?page=1&limit=3&sortBy=publishedAt&order=desc&isPublished=true"
         );
         const json = await safeJson(res);
 
