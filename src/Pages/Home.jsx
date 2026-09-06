@@ -47,7 +47,7 @@ const Home = () => {
     const fetchLatestPosts = async () => {
       try {
         const res = await fetch(
-          "https://pantaikelapa-panel.my.id/api/apps/media/public?page=1&limit=3&sortBy=publishedAt&order=desc&isPublished=true"
+          "https://pantaikelapa-panel.my.id/api/pages/post/public?page=1&limit=3&sortBy=publishedAt&order=desc&isPublished=true&isDeleted=false"
         );
         const json = await safeJson(res);
 
@@ -116,7 +116,7 @@ const Home = () => {
       try {
         // ✅ production endpoint
         // const res = await fetch("https://pantaikelapa-panel.my.id/api/pages/playback/public");
-        const res = await fetch("http://localhost:3000/api/pages/playback/public");
+        const res = await fetch("https://pantaikelapa-panel.my.id/api/apps/media/public?page=1&limit=3&sortBy=publishedAt&order=desc&isPublished=true");
 
         const json = await safeJson(res);
 
