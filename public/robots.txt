@@ -1,7 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-allow: *
+Allow: /
 
-# Optional: Limit crawl rate if needed
-Crawl-delay: 5
 Sitemap: https://www.pantaikelapa.com/sitemap.xml

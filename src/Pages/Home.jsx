@@ -1,326 +1,420 @@
-import React, { useEffect, useState, useMemo, useCallback } from "react";
-import Hero from "../Components/Hero/Hero";
-import LocationInMap from "../Components/Map/LocationInMap";
-import Contact from "../Components/Contact/Contact";
-import Department from "../Components/Department/Department";
-// import Appointment from "../Components/Appointment/Appointment";
-import About from "../Components/About/About";
-import About4 from "../Components/About/About4";
-import Iconbox from "../Components/Iconbox/Iconbox";
-import PostWrapper from "../Components/Post/PostWrapper";
-// import SpecialistsSlider from "../Components/Slider/SpecialistsSlider";
-import TestimonialSlider from "../Components/Slider/TestimonialSlider";
-// import BrandSlider from "../Components/Slider/BrandSlider";
-import Newsletter from "../Components/Newsletter/Newsletter";
-import Accordion from "../Components/Accordion/Accordion";
-import PriceSlider from "../Components/Slider/PriceSlider";
-import Funfact from "../Components/Funfact/Funfact";
-// import BeforeAfter from "../Components/BeforeAfter/BeforeAfter";
-import MasonryGallery from "../Components/Gallery/Gallery";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import UpcomingEvents from "../Components/UpcomingEvents/UpcomingEvents";
-// ✅ pakai modal carousel yang support VIDEO + IMAGE
-import MediaCarouselModal from "../Components/VideoModal/MediaCarouselModal";
-import EventCalendar from "../Components/EventCalendar/EventCalendar";
-// --- helpers ---
-const safeJson = async (res) => {
-  try {
-    return await res.json();
-  } catch {
-    return null;
-  }
-};
+import {
+  LuArrowRight,
+  LuClock,
+  LuMapPin,
+  LuPlay,
+  LuPlus,
+  LuSailboat,
+  LuSun,
+  LuUtensils,
+} from "react-icons/lu";
+import { FaWhatsapp } from "react-icons/fa6";
+import { COVER_SIZES, Img, NewsCard, Rail, SectionHead } from "../Components/ui";
+import MediaModal from "../Components/MediaModal";
+import Events from "../Components/Events";
+import Contact from "../Components/Contact";
+import {
+  ABOUT_VIDEO,
+  ACTIVITIES,
+  activityLabelKey,
+  FAQ_KEYS,
+  GALLERY,
+  GALLERY_CATEGORIES,
+  TEAM,
+  TESTIMONIALS,
+  WAHANA,
+  wahanaPackageKey,
+} from "../data/content";
+import { NEWS } from "../data/news";
+import { SITE } from "../data/site";
+import { fetchFeaturedMedia, fetchLatestPosts, useRemote } from "../lib/api";
 
-const Home = () => {
+const formatRupiah = (amount) => `Rp${String(amount).replace(/\B(?=(\d{3})+$)/g, ".")}`;
+
+function Hero() {
   const { t } = useTranslation();
-  const [upcomingEvents, setUpcomingEvents] = useState([]);
-  // posts
-  const [latestPosts, setLatestPosts] = useState([]);
-
-  // featured media carousel
-  const [topMedia, setTopMedia] = useState([]);
-  const [activeMediaIndex, setActiveMediaIndex] = useState(0);
-  const [openMediaModal, setOpenMediaModal] = useState(false);
-
-  // -------- fetch posts --------
-  useEffect(() => {
-    const fetchLatestPosts = async () => {
-      try {
-        const res = await fetch(
-          "https://pantaikelapa-panel.my.id/api/pages/post/public?page=1&limit=3&sortBy=publishedAt&order=desc&isPublished=true&isDeleted=false"
-        );
-        const json = await safeJson(res);
-
-        const formattedPosts = (json?.data?.posts || []).map((post) => ({
-          img: post.img,
-          title: post.title,
-          date: post.publishedAt
-            ? new Date(post.publishedAt).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "short",
-              day: "numeric",
-            })
-            : "",
-          author: post.author?.name || "Unknown",
-          authorLink: "",
-          subTitle: post.subTitle,
-          postLink: post.postLink,
-          truncateText:
-            post.truncateText || (post.subTitle ? post.subTitle.slice(0, 80) + "..." : ""),
-        }));
-
-        setLatestPosts(formattedPosts);
-      } catch (error) {
-        console.error("❌ Error fetching posts:", error);
-      }
-    };
-    const fetchEvents = async () => {
-      try {
-        const res = await fetch(
-
-          "https://pantaikelapa-panel.my.id/api/apps/calendar/public/events?upcoming=true&limit=3"
-        );
-
-        if (!res.ok) {
-
-          throw new Error(
-            "Cannot fetch event"
-          );
-        }
-
-        const json = await safeJson(res);
-
-        console.log(
-          "EVENTS",
-          json
-        );
-
-        setUpcomingEvents(
-          json?.data || []
-        );
-      }
-      catch (err) {
-        console.error(
-          err
-        );
-      }
-
-    }
-    fetchEvents();
-    fetchLatestPosts();
-  }, []);
-
-  // -------- fetch featured media (VIDEO + IMAGE) --------
-  // -------- fetch featured media (VIDEO + IMAGE) --------
-  useEffect(() => {
-    const fetchFeaturedMedia = async () => {
-      try {
-        const res = await fetch(
-          "https://pantaikelapa-panel.my.id/api/apps/media/public?page=1&limit=10&sortBy=publishedAt&order=desc&isPublished=true&isFeatured=true"
-        );
-
-        if (!res.ok) {
-          throw new Error(`Failed to fetch media: ${res.status}`);
-        }
-
-        const json = await safeJson(res);
-        console.log("✅ featured media:", json);
-
-        // ✅ API sekarang balikin array flat di `data`, bukan { top: { VIDEO, IMAGE } }
-        const items = Array.isArray(json?.data) ? json.data : [];
-
-        const topVideo = items.filter((x) => x?.type === "VIDEO");
-        const topImage = items.filter((x) => x?.type === "IMAGE");
-
-        // merge + stable sort (sortOrder asc, lalu createdAt desc)
-        const merged = [...topVideo, ...topImage].sort((a, b) => {
-          const so = (a?.sortOrder ?? 0) - (b?.sortOrder ?? 0);
-          if (so !== 0) return so;
-          return new Date(b?.createdAt || 0) - new Date(a?.createdAt || 0);
-        });
-
-        setTopMedia(merged);
-
-        // ✅ default pilih video pertama biar autoplay jalan kalau ada
-        const firstVideoIndex = merged.findIndex((x) => x?.type === "VIDEO");
-        setActiveMediaIndex(firstVideoIndex >= 0 ? firstVideoIndex : 0);
-
-        // ✅ auto open modal kalau ada konten
-        if (merged.length > 0) setOpenMediaModal(true);
-      } catch (err) {
-        console.error("❌ Error fetching featured media:", err);
-      }
-    };
-
-    fetchFeaturedMedia();
-  }, []);
-
-  const activeMedia = useMemo(
-    () => topMedia?.[activeMediaIndex] || null,
-    [topMedia, activeMediaIndex]
+  return (
+    <section id="home" className="hero">
+      <Img className="hero-img" src="/images/hero-bg.jpg" alt="" sizes={COVER_SIZES} priority />
+      <div className="wrap hero-in">
+        <p className="eyebrow">{t("hero.eyebrow")}</p>
+        <h1>{t("hero.title")}</h1>
+        <p className="hero-lead">{t("hero.lead")}</p>
+        <div className="btn-row">
+          <Link to="/#contact" className="btn btn-sun">
+            {t("hero.plan")} <LuArrowRight aria-hidden="true" />
+          </Link>
+          <Link to="/post/gst" className="btn btn-ghost">
+            {t("hero.salt")}
+          </Link>
+        </div>
+      </div>
+    </section>
   );
+}
 
-  // optional: kalau mau tombol manual open
-  const openCarousel = useCallback(() => {
-    if (topMedia.length > 0) setOpenMediaModal(true);
-  }, [topMedia.length]);
+function VisitTicket() {
+  const { t } = useTranslation();
+  return (
+    <div className="wrap">
+      <ul className="ticket">
+        <li>
+          <LuClock aria-hidden="true" />
+          <div>
+            <span>{t("hero.hoursLabel")}</span>
+            <strong>{t("hero.hoursValue")}</strong>
+          </div>
+        </li>
+        <li>
+          <LuMapPin aria-hidden="true" />
+          <div>
+            <span>{t("hero.locationLabel")}</span>
+            <a href={SITE.mapsLink} target="_blank" rel="noopener noreferrer">
+              {t("hero.locationValue")}
+            </a>
+          </div>
+        </li>
+        <li>
+          <FaWhatsapp aria-hidden="true" />
+          <div>
+            <span>{t("hero.contactLabel")}</span>
+            <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer">
+              {SITE.phoneDisplay}
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  );
+}
 
-  // ------------------- UI DATA -------------------
-  const heroData = [
-    {
-      title: t("Hero.title11"),
-      subTitle: t("Hero.subTitle1"),
-      bgImg: "/images/garam/bg-garam3.jpg",
-    },
-    {
-      title: t("Hero.title11"),
-      subTitle: t("Hero.subTitle1"),
-      bgImg: "/images/hero-bg.jpg",
-    },
-    {
-      title: t("Hero.title2"),
-      subTitle: t("Hero.subTitle2"),
-      bgImg: "/images/hero-bg3.jpg",
-    },
+function Activities() {
+  const { t } = useTranslation();
+  const [active, setActive] = useState(0);
+  const item = ACTIVITIES[active];
+  return (
+    <section id="department" className="section">
+      <div className="wrap">
+        <SectionHead eyebrow={t("activities.eyebrow")} title={t("activities.title")} lead={t("activities.lead")} />
+        <div className="activities">
+          <ul className="activity-tabs">
+            {ACTIVITIES.map(({ key }, i) => (
+              <li key={key}>
+                <button type="button" aria-pressed={i === active} onClick={() => setActive(i)}>
+                  {t(`activities.${key}.name`)}
+                </button>
+              </li>
+            ))}
+          </ul>
+          <figure className="activity-panel" key={item.key}>
+            <Img src={item.img} alt={t(`activities.${item.key}.name`)} sizes="(max-width: 900px) 100vw, 800px" />
+            <figcaption>
+              <h3>{t(`activities.${item.key}.name`)}</h3>
+              <p>{t(`activities.${item.key}.desc`)}</p>
+              <Link to="/#contact" state={{ pkg: activityLabelKey(item.key) }} className="text-link">
+                {t("activities.ask")} <LuArrowRight aria-hidden="true" />
+              </Link>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function About({ onPlay }) {
+  const { t } = useTranslation();
+  const highlights = [
+    [LuSun, "highlight1"],
+    [LuSailboat, "highlight2"],
+    [LuUtensils, "highlight3"],
   ];
-
-  const iconboxData = [
-    {
-      bg: "blue",
-      icon: "icons/sun.svg",
-      title: t("iconData.title1"),
-      subTitle: t("iconData.subTitle1"),
-    },
-    {
-      bg: "purple",
-      icon: "icons/surfboard.svg",
-      title: t("iconData.title2"),
-      subTitle: t("iconData.subTitle2"),
-    },
-    {
-      bg: "red",
-      icon: "icons/cocktail.svg",
-      title: t("iconData.title3"),
-      subTitle: t("iconData.subTitle3"),
-    },
+  const facts = [
+    ["4", "fact1"],
+    ["5+", "fact2"],
+    ["Rp10rb+", "fact3"],
   ];
+  return (
+    <section id="about" className="section about">
+      <div className="wrap about-grid">
+        <div>
+          <SectionHead eyebrow={t("about.eyebrow")} title={t("about.title")} lead={t("about.body")} />
+          <ul className="highlights">
+            {highlights.map(([Icon, key]) => (
+              <li key={key}>
+                <Icon aria-hidden="true" />
+                <div>
+                  <h3>{t(`about.${key}`)}</h3>
+                  <p>{t(`about.${key}Text`)}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="about-media">
+          <div className="about-photo">
+            <Img src="/images/hero-bg3.jpg" alt={t("about.photoAlt")} sizes="(max-width: 900px) 100vw, 560px" />
+            <button type="button" className="play-btn" onClick={onPlay} aria-label={t("about.play")}>
+              <LuPlay aria-hidden="true" />
+            </button>
+          </div>
+          <dl className="facts">
+            {facts.map(([value, key]) => (
+              <div key={key}>
+                <dt>{t(`about.${key}`)}</dt>
+                <dd>{value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+    </section>
+  );
+}
 
-  const aboutData2 = {
-    imgSrc: `images/about2.png`,
-    title: t("aboutData2.title1"),
-    textLine: [{ text: t("aboutData2.textline.text1") }, { text: t("aboutData2.textline.text2") }],
-  };
+function Wahana() {
+  const { t } = useTranslation();
+  return (
+    <section id="pricing" className="section">
+      <div className="wrap">
+        <SectionHead eyebrow={t("wahana.eyebrow")} title={t("wahana.title")} lead={t("wahana.lead")} />
+        <Rail label={t("nav.wahana")}>
+          {WAHANA.map((item) => (
+            <article className="poster" key={item.key}>
+              <Img
+                src={item.img}
+                alt={`${t(`wahana.items.${item.key}.name`)}, Pantai Kelapa Tuban`}
+                sizes="(max-width: 640px) 85vw, 420px"
+              />
+              <div className="poster-body">
+                <h3>{t(`wahana.items.${item.key}.name`)}</h3>
+                <p>{t(`wahana.items.${item.key}.desc`)}</p>
+                <div className="poster-foot">
+                  {item.prices && (
+                    <ul className="poster-prices">
+                      {item.prices.map((price) => (
+                        <li key={price.amount}>
+                          <strong>{formatRupiah(price.amount)}</strong>
+                          {price.label && ` ${t(`wahana.${price.label}`)}`}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <Link to="/#contact" state={{ pkg: wahanaPackageKey(item) }} className="text-link">
+                    {t("wahana.reserve")} <LuArrowRight aria-hidden="true" />
+                  </Link>
+                </div>
+              </div>
+            </article>
+          ))}
+        </Rail>
+      </div>
+    </section>
+  );
+}
 
-  const aboutData = {
-    title: t("aboutData.title"),
-    subTitle: t("aboutData.subTitle"),
-    avater: {
-      img: "images/avatar1.png",
-      name: "pokdarwis pantai kelapa",
-      designation: "Contact person",
-    },
-    timeTable: [
-      { day: t("aboutData.timeTable.day1"), startTime: "8:00", endTime: "5:00" },
-      { day: t("aboutData.timeTable.day2"), startTime: "8:00", endTime: "5:00" },
-      { day: t("aboutData.timeTable.day3"), startTime: "8:00", endTime: "5:00" },
-      { day: t("aboutData.timeTable.day4"), startTime: "8:00", endTime: "5:00" },
-      { day: t("aboutData.timeTable.day5"), startTime: "8:00", endTime: "5:00" },
-      { day: t("aboutData.timeTable.day6"), startTime: "8:00", endTime: "5:00" },
-      { day: t("aboutData.timeTable.day7"), startTime: "8:00", endTime: "5:00" },
-    ],
-    contact: "(+62) 8574 5410 187",
-  };
+function Gallery({ onOpen }) {
+  const { t } = useTranslation();
+  const [filter, setFilter] = useState("all");
+  const items = GALLERY.filter((g) => filter === "all" || g.category === filter);
+  const filters = ["all", ...GALLERY_CATEGORIES];
+  const altFor = (g) => `${t(`gallery.cat.${g.category}`)}, Pantai Kelapa Tuban`;
 
-  const specialistData = [
-    { img: "images/Pengurus_0000.jpg", name: "Muhasan, SH.", designation: t("specialist.title1"), authorLink: "/doctor-profile" },
-    { img: "images/Pengurus_0001.jpg", name: "Mokhamad Khanafi", designation: t("specialist.title2"), authorLink: "/doctor-profile" },
-    { img: "images/Pengurus_0003.jpg", name: "Heri Poernomo, SE.", designation: t("specialist.title3"), authorLink: "/doctor-profile" },
-    { img: "images/Pengurus_0002.jpg", name: "Muhammad Ludfi, A.Md.", designation: t("specialist.title4"), authorLink: "/doctor-profile" },
-    { img: "images/Pengurus_0006.jpg", name: "Ahmad Rofiq, ST.", designation: t("specialist.title5"), authorLink: "/doctor-profile" },
-    { img: "images/Pengurus_0004.jpg", name: "Muhammad Hariyono", designation: t("specialist.title6"), authorLink: "/doctor-profile" },
-    { img: "images/Pengurus_0005.jpg", name: "Sujito", designation: t("specialist.title7"), authorLink: "/doctor-profile" },
-    { img: "images/Pengurus_0007.jpg", name: "Ahmad Ikhwan", designation: t("specialist.title8"), authorLink: "/doctor-profile" },
-    { img: "images/Pengurus_0008.jpg", name: "Zaenal Abidin", designation: t("specialist.title9"), authorLink: "/doctor-profile" },
-  ];
+  return (
+    <section id="gallery" className="section gallery">
+      <div className="wrap">
+        <SectionHead eyebrow={t("gallery.eyebrow")} title={t("gallery.title")} />
+        <ul className="chips">
+          {filters.map((f) => (
+            <li key={f}>
+              <button type="button" aria-pressed={filter === f} onClick={() => setFilter(f)}>
+                {f === "all" ? t("gallery.all") : t(`gallery.cat.${f}`)}
+              </button>
+            </li>
+          ))}
+        </ul>
+        <ul className="gallery-grid">
+          {items.map((g, i) => (
+            <li key={g.img}>
+              <button
+                type="button"
+                aria-label={`${t("gallery.open")}: ${altFor(g)}`}
+                onClick={() =>
+                  onOpen(
+                    items.map((x) => ({
+                      type: "IMAGE",
+                      url: encodeURI(x.img.replace(/\.jpe?g$/i, ".webp")),
+                      title: altFor(x),
+                    })),
+                    i
+                  )
+                }
+              >
+                <Img src={g.img} alt={altFor(g)} sizes="(max-width: 640px) 50vw, 300px" />
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
 
-  const testimonialData = [
-    { img: "images/avatar2.png", name: "David Bayu Nur Fauzi", designation: "Content Creator", subTitle: t("Testimonial.user.user1Comment") },
-    { img: "images/avatar3.png", name: "D. Ayu Puspita .A", designation: "Travel Blogger", subTitle: t("Testimonial.user.user2Comment") },
-    { img: "images/avatar4.png", name: "Yan Ardi Abdul Hakim", designation: "Travel Blogger", subTitle: t("Testimonial.user.user3Comment") },
-    { img: "images/avatar5.png", name: "Nafisa", designation: "Family Vacationer", subTitle: t("Testimonial.user.user4Comment") },
-  ];
+function Testimonials() {
+  const { t } = useTranslation();
+  const initials = (name) =>
+    name
+      .split(" ")
+      .slice(0, 2)
+      .map((part) => part[0])
+      .join("");
+  return (
+    <section className="section testimonials">
+      <div className="wrap">
+        <SectionHead eyebrow={t("testimonials.eyebrow")} title={t("testimonials.title")} />
+        <Rail label={t("testimonials.title")}>
+          {TESTIMONIALS.map((item) => (
+            <figure className="quote" key={item.name}>
+              <blockquote>{t(`testimonials.${item.quote}`)}</blockquote>
+              <figcaption>
+                <span className="avatar" aria-hidden="true">
+                  {initials(item.name)}
+                </span>
+                <span>
+                  <strong>{item.name}</strong>
+                  <small>{item.role}</small>
+                </span>
+              </figcaption>
+            </figure>
+          ))}
+        </Rail>
+      </div>
+    </section>
+  );
+}
 
-  const priceData = [
-    { image: "images/template wahana/Spot_foto.png", price: "$199", title: "Spot Foto Plan", featureList: [] },
-    { image: "images/template wahana/Berkuda.png", price: "$199", title: "Berkuda Plan", featureList: [] },
-    { image: "images/template wahana/Atv.png", price: "$299", title: "ATV Plan", featureList: [] },
-    { image: "images/template wahana/FlyingFox.png", price: "$399", title: "Flying Fox Plan", featureList: [] },
-    { image: "images/template wahana/Swimming.png", price: "$499", title: "Swimming Pool Plan", featureList: [] },
-    { image: "images/template wahana/Terapi.png", price: "$499", title: "Terapi Plan", featureList: [] },
-    { image: "images/template wahana/Tunnel.png", price: "$499", title: "Tunnel Plan", featureList: [] },
-    { image: "images/template wahana/Seafood.png", price: "$499", title: "Seafood Plan", featureList: [] },
-    { image: "images/template wahana/mobil-listrik.png", price: "$499", title: "Mobil Listrik Plan", featureList: [] },
-    { image: "images/template wahana/panggung-gembira.png", price: "$499", title: "Panggung Gembira Plan", featureList: [] },
-    { image: "images/template wahana/Cafe.png", price: "$499", title: "Cafe Plan", featureList: [] },
-  ];
+const STATIC_NEWS = NEWS.slice(0, 3);
 
-  const faqData = {
-    title: t("faq.sectionTitle"),
-    img: "images/faq-img.png",
-    bgImg: "shape/faq-bg.svg",
-    faqItems: [
-      { title: t("faq.items.item1.title"), content: t("faq.items.item1.desc") },
-      { title: t("faq.items.item2.title"), content: t("faq.items.item2.desc") },
-      { title: t("faq.items.item3.title"), content: t("faq.items.item3.desc") },
-      { title: t("faq.items.item4.title"), content: t("faq.items.item4.desc") },
-    ],
-  };
+function News() {
+  const { t } = useTranslation();
+  const posts = useRemote(fetchLatestPosts, STATIC_NEWS);
+  return (
+    <section id="blog" className="section">
+      <div className="wrap">
+        <div className="head-row">
+          <SectionHead eyebrow={t("news.eyebrow")} title={t("news.title")} />
+          <Link to="/post/postrecap" className="text-link">
+            {t("news.more")} <LuArrowRight aria-hidden="true" />
+          </Link>
+        </div>
+        <div className="news-grid">
+          {posts.map((post) => (
+            <NewsCard key={post.title} post={post} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
-  const newsletterData = {
-    bgImg: "images/news-letter-bg.png",
-    contact: "(+62) 8574 5410 187",
-  };
+function Team() {
+  const { t } = useTranslation();
+  return (
+    <section id="pengurus" className="section team">
+      <div className="wrap">
+        <SectionHead eyebrow={t("team.eyebrow")} title={t("team.title")} lead={t("team.lead")} />
+        <Rail label={t("team.eyebrow")}>
+          {TEAM.map((m) => (
+            <figure className="member" key={m.name}>
+              <Img src={m.img} alt={m.name} sizes="260px" />
+              <figcaption>
+                <strong>{m.name}</strong>
+                <span>{t(`team.${m.role}`)}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </Rail>
+      </div>
+    </section>
+  );
+}
 
-  const mapLocationURL =
-    "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d63375.21794269388!2d112.089161!3d-6.89645!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e77bdc4b920f3cd%3A0x97bbfe219b26599!2sPantai%20Kelapa%20Tuban!5e0!3m2!1sid!2sid!4v1710796156138!5m2!1sid!2sid";
+function Faq() {
+  const { t } = useTranslation();
+  return (
+    <section className="section">
+      <div className="wrap faq-grid">
+        <SectionHead eyebrow={t("faq.eyebrow")} title={t("faq.title")} />
+        <div className="faq-list">
+          {FAQ_KEYS.map((key, i) => (
+            <details key={key} name="faq" open={i === 0}>
+              <summary>
+                {t(`faq.${key}.q`)} <LuPlus aria-hidden="true" />
+              </summary>
+              <p>{t(`faq.${key}.a`)}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const SEEN_KEY = "pk-featured-media-seen";
+
+function alreadySeenFeatured() {
+  try {
+    if (window.sessionStorage.getItem(SEEN_KEY)) return true;
+    window.sessionStorage.setItem(SEEN_KEY, "1");
+  } catch {
+    // Tanpa storage, sorotan tetap ditampilkan.
+  }
+  return false;
+}
+
+export default function Home() {
+  const { t } = useTranslation();
+  const [modal, setModal] = useState({ open: false, items: [], index: 0, label: "" });
+
+  const openModal = (items, index = 0, label = "") => setModal({ open: true, items, index, label });
+
+  useEffect(() => {
+    const controller = new AbortController();
+    fetchFeaturedMedia(controller.signal)
+      .then((items) => {
+        if (items.length === 0 || alreadySeenFeatured()) return;
+        const firstVideo = items.findIndex((m) => m.type === "VIDEO");
+        openModal(items, Math.max(firstVideo, 0));
+      })
+      .catch(() => {});
+    return () => controller.abort();
+  }, []);
 
   return (
     <>
-      <Hero data={heroData} />
-      <UpcomingEvents
-        data={upcomingEvents}
-      />
-      <EventCalendar data={upcomingEvents} />
-      <Iconbox data={iconboxData} />
-      <About data={aboutData} />
-      <PostWrapper data={latestPosts} />
-      <Department />
-      <About4 data={aboutData2} data1={specialistData} />
-      <hr />
-      <MasonryGallery />
-      <TestimonialSlider data={testimonialData} />
-      <Funfact />
-      <PriceSlider data={priceData} />
-      <Accordion data={faqData} />
-      <Newsletter data={newsletterData} />
+      <Hero />
+      <VisitTicket />
+      <Activities />
+      <About onPlay={() => openModal(ABOUT_VIDEO, 0, t("about.play"))} />
+      <Events />
+      <Wahana />
+      <Gallery onOpen={(items, index) => openModal(items, index, t("gallery.eyebrow"))} />
+      <Testimonials />
+      <News />
+      <Team />
+      <Faq />
       <Contact />
-      <LocationInMap data={mapLocationURL} />
-
-      {/* ✅ Modal Carousel (VIDEO + IMAGE) */}
-      <MediaCarouselModal
-        isTrue={openMediaModal}
-        items={topMedia}
-        activeIndex={activeMediaIndex}
-        onChangeIndex={setActiveMediaIndex}
-        handelClose={() => setOpenMediaModal(false)}
+      <MediaModal
+        open={modal.open}
+        items={modal.items}
+        index={modal.index}
+        label={modal.label}
+        onIndex={(index) => setModal((m) => ({ ...m, index }))}
+        onClose={() => setModal((m) => ({ ...m, open: false }))}
       />
-
-      {/* optional debug */}
-      {/* <pre style={{ position: "fixed", bottom: 0, left: 0, zIndex: 9999, background: "#000", color: "#0f0" }}>
-        active: {JSON.stringify(activeMedia, null, 2)}
-      </pre> */}
     </>
   );
-};
-
-export default Home;
+}

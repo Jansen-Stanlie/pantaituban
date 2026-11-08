@@ -1,33 +1,41 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import id from "./locales/id.json";
+import en from "./locales/en.json";
 
-// load resource translasi file dari backend server
-import BackEnd from "i18next-http-backend";
+export const LANGUAGES = ["id", "en"];
+const STORAGE_KEY = "i18nextLng";
 
-// untuk deteksi bahasa yang digunakan pada browser berdasarkan local storage dll.
-import LanguageDetector from "i18next-browser-languagedetector";
+// Render pertama selalu "id" agar cocok dengan HTML prerender.
+// Bahasa tersimpan diterapkan setelah hydration lewat restoreLanguage().
+i18n.use(initReactI18next).init({
+  resources: { id: { translation: id }, en: { translation: en } },
+  lng: "id",
+  fallbackLng: "id",
+  supportedLngs: LANGUAGES,
+  initImmediate: false,
+  interpolation: { escapeValue: false },
+  react: { useSuspense: false },
+});
 
-const currentHost =
-  process.env.REACT_APP_ENV === "development"
-    ? window.location.origin
-    : "https://www.pantaikelapa.com/";
-console.log(currentHost);
+export function restoreLanguage() {
+  try {
+    const saved = window.localStorage.getItem(STORAGE_KEY);
+    if (LANGUAGES.includes(saved) && saved !== i18n.language) {
+      i18n.changeLanguage(saved);
+    }
+  } catch {
+    // Storage bisa diblokir browser; bahasa default tetap dipakai.
+  }
+}
 
-const getCurrentHost = currentHost;
+export function setLanguage(lang) {
+  i18n.changeLanguage(lang);
+  try {
+    window.localStorage.setItem(STORAGE_KEY, lang);
+  } catch {
+    // Pilihan tetap berlaku untuk sesi ini.
+  }
+}
 
-i18n
-  .use(BackEnd)
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    fallbackLng: "id",
-    detection: {
-      order: ["path", "localStorage", "htmlTag", "cookie"],
-      caches: ["localStorage", "cookie"],
-      lookupLocalStorage: "i18nextLng",
-    },
-    backend: {
-      // Use the dynamically determined host for loading translation files
-      loadPath: `${getCurrentHost}/i18n/{{lng}}.json`, // Path to fetch translation files from
-    },
-  });
+export default i18n;
