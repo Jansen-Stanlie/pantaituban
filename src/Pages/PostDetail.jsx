@@ -39,7 +39,7 @@ export default function PostDetail() {
       <>
         <PageHero img="/images/hero-bg2.jpg" title={failed ? t("news.errorTitle") : t("news.loading")} />
         <section className="section">
-          <div className="wrap prose">
+          <div className="wrap article">
             {failed && (
               <>
                 <p>{t("news.errorText")}</p>
@@ -66,7 +66,7 @@ export default function PostDetail() {
         meta={[post.author, date].filter(Boolean).join(" · ")}
       />
       <article className="section">
-        <div className="wrap prose">
+        <div className="wrap article">
           {post.img && <img src={encodeURI(post.img)} alt="" referrerPolicy="no-referrer" />}
           {paragraphs.map((text, i) => (
             <p key={i}>{text}</p>

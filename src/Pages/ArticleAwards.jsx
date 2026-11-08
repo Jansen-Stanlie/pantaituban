@@ -18,7 +18,7 @@ export default function ArticleAwards() {
         meta="Pokdarwis Pantai Kelapa · 31 Oktober 2023"
       />
       <article className="section">
-        <div className="wrap prose">
+        <div className="wrap article">
           <h2>Raih Penghargaan Terbaik EJTA 2023</h2>
           <p>
             Segala puji syukur kepada Tuhan Yang Maha Esa, diawali dari niat untuk meningkatkan ekonomi dan manfaat

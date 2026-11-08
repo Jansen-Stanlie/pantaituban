@@ -15,86 +15,152 @@
     "language": "Pilih bahasa",
     "home": "Beranda Pantai Kelapa Tuban",
     "skip": "Lewati ke konten utama",
-    "whatsapp": "Chat WhatsApp Pantai Kelapa"
+    "whatsapp": "Chat WhatsApp Pantai Kelapa",
+    "top": "Kembali ke atas",
+    "location": "Lokasi",
+    "maps": "Peta",
+    "chat": "Chat"
   },
   "hero": {
-    "eyebrow": "Wisata keluarga di pesisir Bumi Wali",
     "title": "Pantai Kelapa Tuban",
-    "lead": "Biarkan mentari dan ombak menyegarkan jiwa raga, sambil menciptakan kenangan indah bersama orang tersayang.",
-    "plan": "Rencanakan kunjungan",
-    "salt": "Edukasi Garam GST",
+    "lead": "Wisata pantai keluarga di Tuban dengan banyak wahana seru, kuliner seafood, dan area camping di tepi laut.",
+    "plan": "Reservasi Sekarang",
+    "salt": "Edukasi Garam",
     "hoursLabel": "Buka setiap hari",
     "hoursValue": "08.00–17.00 WIB",
     "locationLabel": "Lokasi",
     "locationValue": "Panyuran, Palang, Tuban",
-    "contactLabel": "Tanya dulu"
+    "contactLabel": "WhatsApp",
+    "openNow": "Buka sekarang",
+    "closedNow": "Sedang tutup",
+    "slidePause": "Jeda pergantian foto",
+    "slidePlay": "Putar pergantian foto",
+    "slideGo": "Tampilkan foto",
+    "priceLabel": "Harga wahana",
+    "priceValue": "Mulai Rp10.000",
+    "chat": "Chat sekarang"
   },
   "about": {
-    "eyebrow": "Tentang kami",
-    "title": "Ketenangan laut, keseruan untuk semua umur",
+    "title": "Tentang Pantai Kelapa",
     "body": "Pantai Kelapa Tuban terletak di Jalan Tuban–Gresik km 1–2, Dusun Kepoh, Kelurahan Panyuran, Kecamatan Palang. Pohon kelapa dan cemara yang rindang, hutan bakau, serta beragam wahana menjadikannya pilihan favorit keluarga yang mencari suasana laut yang nyaman.",
-    "highlight1": "Sunset dan angin laut",
-    "highlight1Text": "Lepaskan penat dan nikmati senja di bawah rindangnya pepohonan.",
-    "highlight2": "Petualangan darat dan laut",
-    "highlight2Text": "Dari perahu sampai ATV, ada keseruan untuk setiap anggota keluarga.",
-    "highlight3": "Kuliner dan tempat bersantai",
-    "highlight3Text": "Santap hidangan laut dan es degan sambil menikmati pantai.",
     "fact1": "Tahun pengalaman",
     "fact2": "Aktivitas keluarga",
     "fact3": "Harga terjangkau",
     "play": "Putar video Pantai Kelapa",
-    "photoAlt": "Gerbang selamat datang Pantai Kelapa Tuban"
+    "photoAlt": "Gerbang selamat datang Pantai Kelapa Tuban",
+    "facilitiesTitle": "Fasilitas",
+    "f1": "Area parkir luas",
+    "f2": "Kamar mandi bersih",
+    "f3": "Tempat makan dan minum",
+    "f4": "Panggung hiburan",
+    "f5": "Tempat bermain anak",
+    "f6": "Area camping"
   },
   "activities": {
-    "eyebrow": "Aktivitas",
-    "title": "Jelajahi keseruan darat, laut, dan udara",
-    "lead": "Mulai dari aktivitas air yang menyegarkan hingga petualangan yang menantang.",
+    "title": "Aktivitas Seru",
+    "lead": "Pilih aktivitas yang ingin kamu coba bersama keluarga.",
     "ask": "Tanya jadwal dan paket",
-    "horse": { "name": "Berkuda", "desc": "Nikmati sensasi berkuda di sepanjang pantai Tuban." },
-    "boat": { "name": "Perahu", "desc": "Jelajahi keindahan laut Tuban dengan perahu tradisional." },
-    "atv": { "name": "ATV Bike", "desc": "Rasakan petualangan mengendarai ATV di sepanjang pantai." },
-    "flyingfox": { "name": "Flying Fox", "desc": "Rasakan sensasi meluncur dengan flying fox di atas pantai." },
-    "pool": { "name": "Kolam Renang", "desc": "Nikmati kesegaran kolam renang di tepi Pantai Kelapa." },
-    "photo": { "name": "Spot Foto", "desc": "Abadikan momen di spot foto terbaik Pantai Kelapa." },
-    "camping": { "name": "Camping", "desc": "Nikmati malam yang indah dengan berkemah di tepi pantai." }
+    "horse": {
+      "name": "Berkuda",
+      "desc": "Nikmati sensasi berkuda di sepanjang pantai Tuban."
+    },
+    "boat": {
+      "name": "Perahu",
+      "desc": "Jelajahi keindahan laut Tuban dengan perahu tradisional."
+    },
+    "atv": {
+      "name": "ATV Bike",
+      "desc": "Rasakan petualangan mengendarai ATV di sepanjang pantai."
+    },
+    "flyingfox": {
+      "name": "Flying Fox",
+      "desc": "Rasakan sensasi meluncur dengan flying fox di atas pantai."
+    },
+    "pool": {
+      "name": "Kolam Renang",
+      "desc": "Nikmati kesegaran kolam renang di tepi Pantai Kelapa."
+    },
+    "photo": {
+      "name": "Spot Foto",
+      "desc": "Abadikan momen di spot foto terbaik Pantai Kelapa."
+    },
+    "camping": {
+      "name": "Camping",
+      "desc": "Nikmati malam yang indah dengan berkemah di tepi pantai."
+    }
   },
   "events": {
-    "eyebrow": "Event",
-    "title": "Jangan lewatkan event berikutnya",
-    "lead": "Lihat kegiatan yang akan datang dan rencanakan kunjunganmu.",
-    "emptyTitle": "Event baru sedang dipersiapkan",
-    "emptyText": "Tim Pantai Kelapa sedang menyiapkan kegiatan seru dan hiburan untuk seluruh pengunjung. Jadwalnya akan segera diumumkan.",
+    "title": "Kalender Event",
+    "lead": "Cek kegiatan yang akan datang, lalu atur jadwal kunjunganmu.",
+    "emptyTitle": "Belum ada event terjadwal",
+    "emptyText": "Jadwal event baru akan diumumkan di sini. Pantau terus ya!",
     "fallbackCategory": "Event",
     "calendar": "Kalender event",
     "prevMonth": "Bulan sebelumnya",
     "nextMonth": "Bulan berikutnya",
     "pickDay": "Pilih tanggal bertanda untuk melihat detail event.",
-    "noEvents": "Belum ada event terjadwal di kalender."
+    "noEvents": "Belum ada event terjadwal di kalender.",
+    "addCalendar": "Tambah ke Kalender",
+    "share": "Bagikan"
   },
   "wahana": {
-    "eyebrow": "Wahana dan harga",
-    "title": "Banyak pilihan, harga tetap terjangkau",
-    "lead": "Geser untuk melihat wahana dan fasilitas yang tersedia, lengkap dengan informasi harganya.",
+    "title": "Wahana & Harga",
+    "lead": "Geser untuk melihat semua wahana dan harganya.",
     "reserve": "Reservasi",
     "child": "anak",
     "adult": "dewasa",
     "items": {
-      "boom": { "name": "Boom", "desc": "Menikmati panorama alam dari tengah laut, spot estetik sunrise dan sunset." },
-      "berkuda": { "name": "Berkuda", "desc": "Berkeliling pantai dengan berkuda." },
-      "atv": { "name": "ATV", "desc": "Berkendara di tengah lapang tepi pantai." },
-      "flyingfox": { "name": "Flying Fox", "desc": "Rasakan sensasi terbang dengan pemandangan laut dan pantai." },
-      "kolam": { "name": "Kolam Renang", "desc": "Berenang sepoi-sepoi di tepi pantai, ramah anak." },
-      "terapi": { "name": "Terapi Garam", "desc": "Berterapi di tengah rindangnya pohon kelapa." },
-      "tunnel": { "name": "Tunnel Garam", "desc": "Edukasi pembuatan garam dan produksi garam kesehatan." },
-      "seafood": { "name": "Seafood Pantai Kelapa", "desc": "Sensasi makan seafood di tepi laut dengan menu beragam." },
-      "mobil": { "name": "Mobil Listrik", "desc": "Bermain dan berpetualang di alam terbuka untuk anak-anak." },
-      "panggung": { "name": "Panggung Gembira", "desc": "Bernyanyi dan berjoget di tepi pantai, hadir hari Minggu dan libur nasional." },
-      "cafe": { "name": "Cafe Pantai Kelapa", "desc": "Santuy dan chill di tepi pantai dengan menu kekinian." }
-    }
+      "boom": {
+        "name": "Boom",
+        "desc": "Menikmati panorama alam dari tengah laut, spot estetik sunrise dan sunset."
+      },
+      "berkuda": {
+        "name": "Berkuda",
+        "desc": "Berkeliling pantai dengan berkuda."
+      },
+      "atv": {
+        "name": "ATV",
+        "desc": "Berkendara di tengah lapang tepi pantai."
+      },
+      "flyingfox": {
+        "name": "Flying Fox",
+        "desc": "Rasakan sensasi terbang dengan pemandangan laut dan pantai."
+      },
+      "kolam": {
+        "name": "Kolam Renang",
+        "desc": "Berenang sepoi-sepoi di tepi pantai, ramah anak."
+      },
+      "terapi": {
+        "name": "Terapi Garam",
+        "desc": "Berterapi di tengah rindangnya pohon kelapa."
+      },
+      "tunnel": {
+        "name": "Tunnel Garam",
+        "desc": "Edukasi pembuatan garam dan produksi garam kesehatan."
+      },
+      "seafood": {
+        "name": "Seafood Pantai Kelapa",
+        "desc": "Sensasi makan seafood di tepi laut dengan menu beragam."
+      },
+      "mobil": {
+        "name": "Mobil Listrik",
+        "desc": "Bermain dan berpetualang di alam terbuka untuk anak-anak."
+      },
+      "panggung": {
+        "name": "Panggung Gembira",
+        "desc": "Bernyanyi dan berjoget di tepi pantai, hadir hari Minggu dan libur nasional."
+      },
+      "cafe": {
+        "name": "Cafe Pantai Kelapa",
+        "desc": "Santuy dan chill di tepi pantai dengan menu kekinian."
+      }
+    },
+    "quickTitle": "Daftar harga",
+    "note": "Harga dapat berubah sewaktu-waktu. Konfirmasi lewat WhatsApp sebelum berkunjung.",
+    "calc": "Hitung perkiraan biaya"
   },
   "gallery": {
-    "eyebrow": "Galeri",
-    "title": "Momen di Pantai Kelapa",
+    "title": "Galeri Foto",
     "all": "Semua",
     "open": "Perbesar foto",
     "cat": {
@@ -105,20 +171,19 @@
       "camping": "Camping",
       "terapigaram": "Terapi Garam",
       "others": "Acara"
-    }
+    },
+    "more": "Lihat Foto Lainnya"
   },
   "testimonials": {
-    "eyebrow": "Cerita pengunjung",
-    "title": "Kata mereka yang sudah berkunjung",
+    "title": "Kata Pengunjung",
     "t1": "Saya habis dari sana, tempatnya bersih, nyaman, ada campingnya juga.",
     "t2": "Pantainya adem, bisa dibuat piknik bareng keluarga. Wahananya lengkap dan seru, tiket masuknya pun murah.",
     "t3": "Banyak kenangan di Pantai Kelapa. Seru banget camping di sana.",
     "t4": "Tempatnya estetik, cocok buat nongkrong bareng teman. Campingnya juga seru sambil menikmati senja."
   },
   "news": {
-    "eyebrow": "Berita",
-    "title": "Kabar terbaru dari Pantai Kelapa",
-    "more": "Lihat semua berita",
+    "title": "Berita Terbaru",
+    "more": "Lihat Semua Berita",
     "read": "Baca selengkapnya",
     "by": "oleh",
     "pageTitle": "Berita terbaru Pantai Kelapa Tuban",
@@ -129,9 +194,8 @@
     "backToList": "Lihat semua berita"
   },
   "team": {
-    "eyebrow": "Pengurus",
-    "title": "Pokdarwis, orang-orang di balik Pantai Kelapa",
-    "lead": "Lebih dari sekadar tim, kami adalah keluarga yang menjaga setiap kunjungan tetap berkesan.",
+    "title": "Pengurus Pokdarwis",
+    "lead": "Tim yang mengelola Pantai Kelapa setiap hari.",
     "chair": "Ketua Pokdarwis",
     "viceChair": "Wakil Ketua Pokdarwis",
     "secretary1": "Sekretaris I",
@@ -139,20 +203,34 @@
     "treasurer1": "Bendahara I",
     "treasurer2": "Bendahara II",
     "entertainment": "Divisi Hiburan",
-    "rides": "Divisi Wahana"
+    "rides": "Divisi Wahana",
+    "groupAlt": "Foto bersama pengurus Pokdarwis Pantai Kelapa"
   },
   "faq": {
-    "eyebrow": "FAQ",
-    "title": "Yang sering ditanyakan",
-    "q1": { "q": "Apakah Pantai Kelapa buka setiap hari?", "a": "Ya, Pantai Kelapa buka setiap hari mulai pukul 08.00 hingga 17.00 WIB." },
-    "q2": { "q": "Apakah tersedia tempat parkir?", "a": "Ya, tersedia area parkir yang luas dan aman untuk kendaraan pribadi." },
-    "q3": { "q": "Apakah tersedia kamar mandi?", "a": "Ya, tersedia fasilitas kamar mandi yang bersih dan nyaman untuk pengunjung." },
-    "q4": { "q": "Apakah ada makanan dan minuman?", "a": "Ya, tersedia beragam pilihan makanan dan minuman yang lezat dan segar." }
+    "title": "Pertanyaan Umum",
+    "q1": {
+      "q": "Apakah Pantai Kelapa buka setiap hari?",
+      "a": "Ya, Pantai Kelapa buka setiap hari mulai pukul 08.00 hingga 17.00 WIB."
+    },
+    "q2": {
+      "q": "Apakah tersedia tempat parkir?",
+      "a": "Ya, tersedia area parkir yang luas dan aman untuk kendaraan pribadi."
+    },
+    "q3": {
+      "q": "Apakah tersedia kamar mandi?",
+      "a": "Ya, tersedia fasilitas kamar mandi yang bersih dan nyaman untuk pengunjung."
+    },
+    "q4": {
+      "q": "Apakah ada makanan dan minuman?",
+      "a": "Ya, tersedia beragam pilihan makanan dan minuman yang lezat dan segar."
+    },
+    "askTitle": "Masih ada pertanyaan?",
+    "askText": "Tim kami siap membantu lewat WhatsApp.",
+    "askCta": "Tanya lewat WhatsApp"
   },
   "contact": {
-    "eyebrow": "Kontak",
-    "title": "Reservasi liburanmu sekarang",
-    "lead": "Isi formulir ini dan pesanmu akan dibuka di WhatsApp untuk dikirim ke tim kami.",
+    "title": "Reservasi",
+    "lead": "Isi form berikut, pesanmu akan langsung terbuka di WhatsApp untuk dikirim ke tim kami.",
     "phone": "Telepon / WhatsApp",
     "email": "Email",
     "address": "Alamat",
@@ -196,5 +274,51 @@
     "dialog": "Sorotan media",
     "invalidVideo": "Video tidak valid.",
     "imageError": "Gambar gagal dimuat."
+  },
+  "location": {
+    "title": "Lokasi & Rute",
+    "lead": "Pantai Kelapa mudah dijangkau dari pusat kota Tuban maupun jalur Pantura.",
+    "route1Title": "Dari pusat kota Tuban",
+    "route1": "Sekitar 5 km ke arah Palang, dekat dan mudah ditemukan.",
+    "route2Title": "Dari arah Gresik",
+    "route2": "Ikuti Jalan Tuban–Gresik sampai km 1–2 di Dusun Kepoh, Panyuran.",
+    "route3Title": "Dari Semarang atau Rembang",
+    "route3": "Ikuti Jalan Pantura menuju Tuban, lalu lanjut ke arah Palang.",
+    "open": "Petunjuk Arah"
+  },
+  "salt": {
+    "title": "Belajar Membuat Garam di Tepi Laut",
+    "text": "Lihat langsung produksi garam dengan Greenhouse Salt Tunnel, lalu rasakan terapi garamnya. Cocok untuk rombongan sekolah dan keluarga.",
+    "cta": "Pelajari programnya",
+    "guide": "Unduh panduan"
+  },
+  "planner": {
+    "title": "Hitung Perkiraan Biaya",
+    "lead": "Pilih wahana dan jumlah orangnya, totalnya langsung terlihat.",
+    "summary": "Perkiraan biaya",
+    "empty": "Belum ada wahana yang dipilih.",
+    "total": "Total",
+    "note": "Belum termasuk tiket masuk dan parkir. Harga dapat berubah.",
+    "reserve": "Reservasi Pilihan Ini",
+    "reset": "Atur ulang",
+    "add": "Tambah",
+    "remove": "Kurangi",
+    "estimate": "Perkiraan biaya"
+  },
+  "weather": {
+    "label": "Cuaca di Pantai Kelapa",
+    "clear": "Cerah",
+    "cloudy": "Berawan",
+    "fog": "Berkabut",
+    "drizzle": "Gerimis",
+    "rain": "Hujan",
+    "storm": "Badai petir",
+    "sunset": "Senja"
+  },
+  "share": {
+    "whatsapp": "Bagikan lewat WhatsApp",
+    "facebook": "Bagikan ke Facebook",
+    "copy": "Salin tautan",
+    "copied": "Tautan tersalin"
   }
 }

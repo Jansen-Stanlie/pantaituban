@@ -8,7 +8,7 @@ export default function PostList() {
     <>
       <PageHero img="/images/hero-bg2.jpg" title={t("news.pageTitle")} lead={t("news.pageLead")} />
       <section className="section">
-        <div className="wrap news-grid is-list">
+        <div className="wrap grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {NEWS.map((post) => (
             <NewsCard key={post.title} post={post} />
           ))}

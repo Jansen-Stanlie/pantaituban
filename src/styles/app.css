@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0a2a33;
+  --color-muted: #47616b;
+  --color-sea-deep: #07323c;
+  --color-sea: #0b5a67;
+  --color-teal: #12929a;
+  --color-foam: #d9eeee;
+  --color-sun: #f6ab2f;
+  --color-sun-light: #ffc45c;
+  --color-coral: #e4572e;
+  --color-sand: #fbf6ec;
+  --color-sand-2: #f2e8d6;
+
+  --font-sans: "Plus Jakarta Sans Variable", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque Variable", "Trebuchet MS", sans-serif;
+
+  --shadow-card: 0 14px 34px -18px rgb(7 50 60 / 0.4);
+  --shadow-lift: 0 24px 48px -22px rgb(7 50 60 / 0.5);
+
+  --animate-rise: rise 0.24s ease both;
+  --animate-fade: fade 0.3s ease both;
+
+  @keyframes rise {
+    from {
+      transform: translateY(100%);
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+  }
+}
+
+@utility wrap {
+  width: min(1240px, calc(100% - 2.5rem));
+  margin-inline: auto;
+
+  @media (width >= 48rem) {
+    width: min(1240px, calc(100% - 4rem));
+  }
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  html.no-scroll {
+    overflow: hidden;
+  }
+
+  body {
+    @apply bg-sand font-sans text-ink antialiased;
+    line-height: 1.65;
+    overflow-wrap: break-word;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display font-bold;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  button,
+  summary {
+    cursor: pointer;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-sun);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .btn {
+    @apply inline-flex min-h-13 items-center justify-center gap-2.5 rounded-full px-7 py-3 text-center font-bold no-underline transition duration-200 hover:-translate-y-0.5;
+  }
+
+  .btn-sm {
+    @apply min-h-11 px-5 py-2 text-[0.9375rem];
+  }
+
+  .btn-sun {
+    @apply bg-sun text-ink hover:bg-sun-light;
+  }
+
+  .btn-sea {
+    @apply bg-sea text-white hover:bg-sea-deep;
+  }
+
+  .btn-ghost {
+    @apply bg-white/15 text-white ring-[1.5px] ring-white/70 ring-inset hover:bg-white hover:text-ink;
+  }
+
+  .icon-btn {
+    @apply inline-grid size-11 place-items-center rounded-full bg-white text-xl text-ink shadow-card ring-1 ring-ink/10 transition hover:bg-sea hover:text-white;
+  }
+
+  .text-link {
+    @apply inline-flex items-center gap-2 font-bold text-sea underline decoration-2 underline-offset-[5px] hover:text-coral;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-ink/30 bg-white px-3.5 py-3 text-base outline-none transition focus:border-teal focus:ring-2 focus:ring-teal/40;
+    min-height: 3.125rem;
+  }
+
+  .article {
+    @apply text-[1.0625rem];
+    max-width: 48rem;
+  }
+
+  .article h2 {
+    @apply mt-12 mb-3.5 text-3xl first:mt-0;
+  }
+
+  .article h3 {
+    @apply mt-8 mb-3 text-2xl;
+  }
+
+  .article p + p {
+    @apply mt-3.5;
+  }
+
+  .article > img {
+    @apply my-7 w-full rounded-2xl;
+  }
+
+  .article > .btn {
+    @apply mt-7;
+  }
+
+  .article blockquote {
+    @apply my-6 border-l-4 border-sun pl-5 font-display text-xl leading-snug;
+  }
+
+  .article cite {
+    @apply mt-2.5 block font-sans text-[0.9375rem] text-muted not-italic;
+  }
+
+  .fact-list {
+    counter-reset: fact;
+  }
+
+  .fact-list li {
+    @apply relative border-t border-ink/15 py-3.5 pl-12;
+    counter-increment: fact;
+  }
+
+  .fact-list li::before {
+    @apply absolute top-3.5 left-0 grid size-8 place-items-center rounded-full bg-sun text-[0.9375rem] font-bold;
+    content: counter(fact);
+  }
+
+  .video-frame {
+    @apply my-5 overflow-hidden rounded-2xl bg-sea-deep;
+  }
+
+  .video-frame iframe {
+    @apply aspect-video w-full border-0;
+  }
+
+  .article-grid {
+    @apply my-6 grid grid-cols-2 gap-2 sm:grid-cols-3;
+  }
+
+  .article-grid img {
+    @apply aspect-[4/3] w-full rounded-xl bg-sand-2 object-cover;
+  }
+}

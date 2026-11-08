@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { LuCalendarDays, LuChevronLeft, LuChevronRight, LuMapPin } from "react-icons/lu";
+import { FaWhatsapp } from "react-icons/fa6";
+import { LuCalendarDays, LuCalendarPlus, LuChevronLeft, LuChevronRight, LuMapPin } from "react-icons/lu";
+import { SITE } from "../data/site";
 import { fetchEvents, formatDate, useRemote } from "../lib/api";
 import { SectionHead, Wave } from "./ui";
 
@@ -33,7 +35,9 @@ function EventCalendar({ events }) {
     [lang]
   );
 
-  if (!month) return <div className="calendar is-loading" aria-hidden="true" />;
+  const card = "self-start rounded-3xl bg-sand p-4 text-ink shadow-lift md:p-7";
+
+  if (!month) return <div className={`${card} min-h-[460px]`} aria-hidden="true" />;
 
   const year = month.getFullYear();
   const monthIndex = month.getMonth();
@@ -47,10 +51,12 @@ function EventCalendar({ events }) {
   const selectedEvents = selected ? events.filter((e) => occursOn(e, selected)) : [];
 
   return (
-    <div className="calendar">
-      <div className="calendar-top">
-        <h3 aria-live="polite">{month.toLocaleDateString(lang, { month: "long", year: "numeric" })}</h3>
-        <div>
+    <div className={card}>
+      <div className="mb-3.5 flex items-center justify-between gap-3">
+        <h3 aria-live="polite" className="text-2xl capitalize">
+          {month.toLocaleDateString(lang, { month: "long", year: "numeric" })}
+        </h3>
+        <div className="flex gap-1.5">
           <button type="button" className="icon-btn" onClick={() => change(-1)} aria-label={t("events.prevMonth")}>
             <LuChevronLeft aria-hidden="true" />
           </button>
@@ -59,9 +65,9 @@ function EventCalendar({ events }) {
           </button>
         </div>
       </div>
-      <div className="calendar-grid" aria-label={t("events.calendar")}>
+      <div className="grid grid-cols-7 gap-1" aria-label={t("events.calendar")}>
         {weekdays.map((d) => (
-          <span key={d} className="calendar-weekday">
+          <span key={d} className="py-1.5 text-center text-xs font-bold text-muted">
             {d}
           </span>
         ))}
@@ -72,32 +78,39 @@ function EventCalendar({ events }) {
           const hasEvent = events.some((e) => occursOn(e, date));
           const isToday = dayKey(date) === today;
           const isSelected = selected && dayKey(selected) === dayKey(date);
-          const className = `calendar-day${isToday ? " is-today" : ""}${hasEvent ? " has-event" : ""}${isSelected ? " is-selected" : ""}`;
-          return hasEvent ? (
+          const base = "grid aspect-square min-h-10 place-items-center rounded-[10px] text-[0.9375rem]";
+          const ring = isToday ? "ring-2 ring-teal ring-inset" : "";
+          if (!hasEvent) {
+            return (
+              <span key={date.getDate()} className={`${base} ${ring}`}>
+                {date.getDate()}
+              </span>
+            );
+          }
+          return (
             <button
               key={date.getDate()}
               type="button"
-              className={className}
+              data-event-day
               aria-pressed={Boolean(isSelected)}
               aria-label={formatDate(date, i18n.language)}
               onClick={() => setSelected(date)}
+              className={`${base} ${ring} font-bold transition ${
+                isSelected ? "bg-sea text-white" : "bg-sun hover:bg-sea hover:text-white"
+              }`}
             >
               {date.getDate()}
             </button>
-          ) : (
-            <span key={date.getDate()} className={className}>
-              {date.getDate()}
-            </span>
           );
         })}
       </div>
-      <div className="calendar-detail" aria-live="polite">
+      <div data-calendar-detail aria-live="polite" className="mt-4 min-h-14 border-t border-ink/15 pt-3.5 text-[0.9375rem] text-muted">
         {selectedEvents.length > 0 ? (
-          <ul>
+          <ul className="space-y-2">
             {selectedEvents.map((e) => (
               <li key={e.id}>
-                <strong>{e.title}</strong>
-                {e.location && <span>{e.location}</span>}
+                <strong className="block text-ink">{e.title}</strong>
+                {e.location}
               </li>
             ))}
           </ul>
@@ -110,48 +123,90 @@ function EventCalendar({ events }) {
 }
 
 const NO_EVENTS = [];
+const external = { target: "_blank", rel: "noopener noreferrer" };
+const actionClass = "inline-flex items-center gap-1.5 text-white no-underline hover:text-sun";
+
+const compactDate = (d) =>
+  `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, "0")}${String(d.getDate()).padStart(2, "0")}`;
+
+/** Tautan acara sehari penuh; tanggal akhir Google Calendar bersifat eksklusif. */
+function googleCalendarUrl(event) {
+  const endExclusive = new Date(event.end.getFullYear(), event.end.getMonth(), event.end.getDate() + 1);
+  const params = new URLSearchParams({
+    action: "TEMPLATE",
+    text: event.title,
+    dates: `${compactDate(event.start)}/${compactDate(endExclusive)}`,
+    details: event.description,
+    location: event.location || SITE.name,
+  });
+  return `https://calendar.google.com/calendar/render?${params}`;
+}
+
+function EventCard({ event }) {
+  const { t, i18n } = useTranslation();
+  const style = event.color ? { backgroundColor: event.color } : undefined;
+  const shareText = `${event.title}, ${formatDate(event.start, i18n.language)} di Pantai Kelapa Tuban. ${SITE.url}/#events`;
+  const shareUrl = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+  return (
+    <li className="flex gap-4 rounded-2xl bg-white/10 p-4 ring-1 ring-white/15 transition hover:bg-white/15 md:p-5">
+      <div style={style} className="flex w-16 shrink-0 flex-col items-center justify-center self-start rounded-xl bg-sun py-2.5 text-ink [&[style]]:text-white">
+        <span className="font-display text-3xl leading-none font-bold">{event.start.getDate()}</span>
+        <span className="mt-1 text-xs font-bold uppercase">{formatDate(event.start, i18n.language, { month: "short" })}</span>
+      </div>
+      <div className="min-w-0">
+        <span className="text-[0.8125rem] font-bold text-sun">{event.category || t("events.fallbackCategory")}</span>
+        <h3 className="mt-0.5 text-xl">{event.title}</h3>
+        {event.description && <p className="mt-1.5 text-white/80">{event.description}</p>}
+        {event.location && (
+          <p className="mt-2 flex items-center gap-1.5 text-[0.9375rem] text-white/80">
+            <LuMapPin aria-hidden="true" className="shrink-0" /> {event.location}
+          </p>
+        )}
+        <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-[0.9375rem] font-semibold">
+          <a href={googleCalendarUrl(event)} {...external} className={actionClass}>
+            <LuCalendarPlus aria-hidden="true" /> {t("events.addCalendar")}
+          </a>
+          <a href={shareUrl} {...external} className={actionClass}>
+            <FaWhatsapp aria-hidden="true" /> {t("events.share")}
+          </a>
+        </div>
+      </div>
+    </li>
+  );
+}
 
 export default function Events() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const events = useRemote(fetchEvents, NO_EVENTS);
   const next = events.slice(0, 3);
 
   return (
-    <section id="events" className="events">
-      <Wave />
-      <div className="wrap events-in">
-        <div>
-          <SectionHead eyebrow={t("events.eyebrow")} title={t("events.title")} lead={t("events.lead")} />
-          {next.length === 0 ? (
-            <div className="event-card">
-              <h3>{t("events.emptyTitle")}</h3>
-              <p>{t("events.emptyText")}</p>
-            </div>
-          ) : (
-            <ul className="event-list">
-              {next.map((event) => (
-                <li key={event.id} className="event-card" style={event.color ? { "--event": event.color } : undefined}>
-                  <span className="event-tag">{event.category || t("events.fallbackCategory")}</span>
-                  <h3>{event.title}</h3>
-                  {event.description && <p>{event.description}</p>}
-                  <p className="event-meta">
-                    <span>
-                      <LuCalendarDays aria-hidden="true" /> {formatDate(event.start, i18n.language)}
-                    </span>
-                    {event.location && (
-                      <span>
-                        <LuMapPin aria-hidden="true" /> {event.location}
-                      </span>
-                    )}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          )}
+    <section id="events" className="scroll-mt-4 bg-sand">
+      <Wave className="text-sea-deep" />
+      <div className="-mt-px bg-sea-deep py-12 text-white md:py-16">
+        <div className="wrap grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <SectionHead light title={t("events.title")} lead={t("events.lead")} />
+            {next.length === 0 ? (
+              <div className="flex gap-4 rounded-2xl bg-white/10 p-6 ring-1 ring-white/15">
+                <LuCalendarDays aria-hidden="true" className="mt-1 shrink-0 text-3xl text-sun" />
+                <div>
+                  <h3 className="text-xl">{t("events.emptyTitle")}</h3>
+                  <p className="mt-1.5 text-white/80">{t("events.emptyText")}</p>
+                </div>
+              </div>
+            ) : (
+              <ul data-event-list className="grid gap-3">
+                {next.map((event) => (
+                  <EventCard key={event.id} event={event} />
+                ))}
+              </ul>
+            )}
+          </div>
+          <EventCalendar events={events} />
         </div>
-        <EventCalendar events={events} />
       </div>
-      <Wave flip />
+      <Wave flip className="-mt-px text-sea-deep" />
     </section>
   );
 }

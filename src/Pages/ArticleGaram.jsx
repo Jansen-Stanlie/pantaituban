@@ -21,6 +21,22 @@ const ImageGrid = ({ images, alt }) => (
   </div>
 );
 
+/** Infografik berisi teks, jadi ditampilkan utuh dan bisa dibuka lebih besar. */
+const Infographics = ({ images, alt }) => (
+  <div className="my-6 grid gap-4">
+    {images.map((src, i) => (
+      <a key={src} href={encodeURI(src.replace(/\.png$/, ".webp"))} target="_blank" rel="noopener noreferrer">
+        <Img
+          src={src}
+          alt={`${alt} ${i + 1}`}
+          sizes="(max-width: 800px) 100vw, 768px"
+          className="w-full rounded-xl bg-white shadow-card"
+        />
+      </a>
+    ))}
+  </div>
+);
+
 export default function ArticleGaram() {
   const { t } = useTranslation();
   const guide = (
@@ -39,7 +55,7 @@ export default function ArticleGaram() {
         {guide}
       </PageHero>
       <article className="section">
-        <div className="wrap prose">
+        <div className="wrap article">
           <h2>Manfaat garam alami di Pantai Kelapa</h2>
           <p>
             Di tengah meningkatnya kesadaran akan gaya hidup sehat, produk lokal seperti{" "}
@@ -65,7 +81,7 @@ export default function ArticleGaram() {
             Dipadukan dengan metode Continuous Dynamic Mixing, teknologi ini memungkinkan produksi garam tetap berjalan
             meski di musim hujan.
           </p>
-          <ImageGrid images={PROCESS_IMAGES} alt="Proses pembuatan garam" />
+          <Infographics images={PROCESS_IMAGES} alt="Infografik proses pembuatan garam" />
 
           <h2>Green House Salt Tunnel Pantai Kelapa</h2>
           <div className="video-frame">

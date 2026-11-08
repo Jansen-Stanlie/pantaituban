@@ -23,13 +23,14 @@ export function safeLink(value) {
 
 const safeColor = (value) => (/^#[0-9a-f]{3,8}$/i.test(value ?? "") ? value : null);
 
-async function getJson(path, signal) {
+async function getJson(pathOrUrl, signal) {
+  const url = pathOrUrl.startsWith("https:") ? pathOrUrl : `${API_BASE}${pathOrUrl}`;
   const controller = new AbortController();
   const abort = () => controller.abort();
   const timer = setTimeout(abort, TIMEOUT_MS);
   signal.addEventListener("abort", abort, { once: true });
   try {
-    const res = await fetch(`${API_BASE}${path}`, { signal: controller.signal });
+    const res = await fetch(url, { signal: controller.signal });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return await res.json();
   } finally {
@@ -133,6 +134,30 @@ export async function fetchFeaturedMedia(signal) {
     )
     .map((m) => ({ type: m.type, url: safeHttpUrl(m.url), title: String(m.title ?? "") }));
 }
+
+const WEATHER_URL =
+  "https://api.open-meteo.com/v1/forecast?latitude=-6.8962&longitude=112.0893&current=temperature_2m,weather_code&daily=sunset&forecast_days=1&timezone=Asia%2FJakarta";
+
+/** Mengelompokkan kode cuaca WMO ke kunci terjemahan `weather.*`. */
+function weatherKey(code) {
+  if (code <= 1) return "clear";
+  if (code <= 3) return "cloudy";
+  if (code <= 48) return "fog";
+  if (code <= 57) return "drizzle";
+  if (code <= 82) return "rain";
+  return "storm";
+}
+
+export async function fetchWeather(signal) {
+  const json = await getJson(WEATHER_URL, signal);
+  const temperature = json?.current?.temperature_2m;
+  const code = json?.current?.weather_code;
+  const sunset = json?.daily?.sunset?.[0];
+  if (typeof temperature !== "number" || typeof code !== "number" || typeof sunset !== "string") return null;
+  return { temperature: Math.round(temperature), condition: weatherKey(code), sunset: sunset.slice(11, 16) };
+}
+
+export const formatRupiah = (amount) => `Rp${String(amount).replace(/\B(?=(\d{3})+$)/g, ".")}`;
 
 export function formatDate(value, lang, options = { day: "numeric", month: "long", year: "numeric" }) {
   const date = value instanceof Date ? value : new Date(value);

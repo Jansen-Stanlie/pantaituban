@@ -1,22 +1,30 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { LuClock, LuMail, LuMapPin, LuPhone } from "react-icons/lu";
 import { FaWhatsapp } from "react-icons/fa6";
 import { PACKAGE_KEYS } from "../data/content";
 import { SITE } from "../data/site";
+import Picker from "./Picker";
+import { SectionHead } from "./ui";
+
+const labelClass = "grid min-w-0 gap-1.5 text-[0.9375rem] font-semibold";
+const fieldClass = "field font-normal";
 
 export default function Contact() {
   const { t } = useTranslation();
   const dateInput = useRef(null);
-  const packageSelect = useRef(null);
+  const messageInput = useRef(null);
+  const [packageKey, setPackageKey] = useState("");
   const { state, key: locationKey } = useLocation();
   const requestedPackage = state?.pkg;
+  const requestedNote = state?.note;
 
-  // Tombol wahana dan aktivitas mengirim paket pilihan lewat state navigasi.
+  // Tombol wahana, aktivitas, dan kalkulator mengirim pilihan lewat state navigasi.
   useEffect(() => {
-    if (requestedPackage) packageSelect.current.value = t(requestedPackage);
-  }, [requestedPackage, locationKey, t]);
+    if (requestedPackage) setPackageKey(requestedPackage);
+    if (requestedNote) messageInput.current.value = requestedNote;
+  }, [requestedPackage, requestedNote, locationKey]);
 
   useEffect(() => {
     const now = new Date();
@@ -42,6 +50,7 @@ export default function Contact() {
     // Dibuka langsung di dalam event klik agar tidak diblokir sebagai pop-up.
     window.open(`${SITE.whatsapp}?text=${encodeURIComponent(lines.join("\n"))}`, "_blank", "noopener");
     event.currentTarget.reset();
+    setPackageKey("");
   };
 
   const details = [
@@ -52,20 +61,24 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="section contact">
-      <div className="wrap contact-grid">
-        <div className="contact-info">
-          <p className="eyebrow">{t("contact.eyebrow")}</p>
-          <h2>{t("contact.title")}</h2>
-          <p className="lead">{t("contact.lead")}</p>
+    <section id="contact" className="section bg-sand-2">
+      <div className="wrap grid gap-10 lg:grid-cols-[1fr_1.25fr] lg:gap-16">
+        <div>
+          <SectionHead title={t("contact.title")} lead={t("contact.lead")} className="!mb-7" />
           <ul>
             {details.map(([Icon, label, value, href]) => (
-              <li key={label}>
-                <Icon aria-hidden="true" />
-                <div>
-                  <span>{label}</span>
+              <li key={label} className="flex gap-3.5 border-t border-ink/15 py-3.5">
+                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-white text-sea">
+                  <Icon aria-hidden="true" />
+                </span>
+                <div className="min-w-0">
+                  <span className="block text-sm text-muted">{label}</span>
                   {href ? (
-                    <a href={href} {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
+                    <a
+                      href={href}
+                      className="font-bold no-underline hover:text-sea"
+                      {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    >
                       {value}
                     </a>
                   ) : (
@@ -77,56 +90,61 @@ export default function Contact() {
           </ul>
         </div>
 
-        <form className="contact-form" onSubmit={onSubmit}>
-          <label>
+        <form onSubmit={onSubmit} className="grid content-start gap-4 rounded-3xl bg-white p-5 shadow-card sm:grid-cols-2 md:p-9">
+          <label className={labelClass}>
             {t("contact.name")}
-            <input name="name" type="text" required maxLength={80} autoComplete="name" />
+            <input className={fieldClass} name="name" type="text" required maxLength={80} autoComplete="name" />
           </label>
-          <label>
+          <label className={labelClass}>
             {t("contact.origin")}
-            <input name="origin" type="text" maxLength={80} autoComplete="address-level2" />
+            <input className={fieldClass} name="origin" type="text" maxLength={80} autoComplete="address-level2" />
           </label>
-          <label>
+          <label className={labelClass}>
             {t("contact.phoneField")}
-            <input name="phone" type="tel" required maxLength={20} pattern="[0-9+\(\) \-]{8,20}" autoComplete="tel" inputMode="tel" />
+            <input
+              className={fieldClass}
+              name="phone"
+              type="tel"
+              required
+              maxLength={20}
+              pattern="[0-9+\(\) \-]{8,20}"
+              autoComplete="tel"
+              inputMode="tel"
+            />
           </label>
-          <label>
-            {t("contact.package")}
-            <select ref={packageSelect} name="package" required defaultValue="">
-              <option value="" disabled>
-                {t("contact.packagePick")}
-              </option>
-              {PACKAGE_KEYS.map((key) => (
-                <option key={key} value={t(key)}>
-                  {t(key)}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label>
+          <Picker
+            name="package"
+            required
+            label={t("contact.package")}
+            placeholder={t("contact.packagePick")}
+            closeLabel={t("media.close")}
+            options={PACKAGE_KEYS.map((key) => ({ value: key, label: t(key) }))}
+            value={packageKey}
+            onChange={setPackageKey}
+          />
+          <label className={labelClass}>
             {t("contact.date")}
-            <input ref={dateInput} name="date" type="date" />
+            <input ref={dateInput} className={fieldClass} name="date" type="date" />
           </label>
-          <label>
+          <label className={labelClass}>
             {t("contact.visitors")}
-            <input name="visitors" type="number" min="1" max="5000" inputMode="numeric" />
+            <input className={fieldClass} name="visitors" type="number" min="1" max="5000" inputMode="numeric" />
           </label>
-          <label className="is-wide">
+          <label className={`${labelClass} sm:col-span-2`}>
             {t("contact.message")}
-            <textarea name="message" rows={4} required maxLength={1000} />
+            <textarea
+              ref={messageInput}
+              className={`${fieldClass} resize-y`}
+              name="message"
+              rows={4}
+              required
+              maxLength={1000}
+            />
           </label>
-          <button type="submit" className="btn btn-sea is-wide">
+          <button type="submit" className="btn btn-sea sm:col-span-2">
             <FaWhatsapp aria-hidden="true" /> {t("contact.submit")}
           </button>
         </form>
-      </div>
-      <div className="map">
-        <iframe
-          title={t("contact.mapTitle")}
-          src={SITE.mapsEmbed}
-          loading="lazy"
-          referrerPolicy="strict-origin-when-cross-origin"
-        />
       </div>
     </section>
   );

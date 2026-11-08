@@ -20,6 +20,9 @@ function youtubeEmbed(input) {
 }
 
 const wrap = (i, length) => ((i % length) + length) % length;
+const controlClass =
+  "absolute grid size-11 place-items-center rounded-full bg-sea-deep/75 text-[1.375rem] text-white transition hover:bg-sun hover:text-ink";
+const errorClass = "rounded-xl bg-sea-deep px-8 py-14 text-white";
 
 export default function MediaModal({ open, items, index, onIndex, onClose, label }) {
   const { t } = useTranslation();
@@ -64,22 +67,22 @@ export default function MediaModal({ open, items, index, onIndex, onClose, label
     content = embed ? (
       <iframe
         key={item.url}
-        className="modal-video"
+        className="aspect-video max-h-[84dvh] w-[min(92vw,1040px)] rounded-xl border-0 bg-black"
         src={embed}
         title={item.title || "Video"}
         allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
         referrerPolicy="strict-origin-when-cross-origin"
       />
     ) : (
-      <p className="modal-error">{t("media.invalidVideo")}</p>
+      <p className={errorClass}>{t("media.invalidVideo")}</p>
     );
   } else if (failedUrl === item.url) {
-    content = <p className="modal-error">{t("media.imageError")}</p>;
+    content = <p className={errorClass}>{t("media.imageError")}</p>;
   } else {
     content = (
       <img
         key={item.url}
-        className="modal-img"
+        className="max-h-[84dvh] w-auto rounded-xl"
         src={item.url}
         alt={item.title || ""}
         onError={() => setFailedUrl(item.url)}
@@ -88,11 +91,10 @@ export default function MediaModal({ open, items, index, onIndex, onClose, label
   }
 
   return (
-    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <dialog
       ref={dialog}
-      className="modal"
       aria-label={label || t("media.dialog")}
+      className="m-0 size-full max-h-none max-w-none place-items-center bg-transparent p-4 open:grid backdrop:bg-[rgb(4_24_30/0.86)]"
       onCancel={(e) => {
         e.preventDefault();
         onClose();
@@ -105,20 +107,32 @@ export default function MediaModal({ open, items, index, onIndex, onClose, label
       }}
       onTouchEnd={onTouchEnd}
     >
-      <div className="modal-stage">
+      <div className="relative grid max-w-[min(100%,1040px)] place-items-center">
         {content}
-        <button type="button" className="modal-btn modal-close" onClick={onClose} aria-label={t("media.close")}>
+        <button type="button" className={`${controlClass} top-2.5 right-2.5`} onClick={onClose} aria-label={t("media.close")}>
           <LuX aria-hidden="true" />
         </button>
         {hasMany && (
           <>
-            <span className="modal-count">
+            <span data-modal-count className="absolute top-4 left-3 rounded-full bg-sea-deep/75 px-3 py-0.5 text-sm text-white">
               {position + 1} / {items.length}
             </span>
-            <button type="button" className="modal-btn modal-prev" onClick={() => go(-1)} aria-label={t("media.prev")}>
+            <button
+              type="button"
+              data-modal-prev
+              className={`${controlClass} top-1/2 left-2.5 -translate-y-1/2`}
+              onClick={() => go(-1)}
+              aria-label={t("media.prev")}
+            >
               <LuChevronLeft aria-hidden="true" />
             </button>
-            <button type="button" className="modal-btn modal-next" onClick={() => go(1)} aria-label={t("media.next")}>
+            <button
+              type="button"
+              data-modal-next
+              className={`${controlClass} top-1/2 right-2.5 -translate-y-1/2`}
+              onClick={() => go(1)}
+              aria-label={t("media.next")}
+            >
               <LuChevronRight aria-hidden="true" />
             </button>
           </>

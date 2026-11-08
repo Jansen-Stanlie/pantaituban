@@ -7,10 +7,102 @@
     <link rel="icon" href="/images/favicon.png" />
     <link rel="apple-touch-icon" href="/images/favicon.png" />
     <!--head-tags-->
+    <style>
+      /* Harus inline: preloader tampil sebelum CSS utama selesai diunduh. */
+      #preloader {
+        position: fixed;
+        inset: 0;
+        z-index: 200;
+        display: grid;
+        place-items: center;
+        background: #fbf6ec;
+        transition: opacity 0.4s ease, visibility 0.4s;
+        /* Cadangan jika JavaScript gagal dimuat. */
+        animation: pl-hide 0.4s ease 4s forwards;
+      }
+      #preloader.is-done {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .pl-in {
+        display: grid;
+        justify-items: center;
+        gap: 18px;
+      }
+      .pl-logo {
+        width: auto;
+        height: 52px;
+      }
+      .pl-scene {
+        position: relative;
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        background: #d9eeee;
+        overflow: hidden;
+      }
+      .pl-sun {
+        position: absolute;
+        left: 50%;
+        bottom: 8px;
+        width: 64px;
+        height: 64px;
+        margin-left: -32px;
+        border-radius: 50%;
+        background: #f6ab2f;
+        animation: pl-rise 1.2s ease-in-out infinite alternate;
+      }
+      .pl-wave {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 264px;
+        height: 36px;
+        fill: #0b5a67;
+        animation: pl-wave 1.4s linear infinite;
+      }
+      @keyframes pl-rise {
+        from {
+          transform: translateY(34px);
+        }
+        to {
+          transform: translateY(-2px);
+        }
+      }
+      @keyframes pl-wave {
+        to {
+          transform: translateX(-132px);
+        }
+      }
+      @keyframes pl-hide {
+        to {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .pl-sun,
+        .pl-wave {
+          animation: none;
+        }
+      }
+    </style>
+    <noscript><style>#preloader { display: none; }</style></noscript>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7D3MRRVHPY"></script>
     <script src="/gtag-init.js"></script>
   </head>
   <body>
+    <div id="preloader" role="status" aria-label="Memuat Pantai Kelapa Tuban">
+      <div class="pl-in">
+        <img class="pl-logo" src="/images/logo.png" alt="" width="160" height="50" />
+        <div class="pl-scene" aria-hidden="true">
+          <div class="pl-sun"></div>
+          <svg class="pl-wave" viewBox="0 0 264 26" preserveAspectRatio="none">
+            <path d="M0 13c22-12 44-12 66 0s44 12 66 0 44-12 66 0 44 12 66 0V26H0z" />
+          </svg>
+        </div>
+      </div>
+    </div>
     <div id="root"><!--app-html--></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

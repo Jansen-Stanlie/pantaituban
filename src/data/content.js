@@ -67,15 +67,15 @@ export const PACKAGE_KEYS = [
 ];
 
 export const TEAM = [
-  { img: "/images/Pengurus_0000.jpg", name: "Muhasan, SH.", role: "chair" },
-  { img: "/images/Pengurus_0001.jpg", name: "Mokhamad Khanafi", role: "viceChair" },
-  { img: "/images/Pengurus_0003.jpg", name: "Heri Poernomo, SE.", role: "secretary1" },
-  { img: "/images/Pengurus_0002.jpg", name: "Muhammad Ludfi, A.Md.", role: "secretary2" },
-  { img: "/images/Pengurus_0006.jpg", name: "Ahmad Rofiq, ST.", role: "treasurer1" },
-  { img: "/images/Pengurus_0004.jpg", name: "Muhammad Hariyono", role: "treasurer2" },
-  { img: "/images/Pengurus_0005.jpg", name: "Sujito", role: "entertainment" },
-  { img: "/images/Pengurus_0007.jpg", name: "Ahmad Ikhwan", role: "rides" },
-  { img: "/images/Pengurus_0008.jpg", name: "Zaenal Abidin", role: "entertainment" },
+  { img: "/images/team/0000", name: "Muhasan, SH.", role: "chair" },
+  { img: "/images/team/0001", name: "Mokhamad Khanafi", role: "viceChair" },
+  { img: "/images/team/0003", name: "Heri Poernomo, SE.", role: "secretary1" },
+  { img: "/images/team/0002", name: "Muhammad Ludfi, A.Md.", role: "secretary2" },
+  { img: "/images/team/0006", name: "Ahmad Rofiq, ST.", role: "treasurer1" },
+  { img: "/images/team/0004", name: "Muhammad Hariyono", role: "treasurer2" },
+  { img: "/images/team/0005", name: "Sujito", role: "entertainment" },
+  { img: "/images/team/0007", name: "Ahmad Ikhwan", role: "rides" },
+  { img: "/images/team/0008", name: "Zaenal Abidin", role: "entertainment" },
 ];
 
 export const TESTIMONIALS = [
